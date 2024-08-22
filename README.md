@@ -7,6 +7,9 @@
 
 ・他の世帯の通信費と比較が出来るサービス
 
+■ 画面遷移図
+https://www.figma.com/design/NWTOhrkTqVeMTMKIrSNDdx/tonaritsushin?node-id=0-1&t=wVZH9zrdd8sOQxAT-0
+
 
 ■ このサービスへの思い・作りたい理由
 
