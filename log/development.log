@@ -145,3 +145,443 @@ Processing by Rails::WelcomeController#index as HTML
 Completed 200 OK in 15ms (Views: 3.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
 
 
+  [1m[35m (85.1ms)[0m  [1m[35mCREATE DATABASE "myapp_development" ENCODING = 'unicode'[0m
+  [1m[35m (65.1ms)[0m  [1m[35mCREATE DATABASE "myapp_test" ENCODING = 'unicode'[0m
+Started GET "/" for 172.20.0.1 at 2024-08-31 13:23:08 +0900
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (10.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (14.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/bundle/gems/railties-7.2.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/bundle/gems/railties-7.2.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 2.2ms | GC: 0.0ms)
+Completed 200 OK in 34ms (Views: 9.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.0ms)
+
+
+  [1m[35m (70.1ms)[0m  [1m[35mCREATE DATABASE "myapp_development" ENCODING = 'unicode'[0m
+  [1m[35m (59.7ms)[0m  [1m[35mCREATE DATABASE "myapp_test" ENCODING = 'unicode'[0m
+Started GET "/" for 172.21.0.1 at 2024-08-31 13:57:36 +0900
+Cannot render console from 172.21.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (10.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (5.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#top as HTML
+Completed 406 Not Acceptable in 33ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.2ms)
+
+
+  
+ActionController::MissingExactTemplate (StaticPagesController#top is missing a template for request formats: text/html):
+  
+actionpack (7.2.1) lib/action_controller/metal/implicit_render.rb:49:in `default_render'
+actionpack (7.2.1) lib/action_controller/metal/basic_implicit_render.rb:9:in `send_action'
+actionpack (7.2.1) lib/abstract_controller/base.rb:226:in `process_action'
+actionpack (7.2.1) lib/action_controller/metal/rendering.rb:193:in `process_action'
+actionpack (7.2.1) lib/abstract_controller/callbacks.rb:261:in `block in process_action'
+activesupport (7.2.1) lib/active_support/callbacks.rb:121:in `block in run_callbacks'
+turbo-rails (2.0.6) lib/turbo-rails.rb:24:in `with_request_id'
+turbo-rails (2.0.6) app/controllers/concerns/turbo/request_id_tracking.rb:10:in `turbo_tracking_request_id'
+activesupport (7.2.1) lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+actiontext (7.2.1) lib/action_text/rendering.rb:25:in `with_renderer'
+actiontext (7.2.1) lib/action_text/engine.rb:71:in `block (4 levels) in <class:Engine>'
+activesupport (7.2.1) lib/active_support/callbacks.rb:130:in `instance_exec'
+activesupport (7.2.1) lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+activesupport (7.2.1) lib/active_support/callbacks.rb:141:in `run_callbacks'
+actionpack (7.2.1) lib/abstract_controller/callbacks.rb:260:in `process_action'
+actionpack (7.2.1) lib/action_controller/metal/rescue.rb:27:in `process_action'
+actionpack (7.2.1) lib/action_controller/metal/instrumentation.rb:77:in `block in process_action'
+activesupport (7.2.1) lib/active_support/notifications.rb:210:in `block in instrument'
+activesupport (7.2.1) lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+activesupport (7.2.1) lib/active_support/notifications.rb:210:in `instrument'
+actionpack (7.2.1) lib/action_controller/metal/instrumentation.rb:76:in `process_action'
+actionpack (7.2.1) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.2.1) lib/active_record/railties/controller_runtime.rb:39:in `process_action'
+actionpack (7.2.1) lib/abstract_controller/base.rb:163:in `process'
+actionview (7.2.1) lib/action_view/rendering.rb:40:in `process'
+actionpack (7.2.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (7.2.1) lib/action_controller/metal.rb:335:in `dispatch'
+actionpack (7.2.1) lib/action_dispatch/routing/route_set.rb:67:in `dispatch'
+actionpack (7.2.1) lib/action_dispatch/routing/route_set.rb:50:in `serve'
+actionpack (7.2.1) lib/action_dispatch/journey/router.rb:53:in `block in serve'
+actionpack (7.2.1) lib/action_dispatch/journey/router.rb:133:in `block in find_routes'
+actionpack (7.2.1) lib/action_dispatch/journey/router.rb:126:in `each'
+actionpack (7.2.1) lib/action_dispatch/journey/router.rb:126:in `find_routes'
+actionpack (7.2.1) lib/action_dispatch/journey/router.rb:34:in `serve'
+actionpack (7.2.1) lib/action_dispatch/routing/route_set.rb:896:in `call'
+rack (3.1.7) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.1.7) lib/rack/etag.rb:29:in `call'
+rack (3.1.7) lib/rack/conditional_get.rb:31:in `call'
+rack (3.1.7) lib/rack/head.rb:15:in `call'
+actionpack (7.2.1) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.2.1) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:272:in `context'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:266:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/cookies.rb:704:in `call'
+activerecord (7.2.1) lib/active_record/migration.rb:674:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (7.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.2.1) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:19:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (7.2.1) lib/rails/rack/logger.rb:41:in `call_app'
+railties (7.2.1) lib/rails/rack/logger.rb:29:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/request_id.rb:33:in `call'
+rack (3.1.7) lib/rack/method_override.rb:28:in `call'
+rack (3.1.7) lib/rack/runtime.rb:24:in `call'
+activesupport (7.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.2.1) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.2.1) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.7) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (7.2.1) lib/rails/engine.rb:535:in `call'
+puma (6.4.2) lib/puma/configuration.rb:272:in `call'
+puma (6.4.2) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.2) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.2) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.2) lib/puma/server.rb:464:in `process_client'
+puma (6.4.2) lib/puma/server.rb:245:in `block in run'
+puma (6.4.2) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Started GET "/" for 172.21.0.1 at 2024-08-31 13:58:31 +0900
+Cannot render console from 172.21.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#top as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/top.html.erb within layouts/application
+  Rendered static_pages/top.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 528.6ms | GC: 13.0ms)
+Completed 200 OK in 531ms (Views: 530.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 13.2ms)
+
+
+Started GET "/manifest.json" for 172.21.0.1 at 2024-08-31 13:58:31 +0900
+Cannot render console from 172.21.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.4ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/" for 172.21.0.1 at 2024-08-31 13:58:57 +0900
+Cannot render console from 172.21.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#top as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/top.html.erb within layouts/application
+  Rendered static_pages/top.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 13.8ms | GC: 0.2ms)
+Completed 200 OK in 16ms (Views: 15.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/manifest.json" for 172.21.0.1 at 2024-08-31 13:58:57 +0900
+Cannot render console from 172.21.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.5ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 172.21.0.1 at 2024-08-31 13:59:10 +0900
+Cannot render console from 172.21.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#top as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/top.html.erb within layouts/application
+  Rendered static_pages/top.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | GC: 0.4ms)
+Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/manifest.json" for 172.21.0.1 at 2024-08-31 13:59:10 +0900
+Cannot render console from 172.21.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.5ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 172.21.0.1 at 2024-08-31 14:00:02 +0900
+Cannot render console from 172.21.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#top as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/top.html.erb within layouts/application
+  Rendered static_pages/top.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | GC: 0.4ms)
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/manifest.json" for 172.21.0.1 at 2024-08-31 14:00:02 +0900
+Cannot render console from 172.21.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.4ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 172.21.0.1 at 2024-08-31 14:12:28 +0900
+Cannot render console from 172.21.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#top as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/top.html.erb within layouts/application
+  Rendered static_pages/top.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 4.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 21.7ms | GC: 3.1ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 3.1ms)
+
+
+  
+ActionView::Template::Error (The asset "logo.png" is not present in the asset pipeline.
+):
+
+Causes:
+Sprockets::Rails::Helper::AssetNotFound (The asset "logo.png" is not present in the asset pipeline.
+)
+    1: <header>
+    2:   <nav class='navbar navbar-expand-lg navigation navbar-light bg-light'>
+    3:     <%= link_to '/', class: 'navbar-brand' do %>
+    4:       <%= image_tag 'logo.png' %>
+    5:     <% end %>
+    6:     <button class='navbar-toggler' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent'
+    7:       aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>
+  
+app/views/shared/_header.html.erb:4
+app/views/shared/_header.html.erb:3
+app/views/layouts/application.html.erb:21
+Started GET "/" for 172.21.0.1 at 2024-08-31 14:12:51 +0900
+Cannot render console from 172.21.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#top as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/top.html.erb within layouts/application
+  Rendered static_pages/top.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 2.1ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | GC: 0.2ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.5ms)
+
+
+  
+ActionView::Template::Error (The asset "sample.jpg" is not present in the asset pipeline.
+):
+
+Causes:
+Sprockets::Rails::Helper::AssetNotFound (The asset "sample.jpg" is not present in the asset pipeline.
+)
+    23: 
+    24:         <li class='nav-item dropdown dropdown-slide'>
+    25:           <%= link_to '#', class: 'nav-link', data: { bs_toggle: 'dropdown' }, aria: { haspopup: 'true', expanded: 'false' }, id: 'header-profile' do %>
+    26:             <%= image_tag 'sample.jpg', class: 'rounded-circle mr15', width: '40', height: '40' %>
+    27:           <% end %>
+    28:           <div class='dropdown-menu dropdown-menu-end'>
+    29:             <div class='dropdown-item'>らんてっく たろう</div>
+  
+app/views/shared/_header.html.erb:26
+app/views/shared/_header.html.erb:25
+app/views/layouts/application.html.erb:21
+Started GET "/" for 172.21.0.1 at 2024-08-31 14:13:10 +0900
+Cannot render console from 172.21.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#top as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/top.html.erb within layouts/application
+  Rendered static_pages/top.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/manifest.json" for 172.21.0.1 at 2024-08-31 14:13:10 +0900
+Cannot render console from 172.21.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.4ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 172.21.0.1 at 2024-08-31 14:21:38 +0900
+Cannot render console from 172.21.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#top as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/top.html.erb within layouts/application
+  Rendered static_pages/top.html.erb within layouts/application (Duration: 2.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (The asset "top.png" is not present in the asset pipeline.
+):
+
+Causes:
+Sprockets::Rails::Helper::AssetNotFound (The asset "top.png" is not present in the asset pipeline.
+)
+     6:   <%# トップ画像とキャッチコピー %>
+     7:   <div class="hero bg-base-200 rounded-lg">
+     8:     <div class="hero-content flex-col lg:flex-row">
+     9:       <%= image_tag "top.png", class: "w-full lg:max-w-sm" %>
+    10:       <div class="flex-none text-center">
+    11:         <p class="py-6 text-sm md:text-2xl">自分が本当にしたいこと、できていますか？</p>
+    12:         <p class="py-6 text-xs md:text-lg">WishWay でバケットリストを作成しよう</p>
+  
+app/views/static_pages/top.html.erb:9
+Started GET "/" for 172.21.0.1 at 2024-08-31 14:25:10 +0900
+Cannot render console from 172.21.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#top as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/top.html.erb within layouts/application
+  Rendered static_pages/top.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for 172.21.0.1 at 2024-08-31 14:25:10 +0900
+Cannot render console from 172.21.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.7ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 172.21.0.1 at 2024-08-31 14:25:31 +0900
+Cannot render console from 172.21.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#top as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/top.html.erb within layouts/application
+  Rendered static_pages/top.html.erb within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for 172.21.0.1 at 2024-08-31 14:25:31 +0900
+Cannot render console from 172.21.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.1ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 172.21.0.1 at 2024-08-31 14:25:32 +0900
+Cannot render console from 172.21.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#top as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/top.html.erb within layouts/application
+  Rendered static_pages/top.html.erb within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 77.9ms | GC: 6.0ms)
+Completed 200 OK in 80ms (Views: 78.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 6.0ms)
+
+
+Started GET "/manifest.json" for 172.21.0.1 at 2024-08-31 14:25:32 +0900
+Cannot render console from 172.21.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.2ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 172.21.0.1 at 2024-08-31 14:25:32 +0900
+Cannot render console from 172.21.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#top as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/top.html.erb within layouts/application
+  Rendered static_pages/top.html.erb within layouts/application (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 46.9ms | GC: 0.3ms)
+Completed 200 OK in 48ms (Views: 47.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/manifest.json" for 172.21.0.1 at 2024-08-31 14:25:33 +0900
+Cannot render console from 172.21.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.2ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 172.21.0.1 at 2024-08-31 14:25:33 +0900
+Cannot render console from 172.21.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#top as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/top.html.erb within layouts/application
+  Rendered static_pages/top.html.erb within layouts/application (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | GC: 0.2ms)
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/manifest.json" for 172.21.0.1 at 2024-08-31 14:25:33 +0900
+Cannot render console from 172.21.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.1ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 172.21.0.1 at 2024-08-31 14:34:50 +0900
+Cannot render console from 172.21.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#top as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/top.html.erb within layouts/application
+  Rendered static_pages/top.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 6.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 21.3ms | GC: 0.4ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.4ms)
+
+
+  
+ActionView::Template::Error (The asset "logo.png" is not present in the asset pipeline.
+):
+
+Causes:
+Sprockets::Rails::Helper::AssetNotFound (The asset "logo.png" is not present in the asset pipeline.
+)
+    1: <header>
+    2:   <nav class='navbar navbar-expand-lg navigation navbar-light bg-light'>
+    3:     <%= link_to '/', class: 'navbar-brand' do %>
+    4:       <%= image_tag 'logo.png' %>
+    5:     <% end %>
+    6:     <button class='navbar-toggler' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent'
+    7:       aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>
+  
+app/views/shared/_header.html.erb:4
+app/views/shared/_header.html.erb:3
+app/views/layouts/application.html.erb:13
+Started GET "/" for 172.21.0.1 at 2024-08-31 14:36:54 +0900
+Cannot render console from 172.21.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#top as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/top.html.erb within layouts/application
+  Rendered static_pages/top.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 5.8ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.9ms | GC: 0.4ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.4ms)
+
+
+  
+ActionView::Template::Error (The asset "sample.jpg" is not present in the asset pipeline.
+):
+
+Causes:
+Sprockets::Rails::Helper::AssetNotFound (The asset "sample.jpg" is not present in the asset pipeline.
+)
+    24: 
+    25:         <li class='nav-item dropdown dropdown-slide'>
+    26:           <%= link_to '#', class: 'nav-link', data: { bs_toggle: 'dropdown' }, aria: { haspopup: 'true', expanded: 'false' }, id: 'header-profile' do %>
+    27:             <%= image_tag 'sample.jpg', class: 'rounded-circle mr15', width: '40', height: '40' %>
+    28:           <% end %>
+    29:           <div class='dropdown-menu dropdown-menu-end'>
+    30:             <div class='dropdown-item'>らんてっく たろう</div>
+  
+app/views/shared/_header.html.erb:27
+app/views/shared/_header.html.erb:26
+app/views/layouts/application.html.erb:13
+Started GET "/" for 172.21.0.1 at 2024-08-31 14:37:31 +0900
+Cannot render console from 172.21.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#top as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/top.html.erb within layouts/application
+  Rendered static_pages/top.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
