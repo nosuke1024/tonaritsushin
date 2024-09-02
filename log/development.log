@@ -1254,3 +1254,5 @@ Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.2
   
 ActionController::RoutingError (No route matches [GET] "/top.jpg"):
   
+  [1m[35m (101.9ms)[0m  [1m[35mCREATE DATABASE "myapp_development" ENCODING = 'unicode'[0m
+  [1m[35m (173.0ms)[0m  [1m[35mCREATE DATABASE "myapp_test" ENCODING = 'unicode'[0m
