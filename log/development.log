@@ -1220,3 +1220,37 @@ Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.0/127.255.255.2
   
 ActionController::RoutingError (No route matches [GET] "/top.jpg"):
   
+  [1m[35m (68.6ms)[0m  [1m[35mCREATE DATABASE "myapp_development" ENCODING = 'unicode'[0m
+  [1m[35m (55.0ms)[0m  [1m[35mCREATE DATABASE "myapp_test" ENCODING = 'unicode'[0m
+Started GET "/rails/info/routes" for 172.20.0.1 at 2024-09-02 15:48:30 +0900
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (7.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::InfoController#routes as HTML
+  Rendering layout /usr/local/bundle/gems/railties-7.2.1/lib/rails/templates/layouts/application.html.erb
+  Rendering /usr/local/bundle/gems/railties-7.2.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /usr/local/bundle/gems/actionpack-7.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [30 times] (Duration: 7.3ms | GC: 1.1ms)
+  Rendered /usr/local/bundle/gems/actionpack-7.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (Duration: 2.0ms | GC: 0.0ms)
+  Rendered /usr/local/bundle/gems/railties-7.2.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application (Duration: 14.3ms | GC: 1.7ms)
+  Rendered layout /usr/local/bundle/gems/railties-7.2.1/lib/rails/templates/layouts/application.html.erb (Duration: 15.1ms | GC: 1.7ms)
+Completed 200 OK in 30ms (Views: 18.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 2.1ms)
+
+
+Started GET "/" for 172.20.0.1 at 2024-09-02 15:48:32 +0900
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#top as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/top.html.erb within layouts/application
+  Rendered static_pages/top.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_before_login_header.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 179.5ms | GC: 40.1ms)
+Completed 200 OK in 192ms (Views: 181.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 40.6ms)
+
+
+Started GET "/top.jpg" for 172.20.0.1 at 2024-09-02 15:48:33 +0900
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/top.jpg"):
+  
