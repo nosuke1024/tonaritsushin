@@ -1237,3 +1237,22 @@ Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.0/127.255.255.2
   
 ActionController::RoutingError (No route matches [GET] "/top.jpg"):
   
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 172.20.0.1 at 2024-09-02 17:20:25 +0900
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#top as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/top.html.erb within layouts/application
+  Rendered static_pages/top.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_before_login_header.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 319.6ms | GC: 44.5ms)
+Completed 200 OK in 344ms (Views: 322.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 45.7ms)
+
+
+Started GET "/top.jpg" for 172.20.0.1 at 2024-09-02 17:20:25 +0900
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/top.jpg"):
+  
