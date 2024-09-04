@@ -17,11 +17,13 @@ ja:
     new:
       title: ユーザー登録
       to_login_page: ログインページへ
-  header:
-    login: ログイン
-    logout: ログアウト
-    board: 掲示板
-    board_index: 掲示板一覧
-    create_board: 掲示板作成
-    bookmark_index: ブックマーク一覧
-    profile: プロフィール
+  before_login_header:
+    tonaritsuhin: "隣の通信費" 
+    list_page: "一覧ページ"
+    login: "ログイン"
+    new_registration: "新規登録"
+  footer:
+    terms_of_service: "利用規約"
+    privacy_policy: "プライバシーポリシー"
+    news: "お知らせ"
+    contact: "お問い合わせ"
