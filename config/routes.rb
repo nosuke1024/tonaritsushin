@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   # 初期ページのルーティング
   root 'static_pages#top'
   resources :users, only: %i[new create show]
+  # 投稿機能に関する機能
+  resources :posts, only: %i[index]
 
   # ログインユーザーの内容
   get 'login', to: 'user_sessions#new'
