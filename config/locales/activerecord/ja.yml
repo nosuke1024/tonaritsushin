@@ -8,3 +8,26 @@ ja:
         password: パスワード
         password_confirmation: パスワード確認
         name: 名前
+  enums:
+    post:
+      previous_carrier: 
+        major_carrier: "大手キャリア"
+        online_plan: "大手キャリアオンラインプラン"
+        sub_brand: "大手キャリアサブブランド"
+        mvno: "楽天モバイルまたは格安SIM"
+      new_carrier:
+        major_carrier: "大手キャリア"
+        online_plan: "大手キャリアオンラインプラン"
+        sub_brand: "大手キャリアサブブランド"
+        mvno: "楽天モバイルまたは格安SIM"
+      price_difference:
+        cheaper: "1000円以上ダウン"
+        more_expensive: "1000円以上アップ"
+        no_change: "999円ダウン~999円アップ"
+      device_payment: 
+        yes: "あり"
+        no: "なし"
+      purchase_method:
+        carrier_switch: "乗り換え"
+        online_shop: "オンラインショップ"
+        shop: "店頭による機種変更"
