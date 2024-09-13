@@ -8,6 +8,14 @@ ja:
         password: パスワード
         password_confirmation: パスワード確認
         name: 名前
+      post:
+          title: タイトル
+          body: 本文
+          previous_carrier: 前のキャリア
+          new_carrier: 新しいキャリア
+          price_difference: 金額の差
+          device_payment: 機種を変更したかどうか
+          purchase_method: 機種の購入方法
   enums:
     post:
       previous_carrier: 

@@ -7,6 +7,10 @@ ja:
     label:
       email: メールアドレス
       password: パスワード
+  defaults:
+    flash_message:
+      created: "投稿しました！"
+      not_created: "投稿に失敗しました！"
   user_sessions:
     new:
       title: ログイン
