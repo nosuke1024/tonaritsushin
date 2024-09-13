@@ -17,6 +17,14 @@ class PostsController < ApplicationController
     end
   end
 
+  def show
+    @post = Post.find(params[:id]) # 個別のポストidを取得
+  end
+
+  def edit
+    @post = current_user.posts.find(params[:id])
+  end
+
   private
 
   def post_params
