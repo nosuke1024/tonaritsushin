@@ -9,5 +9,5 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
 
   # 関係性の追加
-  has_many :posts, dependent: :destroy
+  has_many :posts
 end
