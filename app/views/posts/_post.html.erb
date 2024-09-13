@@ -13,7 +13,7 @@
               <i class="bi bi-pencil-fill"></i>
             <% end %>
             <!-- 削除ボタン -->
-            <%= link_to post_path(post), id: 'button-delete-#{post.id}', method: :delete, data: {confirm: '本当に削除しますか？'} do %>
+            <%= link_to post_path(post), id: 'button-delete-#{post.id}', data: { turbo_method: :delete, turbo_confirm: t('defaults.delete_confirm') } do %>
               <i class="bi bi-trash-fill"></i>
             <% end %>
           </div>
@@ -24,6 +24,12 @@
           <li><i class="bi bi-calendar"></i><%= l post.created_at, format: :short %></li>
         </ul>
         <p class="card-text"><%= post.body %></p>
+        <!-- 選択式の回答の表示 -->
+        <p class="card-text"><%= post.previous_carrier %></p> 
+        <p class="card-text"><%= post.new_carrier %></p> 
+        <p class="card-text"><%= post.price_difference %></p> 
+        <p class="card-text"><%= post.device_payment %></p> 
+        <p class="card-text"><%= post.purchase_method %></p> 
       </div>
     </div>
   </div>

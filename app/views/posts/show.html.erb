@@ -14,17 +14,17 @@
                 <li class="list-inline-item"><%= "by #{@post}" %></li>
                 <li class="list-inline-item"><%= l @post.created_at, format: :long %></li>
               </ul>
-              <%# 現在のユーザーが投稿の作成者の場合編集と削除のリンク %>
-              <%# if current_user.own?(@post) %>
-                <%# <div class='d-flex justify-content-end'> %>
-                  <%# <%= link_to edit_post_path(@post), id: "button-edit-#{@post.id}" do %>
-                    <%# <i class="bi bi-pencil-fill"></i> %>
-                  <%# <% end %> %>
-                  <%# <%= link_to post_path(@post), id: "button-delete-#{@post.id}", data: { turbo_method: :delete, turbo_confirm: t('defaults.delete_confirm') } do %>
-                    <%# <i class="bi bi-trash-fill"></i> %>
-                  <%# <% end %> %>
-                <%# </div> %>
-              <%# end %>
+              <!-- 現在のユーザーが投稿の作成者の場合編集と削除のリンク-->
+              <% if current_user.own?(@post) %>
+                <div class='d-flex justify-content-end'>
+                  <%= link_to edit_post_path(@post), id: "button-edit-#{@post.id}" do %>
+                    <i class="bi bi-pencil-fill"></i>
+                  <% end %>
+                  <%= link_to post_path(@post), id: "button-delete-#{@post.id}", data: { turbo_method: :delete, turbo_confirm: t('defaults.delete_confirm') } do %>
+                    <i class="bi bi-trash-fill"></i>
+                  <% end %>
+                </div>
+              <% end %>
             </div>
           </div>
         </div>
