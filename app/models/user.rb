@@ -9,5 +9,10 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
 
   # 関係性の追加
-  has_many :posts
+  has_many :posts, dependent: :destroy
+
+  # ログインしているユーザーかどうか
+  def own?(object)
+    id == object&.user_id
+  end
 end
