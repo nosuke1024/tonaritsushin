@@ -9,7 +9,7 @@
       <li><a href="<%= posts_path %>"><%= '投稿ページ' %></a></li>
       <li><a href="<%= new_post_path %>"><%= '新規投稿' %></a></li>
       <li><%= current_user.name %></li>
-      <li><a href="#">ログアウト</a></li>
+      <li><%= button_to 'ログアウト', logout_path, method: :delete %></li>
     </ul>
   </div>
 </header>

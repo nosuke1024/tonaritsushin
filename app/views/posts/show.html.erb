@@ -20,7 +20,7 @@
                   <%= link_to edit_post_path(@post), id: "button-edit-#{@post.id}" do %>
                     <i class="bi bi-pencil-fill"></i>
                   <% end %>
-                  <%= link_to post_path(@post), id: "button-delete-#{@post.id}", data: { turbo_method: :delete, turbo_confirm: t('defaults.delete_confirm') } do %>
+                  <%= button_to post_path(@post), method: :delete, id: "button-delete-#{@post.id}", data: { turbo_confirm: t('defaults.delete_confirm') } do %>
                     <i class="bi bi-trash-fill"></i>
                   <% end %>
                 </div>
