@@ -10,4 +10,8 @@ class Post < ApplicationRecord
   enum price_difference: { cheaper: 0, more_expensive: 1, no_change: 2 }
   enum device_payment: { yes: 0, no: 1 }
   enum purchase_method: { carrier_switch: 0, online_shop: 1, shop: 2 }
+
+  # ユーザーの区別はまだ
+  # def own?(object) object.user_id == self.id end
+
 end
