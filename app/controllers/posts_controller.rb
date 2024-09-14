@@ -8,7 +8,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = current_user.posts.build(post_params) # current_userを使って投稿を作成
+    @post = current_user.posts.build(post_params) 
     if @post.save
       redirect_to posts_path, success: t('defaults.flash_message.created',)
     else

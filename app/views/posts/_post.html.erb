@@ -23,7 +23,7 @@
         </div>
         <!-- 投稿者と投稿日時 -->
         <ul class="list-inline">
-          <li><i class="bi bi-person"></i><%= post.user.name %></li> <%# postに紐づいたユーザーの名前を表示 %>  
+          <li><i class="bi bi-person"></i><%= post.user.name %></li>
           <li><i class="bi bi-calendar"></i><%= l post.created_at, format: :short %></li>
         </ul>
         <p class="card-text"><%= post.body %></p>
