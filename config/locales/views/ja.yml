@@ -30,7 +30,6 @@ ja:
       success: ユーザー登録が完了しました
       failure: ユーザー登録に失敗しました
   before_login_header:
-    tonaritsuhin: "隣の通信費" 
     list_page: "一覧ページ"
     login: "ログイン"
     new_registration: "新規登録"
