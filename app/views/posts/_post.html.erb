@@ -9,12 +9,12 @@
           </h4>
           <div class='ms-auto'> 
             <!-- 現在のユーザーが投稿の作成者の場合編集と削除のリンク-->
-            <% if current_user.own?(@post) %>
+            <% if current_user.own?(post) %>
               <div class='d-flex justify-content-end'>
-                <%= link_to edit_post_path(@post), id: "button-edit-#{@post.id}" do %>
+                <%= link_to edit_post_path(post), id: "button-edit-#{post.id}" do %>
                   <i class="bi bi-pencil-fill"></i>
                 <% end %>
-                <%= button_to post_path(@post), method: :delete, id: "button-delete-#{@post.id}", data: { turbo_confirm: t('defaults.delete_confirm') } do %>
+                <%= button_to post_path(post), method: :delete, id: "button-delete-#{post.id}", data: { turbo_confirm: t('defaults.delete_confirm') } do %>
                   <i class="bi bi-trash-fill"></i>
                 <% end %>
               </div>
