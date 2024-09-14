@@ -4,11 +4,11 @@
     <div class="col-lg-8 offset-lg-2">
       <h1><%= t('.title') %></h1>
 
-      <div id="post-id-<%= @post.id %>"> <%# この行を追加 %>
+      <div id="post-id-<%= @post.id %>">
         <div class="card">
           <div class="card-body">
             <div class="d-flex">
-              <h3 style="display: inline;"><%= @post.title %></h3> <%# この行を修正 %>
+              <h3 style="display: inline;"><%= @post.title %></h3>
 
               <% if current_user.own?(@post) %>
                 <div class='ms-auto d-flex justify-content-end'>
@@ -23,16 +23,16 @@
             </div>
 
             <ul class="list-inline">
-              <li class="list-inline-item"><%= "by #{@post.user.name}" %></li> <%# この行を修正 %>
-              <li class="list-inline-item"><%= l @post.created_at, format: :short %></li> <%# この行を修正 %>
+              <li class="list-inline-item"><%= "by #{@post.user.name}" %></li>
+              <li class="list-inline-item"><%= l @post.created_at, format: :short %></li>
             </ul>
 
             <%# 選択式の回答の表示 %>
-            <p class="card-text">以前のキャリア：<%= Post.human_attribute_name(:previous_carrier) %>: <%= @post.previous_carrier_i18n %></p> 
-            <p class="card-text">新しいキャリア：<%= Post.human_attribute_name(:new_carrier) %>: <%= @post.new_carrier_i18n %></p> 
-            <p class="card-text">料金差：<%= Post.human_attribute_name(:price_difference) %>: <%= @post.price_difference_i18n %></p> 
-            <p class="card-text">端末代金：<%= Post.human_attribute_name(:device_payment) %>: <%= @post.device_payment_i18n %></p> 
-            <p class="card-text">購入方法：<%= Post.human_attribute_name(:purchase_method) %>: <%= @post.purchase_method_i18n %></p>
+            <p class="card-text"><%= Post.human_attribute_name(:previous_carrier) %>: <%= @post.previous_carrier_i18n %></p> 
+            <p class="card-text"><%= Post.human_attribute_name(:new_carrier) %>: <%= @post.new_carrier_i18n %></p> 
+            <p class="card-text"><%= Post.human_attribute_name(:price_difference) %>: <%= @post.price_difference_i18n %></p> 
+            <p class="card-text"><%= Post.human_attribute_name(:device_payment) %>: <%= @post.device_payment_i18n %></p> 
+            <p class="card-text"><%= Post.human_attribute_name(:purchase_method) %>: <%= @post.purchase_method_i18n %></p>
 
             <%# 本文の表示 %>
             <p><%= simple_format(@post.body) %></p> 
