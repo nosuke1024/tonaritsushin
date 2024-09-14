@@ -3,20 +3,15 @@
   <div class="row mb-3">
     <div class="col-lg-8 offset-lg-2">
       <h1><%= t('.title') %></h1>
-      <article class="card">
-        <div class="card-body">
-          <div class="row">
-            <div class="col-md-9">
-	            <!-- 画像投稿に関する部分を削除 -->
-              <!-- 投稿に関するタイトル、作成者、投稿時間 -->
-              <h3 style="display: inline;"><%= @post.title %></h3>
-              <ul class="list-inline">
-                <li class="list-inline-item"><%= "by #{@post}" %></li>
-                <li class="list-inline-item"><%= l @post.created_at, format: :long %></li>
-              </ul>
-              <!-- 現在のユーザーが投稿の作成者の場合編集と削除のリンク-->
+
+      <div id="post-id-<%= @post.id %>"> <%# この行を追加 %>
+        <div class="card">
+          <div class="card-body">
+            <div class="d-flex">
+              <h3 style="display: inline;"><%= @post.title %></h3> <%# この行を修正 %>
+
               <% if current_user.own?(@post) %>
-                <div class='d-flex justify-content-end'>
+                <div class='ms-auto d-flex justify-content-end'>
                   <%= link_to edit_post_path(@post), id: "button-edit-#{@post.id}" do %>
                     <i class="bi bi-pencil-fill"></i>
                   <% end %>
@@ -26,13 +21,24 @@
                 </div>
               <% end %>
             </div>
+
+            <ul class="list-inline">
+              <li class="list-inline-item"><%= "by #{@post.user.name}" %></li> <%# この行を修正 %>
+              <li class="list-inline-item"><%= l @post.created_at, format: :short %></li> <%# この行を修正 %>
+            </ul>
+
+            <%# 選択式の回答の表示 %>
+            <p class="card-text">以前のキャリア：<%= Post.human_attribute_name(:previous_carrier) %>: <%= @post.previous_carrier_i18n %></p> 
+            <p class="card-text">新しいキャリア：<%= Post.human_attribute_name(:new_carrier) %>: <%= @post.new_carrier_i18n %></p> 
+            <p class="card-text">料金差：<%= Post.human_attribute_name(:price_difference) %>: <%= @post.price_difference_i18n %></p> 
+            <p class="card-text">端末代金：<%= Post.human_attribute_name(:device_payment) %>: <%= @post.device_payment_i18n %></p> 
+            <p class="card-text">購入方法：<%= Post.human_attribute_name(:purchase_method) %>: <%= @post.purchase_method_i18n %></p>
+
+            <%# 本文の表示 %>
+            <p><%= simple_format(@post.body) %></p> 
+
           </div>
         </div>
-        <!-- 投稿の本文 -->
-        <p><%= simple_format(@post.body) %></p>
-      </article>
+      </div> 
     </div>
   </div>
-
-  <!-- コメント機能に関する部分を削除 -->
-</div>

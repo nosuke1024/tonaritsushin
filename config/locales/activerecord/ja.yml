@@ -19,12 +19,12 @@ ja:
   enums:
     post:
       previous_carrier: 
-        major_carrier: "大手キャリア"
+        major_carrier: "大手キャリアメインプラン"
         online_plan: "大手キャリアオンラインプラン"
         sub_brand: "大手キャリアサブブランド"
         mvno: "楽天モバイルまたは格安SIM"
       new_carrier:
-        major_carrier: "大手キャリア"
+        major_carrier: "大手キャリアメインプラン"
         online_plan: "大手キャリアオンラインプラン"
         sub_brand: "大手キャリアサブブランド"
         mvno: "楽天モバイルまたは格安SIM"
