@@ -11,6 +11,8 @@ ja:
     flash_message:
       created: "投稿しました！"
       not_created: "投稿に失敗しました！"
+      updated: "更新しました！"
+      not_updated: "更新に失敗しました"
   user_sessions:
     new:
       title: ログイン
