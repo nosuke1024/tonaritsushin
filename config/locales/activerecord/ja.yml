@@ -9,13 +9,13 @@ ja:
         password_confirmation: パスワード確認
         name: 名前
       post:
-          title: タイトル
-          body: 本文
-          previous_carrier: 前のキャリア
-          new_carrier: 新しいキャリア
-          price_difference: 金額の差
-          device_payment: 機種を変更したかどうか
-          purchase_method: 機種の購入方法
+          title: タイトル（携帯電話を買った、料金プランを変更したなど）
+          body: 本文（どんな感じだったか、気づいたことなど）
+          previous_carrier: 前使っていた料金プランは？
+          new_carrier: 新しくした料金プランは？
+          price_difference: 金額の差は？
+          device_payment: 機種を変更はしました？
+          purchase_method: 機種の購入方法はどう買いましたか？
   enums:
     post:
       previous_carrier: 
