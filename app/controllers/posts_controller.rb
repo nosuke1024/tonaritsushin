@@ -39,7 +39,7 @@ class PostsController < ApplicationController
   def destroy
     post = current_user.posts.find(params[:id])
     post.destroy!
-    redirect_to posts_path, success: t('defaults.flash_message.deleted'), status: :see_other
+    redirect_to posts_path, flash: { danger: t('defaults.flash_message.deleted') }, status: :see_other
   end
 
   private
