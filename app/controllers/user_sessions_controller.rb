@@ -17,6 +17,6 @@ class UserSessionsController < ApplicationController
 
   def destroy
     logout
-    redirect_to root_path, status: :see_other, success: t('user_sessions.destroy.success')
+    redirect_to root_path, status: :see_other, flash: { danger: t('user_sessions.destroy.success') } 
   end
 end
