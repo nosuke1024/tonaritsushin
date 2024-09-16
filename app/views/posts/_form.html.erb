@@ -31,7 +31,7 @@
   
   <div class="mb-3">
     <%= f.label :purchase_method %>
-    <%= f.select :purchase_method, Post.purchase_methods.keys.map {|k| [t("enums.post.purchase_method.#{k}"), k]}, { include_blank: '選択してください', selected: ''  }, { class: "form-control" } %>
+    <%= f.select :purchase_method, Post.purchase_methods.keys.map {|k| [t("enums.post.purchase_method.#{k}"), k]}, { include_blank: '選択してください（購入のない場合はこのまま）', selected: ''  }, { class: "form-control" } %>
   </div>
     
   <%= f.submit nil, class: "btn btn-primary" %>
