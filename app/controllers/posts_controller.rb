@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.includes(:user)
+    @posts = Post.includes(:user).page(params[:page])
   end
 
   def new

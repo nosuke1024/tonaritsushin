@@ -13,6 +13,7 @@
         <% else %>
           <div class="mb-3">投稿がありません</div>
         <% end %>
+        <%= paginate @posts, theme: 'bootstrap-5' %>
       </div>
     </div>
   </div>
