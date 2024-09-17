@@ -2,7 +2,7 @@
   <!-- 入力フォームの追加追加 -->
   <div class="mb-3">
     <%= f.label :title %>
-    <%= f.text_field :title, class: "form-control" %>
+    <%= f.select :title, Post.titles.keys.map {|k| [t("enums.post.title.#{k}"), k]}, { include_blank: '選択してください', selected: '' }, { class: "form-control" } %>
   </div>
   <div class="mb-3">
     <%= f.label :body %>
