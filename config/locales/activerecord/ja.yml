@@ -9,33 +9,43 @@ ja:
         password_confirmation: パスワード確認
         name: 名前
       post:
-          title: タイトル（携帯電話を買った、料金プランを変更したなど）
+          title: 今回の手続きについて教えて。
           body: 本文（どんな感じだったか、気づいたことなど）
           previous_carrier: 前使っていた料金プランは？
           new_carrier: 新しくした料金プランは？
           price_difference: 金額の差は？
-          device_payment: 機種を変更はしました？
+          device_payment: スマホの購入方法は？
           purchase_method: 機種の購入方法はどう買いましたか？
   enums:
     post:
+      title:
+        plan_change: "料金プランの変更"
+        smartphone_change: "機種交換"
+        change: "プランの変更と機種交換"
+        other: "その他"
       previous_carrier: 
         major_carrier: "大手キャリアメインプラン"
         online_plan: "大手キャリアオンラインプラン"
         sub_brand: "大手キャリアサブブランド"
-        mvno: "楽天モバイルまたは格安SIM"
+        mvno: "格安SIM"
+        rakuten: "楽天モバイル"
       new_carrier:
         major_carrier: "大手キャリアメインプラン"
         online_plan: "大手キャリアオンラインプラン"
         sub_brand: "大手キャリアサブブランド"
-        mvno: "楽天モバイルまたは格安SIM"
+        mvno: "格安SIM"
+        rakuten: "楽天モバイル"
       price_difference:
         cheaper: "1000円以上ダウン"
         more_expensive: "1000円以上アップ"
         no_change: "999円ダウン~999円アップ"
       device_payment: 
-        yes: "あり"
-        no: "なし"
+        bundled_sale: "スマホと料金プランのセット購入"
+        device_only: "スマホだけの購入"
       purchase_method:
-        carrier_switch: "乗り換え"
-        online_shop: "オンラインショップ"
-        shop: "店頭による機種変更"
+        carrier_shop: "キャリアショップ"
+        electronics_store: "家電量販店"
+        online_shop: "キャリアのオンラインショップ"
+        ec_store: "ECサイトやメーカー直販サイトなどのオンラインストア"
+        used_store: "中古販売店や中古のオンラインストア"
+        online_marketplace: "フリマサイト"
