@@ -13,6 +13,7 @@ ja:
           body: 本文（どんな感じだったか、気づいたことなど）
           previous_carrier: 前使っていた料金プランは？
           new_carrier: 新しくした料金プランは？
+          carrier_changed: キャリアを変えましたか？
           price_difference: 金額の差は？
           device_payment: スマホの購入方法は？
           purchase_method: 機種の購入方法はどう買いましたか？
@@ -35,6 +36,9 @@ ja:
         sub_brand: "大手キャリアサブブランド"
         mvno: "格安SIM"
         rakuten: "楽天モバイル"
+      carrier_changed:
+        no_change_carrier: "そのまま"
+        change_carrier: "変えました"
       price_difference:
         cheaper: "1000円以上ダウン"
         more_expensive: "1000円以上アップ"

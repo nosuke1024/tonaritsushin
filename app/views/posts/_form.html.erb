@@ -18,6 +18,11 @@
     <%= f.label :new_carrier %>
     <%= f.select :new_carrier, Post.new_carriers.keys.map {|k| [t("enums.post.new_carrier.#{k}"), k]}, { include_blank: '選択してください', selected: ''  }, { class: "form-control" } %>
   </div>
+
+  <div class="mb-3">
+    <%= f.label :carrier_changed %>
+    <%= f.select :carrier_changed, Post.carrier_changeds.keys.map {|k| [t("enums.post.carrier_changed.#{k}"), k]}, { include_blank: '選択してください', selected: ''  }, { class: "form-control" } %>
+  </div>
   
   <div class="mb-3">
     <%= f.label :price_difference %>
