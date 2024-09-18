@@ -9,14 +9,14 @@ ja:
         password_confirmation: パスワード確認
         name: 名前
       post:
-          title: 今回の手続き
-          body: 本文（どんな感じだったか、気づいたことなど）
-          previous_carrier: 前回までの料金プラン
-          new_carrier: 今回の料金プラン
-          carrier_changed: 乗り換えの有無
-          price_difference: 金額の差
-          device_payment: 料金プランとのセットによる購入
-          purchase_method: 購入方法や場所
+        title: 今回の手続き
+        body: 本文（どんな感じだったか、気づいたことなど）
+        previous_carrier: 前回までの料金プラン
+        new_carrier: 今回の料金プラン
+        carrier_changed: 乗り換えの有無
+        price_difference: 金額の差
+        device_payment: 料金プランとスマホのセットによる購入の有無
+        purchase_method: 購入方法や場所
   enums:
     post:
       title:
@@ -37,8 +37,8 @@ ja:
         mvno: "格安SIM"
         rakuten: "楽天モバイル"
       carrier_changed:
-        no_change_carrier: "そのまま"
-        change_carrier: "変えました"
+        no_change_carrier: "無し"
+        change_carrier: "有り"
       price_difference:
         cheaper: "1000円以上ダウン"
         more_expensive: "1000円以上アップ"
@@ -50,6 +50,6 @@ ja:
         carrier_shop: "キャリアショップ"
         electronics_store: "家電量販店"
         online_shop: "キャリアのオンラインショップ"
-        ec_store: "ECサイトやメーカー直販サイトなどのオンラインストア"
+        ec_store: "ECサイトやメーカー直販サイト"
         used_store: "中古販売店や中古のオンラインストア"
         online_marketplace: "フリマサイト"
