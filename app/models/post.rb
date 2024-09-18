@@ -1,7 +1,7 @@
 class Post < ApplicationRecord
   # タイトルの空欄のバリテーションに変更
   validates :title, presence: true
-  validates :body, presence: true, length: { maximum: 65_535 }
+  validates :body, presence: true, length: { maximum: 65_535 }, allow_blank: true
   # 空のままの場合バリテーションエラーを返す内容の追加
   validates :previous_carrier, presence: true
   validates :new_carrier, presence: true

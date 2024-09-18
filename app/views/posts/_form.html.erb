@@ -6,7 +6,7 @@
   </div>
   <div class="mb-3">
     <%= f.label :body %>
-    <%= f.text_area :body, class: "form-control", rows: "10" %>
+    <%= f.text_area :body, class: "form-control", rows: "10", placeholder: "今回の手続きについて、詳しく教えてください。\n例えば、昔は何のプランや機種を使っていて、どうして変えようと思ったのか。情報をどう集めたりどこで相談をしたりしたか。今回はなんでその会社でその料金プランにしたかなど。\n今回の手続きで残しておきたいメモとしても利用ください。（何日後に解約をするなど）" %>
   </div>
   <!-- ここにenumの項目を追加 -->
   <div class="mb-3">
@@ -31,7 +31,7 @@
   
   <div class="mb-3">
     <%= f.label :device_payment %>
-    <%= f.select :device_payment, Post.device_payments.keys.map {|k| [t("enums.post.device_payment.#{k}"), k]}, { include_blank: '選択してください', selected: ''  }, { class: "form-control" } %>
+    <%= f.select :device_payment, Post.device_payments.keys.map {|k| [t("enums.post.device_payment.#{k}"), k]}, { include_blank: '選択してください（購入のない場合はこのまま）', selected: ''  }, { class: "form-control" } %>
   </div>
   
   <div class="mb-3">

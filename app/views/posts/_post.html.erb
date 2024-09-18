@@ -5,7 +5,7 @@
         <div class="d-flex">
           <h4 class="card-title">
 	          <!-- 投稿のタイトル -->
-            <%= link_to post.title, post_path(post) %>
+            <%= link_to "#{post.user.name}の#{post.title_i18n}", post_path(post) %>
           </h4>
           <div class='ms-auto'> 
             <!-- 現在のユーザーが投稿の作成者の場合編集と削除のリンク-->
@@ -21,15 +21,15 @@
             <% end %>
           </div>
         </div>
-        <!-- 投稿者と投稿日時 -->
+        <!-- 投稿日時 -->
         <ul class="list-inline">
-          <li><i class="bi bi-person"></i><%= post.user.name %></li>
           <li><i class="bi bi-calendar"></i><%= l post.created_at, format: :short %></li>
         </ul>
         <!-- 選択式の回答の表示 -->
         <p class="card-text"><%= Post.human_attribute_name(:previous_carrier) %>: <%= post.previous_carrier_i18n %></p> 
         <p class="card-text"><%= Post.human_attribute_name(:new_carrier) %>: <%= post.new_carrier_i18n %></p> 
         <p class="card-text"><%= Post.human_attribute_name(:price_difference) %>: <%= post.price_difference_i18n %></p> 
+        <p class="card-text"><%= Post.human_attribute_name(:carrier_changed) %>: <%= post.carrier_changed_i18n %></p> 
         <p class="card-text"><%= Post.human_attribute_name(:device_payment) %>: <%= post.device_payment_i18n %></p> 
         <p class="card-text"><%= Post.human_attribute_name(:purchase_method) %>: <%= post.purchase_method_i18n %></p>  
       </div>
