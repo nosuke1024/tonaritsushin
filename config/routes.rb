@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :posts, only: %i[index new create show edit update destroy]
   # 診断機能に関するルート
   resources :plan_diagnoses, only: %i[index create]do
-    member do
+    collection  do
       get 'result'
     end
   end
