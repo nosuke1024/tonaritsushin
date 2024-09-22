@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   # 投稿機能に関する機能
   resources :posts, only: %i[index new create show edit update destroy]
   # 診断機能に関するルート
-  resources :plan_diagnoses, only: %i[index create]do
-    collection  do
+  resources :plan_diagnoses, only: %i[index create] do
+    collection do
       get 'result'
     end
   end
