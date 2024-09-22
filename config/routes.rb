@@ -5,7 +5,11 @@ Rails.application.routes.draw do
   # 投稿機能に関する機能
   resources :posts, only: %i[index new create show edit update destroy]
   # 診断機能に関するルート
-  resources :plan_diagnoses, only: %i[index new create]
+  resources :plan_diagnoses, only: %i[index create]do
+    member do
+      get 'result'
+    end
+  end
 
   # ログインユーザーの内容
   get 'login', to: 'user_sessions#new'
