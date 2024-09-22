@@ -2,10 +2,6 @@ class PlanDiagnosesController < ApplicationController
   def index
   end
 
-  def new
-    @plan_diagnosis = PlanDiagnosis.new
-  end
-
   def create
     # フォームデータを受け取る（nil の場合に対処）
     # plan_diagnosis_params = params[:plan_diagnosis] || {} 
