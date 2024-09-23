@@ -1,9 +1,27 @@
-<h1>診断結果</h1>
+<div class="container">
+  <div class="text-center">
+    <h1>診断結果</h1>
 
-<% if @diagnosis_result %>
-  <div class="alert alert-success">
-    <p>診断結果: <%= @diagnosis_result %></p>
+    <div class="result-box"> 
+      <h3 class="result-text"> 
+        <%= @diagnosis_result %>
+      </h3> 
+    </div>
+
+    <div class="action-button mb-3">
+      <%= link_to "大手キャリアメインプラン（docomo,au,softbank）について詳しく見る", "#": "btn btn-primary" %>
+    </div>
+    <div class="action-button mb-3">
+      <%= link_to "大手キャリアオンラインプラン（ahamo,povo,linmo）について詳しく見る", "#": "btn btn-primary" %>
+    </div>
+    <div class="action-button mb-3">
+      <%= link_to "大手キャリアサブブランド（irumo,UQﾓﾊﾞｲﾙ,Yﾓﾊﾞｲﾙ）について詳しく見る", "#": "btn btn-primary" %>
+    </div>
+    <div class="action-button mb-3">
+      <%= link_to "格安SIMについて詳しく見る", "#": "btn btn-primary" %>
+    </div>
+    <div class="action-button mb-3">
+      <%= link_to "楽天モバイルについて詳しく見る", "#": "btn btn-primary" %>
+    </div>
   </div>
-<% else %>
-  <p>診断結果は見つかりませんでした。</p>
-<% end %>
+</div>
