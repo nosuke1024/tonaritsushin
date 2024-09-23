@@ -27,13 +27,13 @@ ja:
       previous_carrier: 
         major_carrier: "大手キャリアメインプラン（docomo,au,softbank）"
         online_plan: "大手キャリアオンラインプラン（ahamo,povo,linmo）"
-        sub_brand: "大手キャリアサブブランド（UQﾓﾊﾞｲﾙ,Yﾓﾊﾞｲﾙ）"
+        sub_brand: "大手キャリアサブブランド（irumo,UQﾓﾊﾞｲﾙ,Yﾓﾊﾞｲﾙ）"
         mvno: "格安SIM"
         rakuten: "楽天モバイル"
       new_carrier:
         major_carrier: "大手キャリアメインプラン（docomo,au,softbank）"
         online_plan: "大手キャリアオンラインプラン（ahamo,povo,linmo）"
-        sub_brand: "大手キャリアサブブランド（UQﾓﾊﾞｲﾙ,Yﾓﾊﾞｲﾙ）"
+        sub_brand: "大手キャリアサブブランド（irumo,UQﾓﾊﾞｲﾙ,Yﾓﾊﾞｲﾙ）"
         mvno: "格安SIM"
         rakuten: "楽天モバイル"
       carrier_changed:
