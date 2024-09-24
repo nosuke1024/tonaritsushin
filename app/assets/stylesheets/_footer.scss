@@ -10,3 +10,7 @@
 .nav-link {
   color: hsl(0, 0%, 92%); //リンクを白に設定
 }
+
+.navbar a[title="Twitter"] {
+  color: hsl(0, 0%, 92%); 
+}
