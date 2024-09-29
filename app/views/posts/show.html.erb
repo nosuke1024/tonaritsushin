@@ -10,7 +10,7 @@
                 <div> <%# タイトルとユーザー名をグループ化 %>
                   <h2 style="display: inline;"><%= @post.user.name %>の<%= @post.title_i18n %></h2>
                 </div>
-            
+
                 <% if current_user.own?(@post) %>
                   <div class='d-flex'> <%# 編集・削除ボタンをグループ化 %>
                     <%= link_to edit_post_path(@post), id: "button-edit-#{@post.id}" do %>
@@ -37,11 +37,11 @@
             <p class="card-text"><%= Post.human_attribute_name(:purchase_method) %>: <%= @post.purchase_method_i18n %></p>
 
             <%# 本文の表示 %>
-            <p><%= simple_format(@post.body) %></p> 
+            <p><%= simple_format(@post.body) %></p>
 
           </div>
         </div>
-      </div> 
+      </div>
     </div>
   </div>
 </div>

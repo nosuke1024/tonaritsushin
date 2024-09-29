@@ -13,7 +13,7 @@
     <%= f.label :previous_carrier %>
     <%= f.select :previous_carrier, Post.previous_carriers.keys.map {|k| [t("enums.post.previous_carrier.#{k}"), k]}, { include_blank: '選択してください', selected: '' }, { class: "form-control" } %>
   </div>
-  
+
   <div class="mb-3">
     <%= f.label :new_carrier %>
     <%= f.select :new_carrier, Post.new_carriers.keys.map {|k| [t("enums.post.new_carrier.#{k}"), k]}, { include_blank: '選択してください', selected: ''  }, { class: "form-control" } %>
@@ -23,21 +23,21 @@
     <%= f.label :carrier_changed %>
     <%= f.select :carrier_changed, Post.carrier_changeds.keys.map {|k| [t("enums.post.carrier_changed.#{k}"), k]}, { include_blank: '選択してください', selected: ''  }, { class: "form-control" } %>
   </div>
-  
+
   <div class="mb-3">
     <%= f.label :price_difference %>
     <%= f.select :price_difference, Post.price_differences.keys.map {|k| [t("enums.post.price_difference.#{k}"), k]}, { include_blank: '選択してください', selected: ''  }, { class: "form-control" } %>
   </div>
-  
+
   <div class="mb-3">
     <%= f.label :device_payment %>
     <%= f.select :device_payment, Post.device_payments.keys.map {|k| [t("enums.post.device_payment.#{k}"), k]}, { include_blank: '選択してください（購入のない場合はこのまま）', selected: ''  }, { class: "form-control" } %>
   </div>
-  
+
   <div class="mb-3">
     <%= f.label :purchase_method %>
     <%= f.select :purchase_method, Post.purchase_methods.keys.map {|k| [t("enums.post.purchase_method.#{k}"), k]}, { include_blank: '選択してください（購入のない場合はこのまま）', selected: ''  }, { class: "form-control" } %>
   </div>
-    
+
   <%= f.submit nil, class: "btn btn-primary" %>
 <% end %>
