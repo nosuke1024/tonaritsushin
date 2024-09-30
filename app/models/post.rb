@@ -7,7 +7,7 @@ class Post < ApplicationRecord
   validates :new_carrier, presence: true
   validates :carrier_changed, presence: true #追加
   validates :price_difference, presence: true
-  
+
 
   belongs_to :user
 

@@ -24,7 +24,7 @@ ja:
         smartphone_change: "機種交換"
         change: "プランの変更と機種交換"
         other: "その他"
-      previous_carrier: 
+      previous_carrier:
         major_carrier: "大手キャリアメインプラン（docomo,au,softbank）"
         online_plan: "大手キャリアオンラインプラン（ahamo,povo,linmo）"
         sub_brand: "大手キャリアサブブランド（irumo,UQﾓﾊﾞｲﾙ,Yﾓﾊﾞｲﾙ）"
@@ -43,7 +43,7 @@ ja:
         cheaper: "1000円以上ダウン"
         more_expensive: "1000円以上アップ"
         no_change: "999円ダウン~999円アップ"
-      device_payment: 
+      device_payment:
         bundled_sale: "スマホと料金プランのセット購入"
         device_only: "スマホだけの購入"
       purchase_method:
