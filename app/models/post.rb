@@ -10,6 +10,9 @@ class Post < ApplicationRecord
 
 
   belongs_to :user
+  # Favoritenに関する関係性の追加
+  has_many :favorites, dependent: :destroy
+  has_many :favorite_posts, through: :favorites, source: :post
 
   # タイトルのENUMに変更
   enum title: { plan_change: 0, smartphone_change:1, change:2, other:3}

@@ -10,6 +10,9 @@ class User < ApplicationRecord
 
   # 関係性の追加
   has_many :posts, dependent: :destroy
+  # Favoriteに関する関係性の追加
+  has_many :favorites, dependent: :destroy
+  has_many :favorite_posts, through: :favorites, source: :post
 
   # ログインしているユーザーかどうか
   def own?(object)
