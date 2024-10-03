@@ -1,5 +1,5 @@
 class PlanDiagnosesController < ApplicationController
-  def index end
+  def index; end
 
   def create
     # strong parameters を使用して安全にパラメータを取得
