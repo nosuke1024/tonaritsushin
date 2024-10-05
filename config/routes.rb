@@ -3,7 +3,14 @@ Rails.application.routes.draw do
   root 'static_pages#top'
   resources :users, only: %i[new create show]
   # 投稿機能に関する機能
-  resources :posts, only: %i[index new create show edit update destroy]
+  resources :posts, only: %i[index new create show edit update destroy] do
+    collection do
+      get :favorite
+    end
+  end
+
+  # お気に入り機能の追加
+  resources :favorite, only: %i[create destroy]
   # 診断機能に関するルート
   resources :plan_diagnoses, only: %i[index create] do
     collection do

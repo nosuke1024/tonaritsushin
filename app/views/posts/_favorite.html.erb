@@ -1,0 +1,5 @@
+<% if favorite = current_user.favorites.find_by(post_id: post.id) %>
+  <%= link_to favorite_path(favorite.id), id: "unfavorite-button-for-post-#{post.id}", data: { turbo: false } do %>
+    <i class="bi bi-star-fill"></i>
+  <% end %>
+<% end %>
