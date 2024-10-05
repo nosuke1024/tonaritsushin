@@ -1,3 +1,4 @@
-<%= link_to favorite_path(current_user.favorites.find_by(post_id: post.id)), id: "unfavorite-button-for-post-#{post.id}", data: { turbo_method: :delete } do %>
-  <i class="bi bi-star-fill"></i>
+<!-- お気に入り解除した時 -->
+<%= link_to favorite_path(current_user.favorites.find_by(post_id: post.id)), method: :delete, id: "unfavorite-button-for-post-#{post.id}", class: "btn btn-danger" do %>
+  <i class="bi bi-star-fill"></i> お気に入り解除
 <% end %>

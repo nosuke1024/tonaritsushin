@@ -1,3 +1,4 @@
+<!-- お気に入りしているかどうかの条件式 -->
 <div class='ms-auto'>
   <% if current_user.favorite?(post) %>
     <%= render 'unfavorite', { post: post} %>

@@ -1,5 +1,4 @@
-<% if favorite = current_user.favorites.find_by(post_id: post.id) %>
-  <%= link_to favorite_path(favorite.id), id: "unfavorite-button-for-post-#{post.id}", data: { turbo: false } do %>
-    <i class="bi bi-star-fill"></i>
-  <% end %>
+<!-- お気に入り登録した時 -->
+<%= link_to favorites_path(post_id: post.id), method: :post, id: "favorite-button-for-post-#{post.id}", class: "btn btn-primary" do %>
+  <i class="bi bi-star"></i> お気に入り
 <% end %>
