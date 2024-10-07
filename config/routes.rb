@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   end
 
   # お気に入り機能の追加
-  resources :favorites, only: %i[create destroy]
+  resources :favorites, only: %i[index create destroy]
   # 診断機能に関するルート
   resources :plan_diagnoses, only: %i[index create] do
     collection do
