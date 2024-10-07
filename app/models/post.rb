@@ -23,4 +23,9 @@ class Post < ApplicationRecord
   enum price_difference: { cheaper: 0, more_expensive: 1, no_change: 2 }
   enum device_payment: { bundled_sale: 0, device_only: 1 }
   enum purchase_method: { carrier_shop: 0, electronics_store: 1, online_shop: 2, ec_store: 3, used_store: 4, online_marketplace: 5 }
+
+  # お気に入り登録用のメソッドの定義
+  def favorited_by?(user)
+    favorites.exists?(user_id: user.id)
+  end
 end

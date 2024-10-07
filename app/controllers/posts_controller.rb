@@ -42,10 +42,6 @@ class PostsController < ApplicationController
     redirect_to posts_path, flash: { danger: t('defaults.flash_message.deleted') }, status: :see_other
   end
 
-  def favorite
-    @favorite_posts =  current_user.favorite_posts.includes(:user).order(created_at: :desc)
-  end
-
   private
 
   def post_params
