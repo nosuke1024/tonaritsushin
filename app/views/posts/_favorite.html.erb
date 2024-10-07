@@ -1,0 +1,6 @@
+<!-- お気に入り登録した時 -->
+<turbo-frame id="favorite_<%= post.id %>">
+  <%= link_to favorites_path(post_id: post.id), method: :post, id: "favorite-button-for-post-#{post.id}", class: "btn btn-primary", data: { turbo_frame: "favorite_#{post.id}" } do %>
+    <i class="bi bi-star"></i> お気に入り
+  <% end %>
+</turbo-frame>
