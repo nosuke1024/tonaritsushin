@@ -19,7 +19,9 @@
                 <% end %>
               </div>
             <% else %>
-              <%= render "favorites/favorite", post: post %>
+              <%= turbo_frame_tag "favorite_#{post.id}" do %>
+                <%= render "favorites/favorite", post: post %>
+              <% end %>
             <% end %>
           </div>
         </div>

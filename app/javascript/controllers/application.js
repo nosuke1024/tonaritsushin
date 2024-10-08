@@ -1,3 +1,4 @@
+// Stimulus を導入し、設定するためのファイル
 import { Application } from "@hotwired/stimulus"
 
 const application = Application.start()

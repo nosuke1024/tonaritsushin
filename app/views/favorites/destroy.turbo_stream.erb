@@ -1,0 +1,2 @@
+<%= turbo_stream.replace "favorite_#{@post.id}", partial: "favorites/favorite", locals: { post: @post } %>
+<%= turbo_stream.update "flash", partial: "shared/flash_message" %>

@@ -5,8 +5,7 @@ Rails.application.routes.draw do
   # 投稿機能に関する機能
   resources :posts, only: %i[index new create show edit update destroy] do
     # お気に入り機能の追加
-    resources :favorites, only: %i[create destroy] do
-    end
+    resources :favorites, only: %i[create destroy]
   end
 
   # 診断機能に関するルート

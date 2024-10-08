@@ -1,9 +1,9 @@
 <% if post.favorited_by?(current_user) %>
-  <%= link_to post_favorites_path(post), method: :delete, remote: true, id: "favorite-link-#{post.id}", data: { favorite_count: post.favorites.count } do %>
+  <div id="favorite-link-<%= post.id %>" data-favorite-count="<%= post.favorites.count %>">
     ♥<span class="favorite-count"><%= post.favorites.count %></span>いいね
-  <% end %>
+  </div>
 <% else %>
-  <%= link_to post_favorites_path(post), method: :post, remote: true, id: "favorite-link-#{post.id}", data: { favorite_count: post.favorites.count } do %>
+  <div id="favorite-link-<%= post.id %>" data-favorite-count="<%= post.favorites.count %>">
     ♡<span class="favorite-count"><%= post.favorites.count %></span>いいね
-  <% end %>
+  </div>
 <% end %>

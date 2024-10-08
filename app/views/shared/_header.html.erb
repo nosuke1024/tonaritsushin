@@ -34,12 +34,3 @@
     </div>
   </div>
 </nav>
-
-<script>
-  // メニューボタンをクリックした際にJavaScriptによるDOM操作の記載
-  document.getElementById('navbarDropdown').addEventListener('click', function(event) {
-    event.preventDefault(); // ページ遷移を無効化
-    const dropdownMenu = this.nextElementSibling;
-    dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
-  });
-</script>
