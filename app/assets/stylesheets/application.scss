@@ -2,3 +2,13 @@ body {
   background-color: hsl(0, 0%, 92%); /* 背景色を薄いグレーに設定 */
   color: #4E342E; /* 文字色を濃いグレーに設定 */
 }
+
+/* メニューの初期状態を非表示に */
+.navbar-collapse {
+  display: none;
+}
+
+/* showクラスが適用されたら表示 */
+.navbar-collapse.show {
+  display: block; /* または flex */
+}

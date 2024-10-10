@@ -2,11 +2,17 @@
   <div class="container">
     <%= link_to "Smart Phone Choice", root_path, class: "navbar-brand display-4" %>
 
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <!-- このbuttonはハンバーガーメニューでDOM操作 -->
+    <button class="navbar-toggler" type="button" 
+      data-controller="header"  
+      data-action="click->header#toggleMenu" 
+      aria-controls="navbarNav" 
+      aria-expanded="false" 
+      aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+    <div class="collapse navbar-collapse justify-content-end" data-header-target="menu" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
           <%= link_to 'みんなのスマチョイ', posts_path, class: "nav-link" %>

@@ -7,7 +7,6 @@
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "application" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
-    <%= turbo_include_tags %>
   </head>
 
   <body>
@@ -20,4 +19,5 @@
     <%= yield %>
     <%= render 'shared/footer' %>
   </body>
+
 </html>

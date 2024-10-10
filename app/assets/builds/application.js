@@ -8243,6 +8243,14 @@ var application = Application.start();
 application.debug = false;
 window.Stimulus = application;
 
+// app/javascript/controllers/header_controller.js
+var header_controller_default = class extends Controller {
+  static targets = ["menu"];
+  toggleMenu() {
+    this.menuTarget.classList.toggle("show");
+  }
+};
+
 // app/javascript/controllers/hello_controller.js
 var hello_controller_default = class extends Controller {
   connect() {
@@ -8251,6 +8259,7 @@ var hello_controller_default = class extends Controller {
 };
 
 // app/javascript/controllers/index.js
+application.register("header", header_controller_default);
 application.register("hello", hello_controller_default);
 
 // node_modules/@popperjs/core/lib/index.js
