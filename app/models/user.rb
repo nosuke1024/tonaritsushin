@@ -14,20 +14,22 @@ class User < ApplicationRecord
   has_many :favorites, dependent: :destroy
   has_many :favorite_posts, through: :favorites, source: :post
 
-  # ログインしているユーザーかどうか
+  # ユーザーがログインしているユーザーかどうか
   def own?(object)
     id == object&.user_id
   end
 
-  # お気に入り登録をしているかどうかの状態に関するメソッド
+  # ユーザーがお気に入りにした
   def favorite(post)
     favorite_posts << post
   end
 
+  # ユーザーがお気に入りを外した
   def unfavorite(post)
     favorite_posts.destroy(post)
   end
 
+  # ユーザーがお気に入りかどうか
   def favorite?(post)
     favorite_posts.include?(post)
   end

@@ -4,13 +4,10 @@ Rails.application.routes.draw do
   resources :users, only: %i[new create show]
   # 投稿機能に関する機能
   resources :posts, only: %i[index new create show edit update destroy] do
-    collection do
-      get :favorite
-    end
+    # ここにはコメント機能のルートを追加する予定
+    resources :favorites, only: %i[index create destroy]  # お気に入り機能の追加
   end
 
-  # お気に入り機能の追加
-  resources :favorites, only: %i[index create destroy]
   # 診断機能に関するルート
   resources :plan_diagnoses, only: %i[index create] do
     collection do
