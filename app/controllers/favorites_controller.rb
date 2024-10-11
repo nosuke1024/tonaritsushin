@@ -1,19 +1,21 @@
 class FavoritesController < ApplicationController
-  def index; end
+  before_action :require_login
 
   def create
-    @post = Post.find(params[:post_id])
-    current_user.favorite(@post)
-
-    respond_to do |format|
-      format.turbo_stream do
-        render turbo_stream: turbo_stream.replace("favorite_#{@post.id}", partial: 'posts/favorite', locals: { post: @post })
-      end
-    end
+    post = Post.find(params[:post_id])
+    current_user.favorite(post)
+    redirect_to posts_path(post)
   end
 
   def destroy
-    @post = current_user.post.find(params[:id]).post
-    current_user.favorite(@post)
+    favorite = current_user.favorites.find_by(post_id: params[:post_id])
+
+    if favorite.present?
+      favorite.destroy
+      redirect_to params[:redirect_to] || post_path(favorite.post)
+    else
+      flash[:error] = 'お気に入りボタンを連打しないでください！'
+      redirect_back(fallback_location: root_path)
+    end
   end
 end
