@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :posts, only: %i[index new create show edit update destroy] do
     # ここにはコメント機能のルートを追加する予定
     resources :favorites, only: %i[index create destroy]  # お気に入り機能の追加
+    resources :comments, only: %i[create edit destroy], shallow: true #コメント機能の追加
   end
 
   # 診断機能に関するルート
