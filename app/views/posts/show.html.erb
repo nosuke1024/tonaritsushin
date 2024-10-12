@@ -6,22 +6,22 @@
       <div id="post-id-<%= @post.id %>">
         <div class="card">
           <div class="card-body">
-              <div class="d-flex justify-content-between align-items-center"> 
-                <div> <%# タイトルとユーザー名をグループ化 %>
-                  <h2 style="display: inline;"><%= @post.user.name %>の<%= @post.title_i18n %></h2>
-                </div>
-
-                <% if current_user.own?(@post) %>
-                  <div class='d-flex'> <%# 編集・削除ボタンをグループ化 %>
-                    <%= link_to edit_post_path(@post), id: "button-edit-#{@post.id}" do %>
-                      <i class="bi bi-pencil-fill"></i>
-                    <% end %>
-                    <%= button_to post_path(@post), method: :delete, id: "button-delete-#{@post.id}", data: { turbo_confirm: t('defaults.delete_confirm') } do %>
-                      <i class="bi bi-trash-fill"></i>
-                    <% end %>
-                  </div>
-                <% end %>
+            <div class="d-flex justify-content-between align-items-center"> 
+              <div> <%# タイトルとユーザー名をグループ化 %>
+                <h2 style="display: inline;"><%= @post.user.name %>の<%= @post.title_i18n %></h2>
               </div>
+
+              <% if current_user.own?(@post) %>
+                <div class='d-flex'> <%# 編集・削除ボタンをグループ化 %>
+                  <%= link_to edit_post_path(@post), id: "button-edit-#{@post.id}" do %>
+                    <i class="bi bi-pencil-fill"></i>
+                  <% end %>
+                  <%= button_to post_path(@post), method: :delete, id: "button-delete-#{@post.id}", data: { turbo_confirm: t('defaults.delete_confirm') } do %>
+                    <i class="bi bi-trash-fill"></i>
+                  <% end %>
+                </div>
+              <% end %>
+            </div>
 
             <!-- 投稿日時 -->
             <ul class="list-inline">
@@ -39,6 +39,17 @@
             <%# 本文の表示 %>
             <p><%= simple_format(@post.body) %></p>
 
+          </div>
+        </div>
+        <!-- コメント機能の追加 -->
+        <%= render 'comments/form', comment: @comment, post: @post %>
+        <div class="row">
+          <div class="col-lg-8 offset-lg-2">
+            <table class="table">
+              <tbody id="table-comment">
+                <%= render @comments %>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
