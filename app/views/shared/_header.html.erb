@@ -27,6 +27,9 @@
 
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown" style="display: none;">
             <a class="dropdown-item" href="#"><%= current_user.name %></a>
+            <%= link_to 'プロフィール編集', my_profile_path, class: "dropdown-item" %>
+            <%= link_to '自分の投稿一覧', my_posts_path, class: "dropdown-item" %>
+            <%= link_to 'お気に入り一覧', my_favorites_path, class: "dropdown-item" %>
             <%= button_to 'ログアウト', logout_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>
