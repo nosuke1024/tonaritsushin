@@ -16,6 +16,11 @@ Rails.application.routes.draw do
     end
   end
 
+  # マイページ用の情報取得
+  resource :my_profile, only: [:edit, :show, :update]
+  resources :my_posts
+  resources :my_favorites, only: [:index]
+
   # ログインユーザーの内容
   get 'login', to: 'user_sessions#new'
   post 'login', to: 'user_sessions#create'
@@ -27,6 +32,9 @@ Rails.application.routes.draw do
   get 'sub_brand', to: 'plans#sub_brand'
   get 'mvno', to: 'plans#mvno'
   get 'rakuten', to: 'plans#rakuten'
+
+  # マイページ用のルート
+  get 'my_posts', to: 'posts#index'
 
   # 初期設定のセットアップ時のルーティング
   get "up" => "rails/health#show", as: :rails_health_check
