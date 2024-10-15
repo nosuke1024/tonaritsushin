@@ -24,4 +24,12 @@ class Post < ApplicationRecord
   enum device_payment: { bundled_sale: 0, device_only: 1 }
   enum purchase_method: { carrier_shop: 0, electronics_store: 1, online_shop: 2, ec_store: 3, used_store: 4, online_marketplace: 5 }
 
+  # ランサックに対応するためのもの
+  def self.ransackable_attributes(auth_object = nil)
+    ["body", "carrier_changed", "created_at", "device_payment", "id", "new_carrier", "previous_carrier", "price_difference", "purchase_method", "title", "updated_at", "user_id"]
+  end
+  def self.ransackable_associations(auth_object = nil)
+    ["comments", "favorite_posts", "favorites", "user"]
+  end
+
 end
