@@ -28,6 +28,7 @@ class Post < ApplicationRecord
   def self.ransackable_attributes(auth_object = nil)
     ["body", "carrier_changed", "created_at", "device_payment", "id", "new_carrier", "previous_carrier", "price_difference", "purchase_method", "title", "updated_at", "user_id"]
   end
+
   def self.ransackable_associations(auth_object = nil)
     ["comments", "favorite_posts", "favorites", "user"]
   end
