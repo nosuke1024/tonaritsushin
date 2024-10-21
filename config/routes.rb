@@ -22,15 +22,10 @@ Rails.application.routes.draw do
       get 'question1'
       # post 'question1_answer'
       get 'question2'
-      post 'question2_answer'
       get 'question3'
-      post 'question3_answer'
       get 'question4'
-      post 'question4_answer'
       get 'question5'
-      post 'question5_answer'
       get 'question6'
-      post 'question6_answer'
       get 'result' # 診断結果表示用
     end
   end
