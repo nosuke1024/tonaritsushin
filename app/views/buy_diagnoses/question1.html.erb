@@ -1,0 +1,10 @@
+<h1>質問1</h1>
+<p>次に買う端末は新しい端末がいい？それとも古い端末や中古を買おうと思っている？</p>
+
+<%= form_with url: question1_answer_buy_diagnoses_path, method: :post do |f| %>
+  <%= f.radio_button :answer, 'new' %>
+  <%= f.label :answer_new, '新品' %>
+  <%= f.radio_button :answer, 'old' %>
+  <%= f.label :answer_old, '古い端末または中古可' %>
+  <%= f.submit '次へ' %>
+<% end %>

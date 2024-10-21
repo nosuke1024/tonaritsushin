@@ -9,13 +9,31 @@ Rails.application.routes.draw do
     resources :comments, only: %i[create edit destroy], shallow: true #コメント機能の追加
   end
 
-  # 診断機能に関するルート
+  # プランの診断機能に関するルート
   resources :plan_diagnoses, only: %i[index create] do
     collection do
       get 'result'
     end
   end
 
+  # 購入方法の診断機能に関するルート
+  resources :buy_diagnoses do
+    collection do
+      get 'question1'
+      post 'question1_answer'
+      get 'question2'
+      post 'question2_answer'
+      get 'question3'
+      post 'question3_answer'
+      get 'question4'
+      post 'question4_answer'
+      get 'question5'
+      post 'question5_answer'
+      get 'question6'
+      post 'question6_answer'
+      get 'result' # 診断結果表示用
+    end
+  end
   # マイページ用の情報取得
   resource :my_profile, only: [:edit, :show, :update]
   resources :my_posts, only: [:index]
@@ -32,6 +50,8 @@ Rails.application.routes.draw do
   get 'sub_brand', to: 'plans#sub_brand'
   get 'mvno', to: 'plans#mvno'
   get 'rakuten', to: 'plans#rakuten'
+
+  # 診断結果のページ
 
   # 初期設定のセットアップ時のルーティング
   get "up" => "rails/health#show", as: :rails_health_check
