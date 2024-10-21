@@ -46,7 +46,15 @@ Rails.application.routes.draw do
   get 'mvno', to: 'plans#mvno'
   get 'rakuten', to: 'plans#rakuten'
 
-  # 診断結果のページ
+  # 購入方法の診断結果
+  get 'carrier_shop', to: 'buys#carrier_shop'
+  get 'electronics_retailer', to: 'buys#electronics_retailer'
+  get 'carrier_online_shop', to: 'buys#carrier_online_shop'
+  get 'manufacturer_direct_sale', to: 'buys#manufacturer_direct_sale'
+  get 'major_ec_site', to: 'buys#major_ec_site'
+  get 'used_store', to: 'buys#used_store'
+  get 'used_online_sale', to: 'buys#used_online_sale'
+  get 'flea_market_site', to: 'buys#flea_market_site'
 
   # 初期設定のセットアップ時のルーティング
   get "up" => "rails/health#show", as: :rails_health_check
