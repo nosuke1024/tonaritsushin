@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   resources :buy_diagnoses do
     collection do
       get 'question1'
-      post 'question1_answer'
+      # post 'question1_answer'
       get 'question2'
       post 'question2_answer'
       get 'question3'

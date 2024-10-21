@@ -3,14 +3,7 @@ class BuyDiagnosesController < ApplicationController
     # 質問1を表示
   end
 
-  def question1_answer
-    case params[:answer]
-    when 'new'
-      redirect_to question2_buy_diagnosis_path
-    when 'old'
-      redirect_to question3_buy_diagnosis_path
-    end
-  end
+  # def question1_answer 直接書く方法にしたため不要
 
   def question2
     # 質問2を表示
