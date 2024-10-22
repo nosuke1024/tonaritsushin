@@ -25,9 +25,5 @@ class BuyDiagnosesController < ApplicationController
     # 質問6を表示
   end
 
-  def result
-    @recommendation = BuyDiagnoses.generate_recommendation(session[:answers], session[:candidates]) # 候補を渡す
-    session[:answers] = nil # セッションをリセット
-    session[:candidates] = nil # セッションをリセット
-  end
+  # def result セッションで保存しないから削除
 end
