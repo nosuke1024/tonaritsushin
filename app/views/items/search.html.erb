@@ -1,0 +1,18 @@
+<h1>楽天市場の商品一覧</h1>
+
+<% if @items.present? %>
+  <h2>検索結果</h2>
+  <ul>
+    <% @items.each do |item| %>
+      <li>
+        <%= link_to item['itemName'], item['itemUrl'] %>
+        <br>
+        <%= image_tag item['mediumImageUrls'][0] %>
+        <br>
+        <%= item['itemPrice'] %>円
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>該当する商品はありませんでした。</p>
+<% end %>

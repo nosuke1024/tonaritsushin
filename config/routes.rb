@@ -59,6 +59,7 @@ Rails.application.routes.draw do
 
   # 楽天の検索
   get 'items', to: 'items#index'
+  get 'items/search' , to: 'items#search'
 
   # 初期設定のセットアップ時のルーティング
   get "up" => "rails/health#show", as: :rails_health_check
