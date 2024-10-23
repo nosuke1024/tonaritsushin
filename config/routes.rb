@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get "items/index"
   # 初期ページのルーティング
   root 'static_pages#top'
   resources :users, only: %i[new create show]
@@ -55,6 +56,9 @@ Rails.application.routes.draw do
   get 'used_store', to: 'buys#used_store'
   get 'used_online_sale', to: 'buys#used_online_sale'
   get 'flea_market_site', to: 'buys#flea_market_site'
+
+  # 楽天の検索
+  get 'items', to: 'items#index'
 
   # 初期設定のセットアップ時のルーティング
   get "up" => "rails/health#show", as: :rails_health_check
