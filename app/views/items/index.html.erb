@@ -1,4 +1,12 @@
 <h1>楽天市場の商品一覧</h1>
+<!-- 検索エンジン -->
+<%= form_with url: items_search_path, method: :get, local: true do |f| %>
+  <%= f.label :keyword, "キーワード" %>
+  <%= f.text_field :keyword %>
+  <%= f.submit "検索" %>
+<% end %>
+
+<!-- 全体のインデックス -->
 <ul>
   <% @items.each do |item| %>
     <li>
