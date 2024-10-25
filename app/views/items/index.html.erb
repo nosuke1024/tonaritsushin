@@ -1,8 +1,24 @@
 <h1>楽天市場の商品一覧</h1>
 <!-- 検索エンジン -->
 <%= form_with url: items_search_path, method: :get, local: true do |f| %>
-  <%= f.label :keyword, "キーワード" %>
-  <%= f.text_field :keyword %>
+
+  <!-- 検索欄 -->
+  <%= f.label :condition_new, "新品" %>
+  <%= f.radio_button :condition, 'new' %>
+
+  <%= f.label :condition_used, "中古" %>
+  <%= f.radio_button :condition, 'used' %>
+
+  <div>
+    <%= f.label :rakuten, "楽天モバイルで購入の場合" %>
+    <%= f.check_box :rakuten %>
+  </div>
+
+  <div>
+    <%= f.label :keyword, "キーワード" %>
+    <%= f.text_field :keyword %>
+  </div>
+
   <%= f.submit "検索" %>
 <% end %>
 
