@@ -10,13 +10,11 @@ class ItemsController < ApplicationController
     # キーワードに商品状態を追加
     keyword = @search_params[:keyword].to_s
     keyword += " " + @search_params[:condition].to_s if @search_params[:condition].present?
-    search_conditions[:keyword] = @search_params[:keyword].presence || "スマホ" # デフォルトキーワードを設定
-  
-    # 楽天モバイルで購入できる商品に絞り込み
-    if @search_params[:rakuten] == "1"
-      search_conditions[:carrier] = 1 # 楽天モバイルのキャリアコードを指定
-    end
-  
+    # carrier が "楽天モバイル" の場合のみキーワードに追加
+    keyword += " " + @search_params[:carrier].to_s if @search_params[:carrier] == "楽天モバイル" 
+
+    search_conditions[:keyword] = keyword.presence || "スマホ" # デフォルトキーワードを設定
+
     if search_conditions.present?
       @items = RakutenWebService::Ichiba::Item.search(search_conditions)
     end
@@ -25,6 +23,6 @@ class ItemsController < ApplicationController
   private
 
   def item_search_params
-    params.permit(:condition, :rakuten, :keyword)
+    params.permit(:keyword, :carrier, :condition)
   end
 end
