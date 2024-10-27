@@ -42,3 +42,5 @@
 
 # APIの設定内容
 /.env
+# SSL証明書用のファイル
+/config/certs/*

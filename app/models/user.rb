@@ -14,6 +14,9 @@ class User < ApplicationRecord
   has_many :favorites, dependent: :destroy
   has_many :favorite_posts, through: :favorites, source: :post
   has_many :comments, dependent: :destroy
+  # LINEログインに関する関係性
+  has_many :authentications, :dependent => :destroy
+  accepts_nested_attributes_for :authentications
 
   # ユーザーがログインしているユーザーかどうか
   def own?(object)

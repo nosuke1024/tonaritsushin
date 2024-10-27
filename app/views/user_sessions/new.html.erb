@@ -16,6 +16,7 @@
       <div class='text-center'>
         <%= link_to '登録ページへ', new_user_path %>
         <%= link_to 'パスワードをお忘れの方はこちら', '#' %>
+        <%= link_to "LINEでログイン", oauths_oauth_path(:provider => :line) %>
       </div>
     </div>
   </div>

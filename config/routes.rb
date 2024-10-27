@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get "oauths/oauth"
+  get "oauths/callback"
   get "items/index"
   # 初期ページのルーティング
   root 'static_pages#top'
@@ -60,6 +62,10 @@ Rails.application.routes.draw do
   # 楽天の検索
   get 'items', to: 'items#index'
   get 'items/search' , to: 'items#search'
+
+  # LINE認証の
+  post "oauth/callback" => "oauths#callback"
+  get "oauth/:provider" => "oauths#oauth", :as => :auth_at_provider
 
   # 初期設定のセットアップ時のルーティング
   get "up" => "rails/health#show", as: :rails_health_check
