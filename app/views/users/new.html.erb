@@ -24,6 +24,7 @@
       <% end %>
       <div class='text-center'>
         <%= link_to 'ログインページへ', login_path %>
+        <%= link_to "LINEでログイン", oauths_oauth_path(:provider => :line) %>
       </div>
     </div>
   </div>
