@@ -222,7 +222,7 @@ Rails.application.config.sorcery.configure do |config|
   # LINE認証に関すること
   config.line.key = ENV['LINE_CHANNEL_ID']
   config.line.secret = ENV['LINE_CHANNEL_SECRET']
-  config.line.callback_url = ENV['https://tonaritsushin.onrender.com/oauth/callback']
+  config.line.callback_url ='https://tonaritsushin.onrender.com/oauth/callback'
   config.line.scope = "profile"
   config.line.bot_prompt = "normal"
   config.line.user_info_mapping = {
