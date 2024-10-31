@@ -224,11 +224,8 @@ Rails.application.config.sorcery.configure do |config|
   config.line.secret = ENV['LINE_CHANNEL_SECRET']
   config.line.callback_url ='https://tonaritsushin.onrender.com/oauth/callback'
   config.line.scope = "profile"
-  config.line.bot_prompt = "normal"
-  config.line.user_info_mapping = {
-  name: 'name',
-  email: 'email'
-  }
+  config.line.bot_prompt = 'aggressive'
+  config.line.user_info_mapping = { name: 'displayName', email: 'userId' }
 
   # For information about Discord API
   # https://discordapp.com/developers/docs/topics/oauth2
@@ -293,6 +290,8 @@ Rails.application.config.sorcery.configure do |config|
     #
     # user.encryption_key =
 
+    # -- external --
+    user.authentications_class = Authentication
     # Use an external encryption class.
     # Default: `nil`
     #
