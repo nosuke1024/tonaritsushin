@@ -65,6 +65,9 @@ gem 'rakuten_web_service'
 # 44ブランチで導入。環境変数として.envの導入のために導入
 gem 'dotenv-rails'
 
+# 47ブランチで導入。LINE通知
+gem 'line-bot-api'
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
