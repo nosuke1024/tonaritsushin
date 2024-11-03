@@ -2,22 +2,23 @@
   <div class="container-fluid" id="footer">
     <div class="container">
       <div class="row text-center pt-3">
-        <div class="col-md-1"></div>
-        <div class="col-md-2 py-2 col-6">
-          <li><%= t('footer.terms_of_service') %></li>
+
+        <div class="col-md-3 py-2 col-6"> 
+          <li><a href="<%= terms_path %>" style="color: hsl(0, 0%, 92%);"><%= t('footer.terms_of_service') %></a></li> 
         </div>
-        <div class="col-md-2 py-2 col-6">
-          <li><%= t('footer.privacy_policy') %></li>
+
+        <div class="col-md-3 py-2 col-6"> 
+          <li><a href="<%= privacy_path %>" style="color: hsl(0, 0%, 92%);"><%= t('footer.privacy_policy') %></a></li> 
         </div>
-        <div class="col-md-2 py-2 col-6">
-          <li><%= t('footer.news') %></li>
+
+        <div class="col-md-3 py-2 col-6"> 
+          <li><%= t('footer.contact') %></li> 
         </div>
-        <div class="col-md-2 py-2 col-6">
-          <li><%= t('footer.contact') %></li>
+
+        <div class="col-md-3 py-2 col-6"> 
+          <li><a href="https://twitter.com/share?url=#{request.url}" title="Twitter" target="_blank">Xへのシェア</a></li> 
         </div>
-        <div class="col-md-2 py-2 col-6">
-          <li><a href="https://twitter.com/share?url=#{request.url}" title="Twitter" target="_blank">Xへのシェア</a></li>
-        </div>
+
         <div class="row text-center mt-1">
           <div class="col"><p class='copy-right'> 2024 - Smart Phone Choice.</p></div>
         </div>
