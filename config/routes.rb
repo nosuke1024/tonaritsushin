@@ -32,6 +32,11 @@ Rails.application.routes.draw do
       get 'result' # 診断結果表示用
     end
   end
+
+  # ヘッターのリンク
+  get 'terms', to: 'static_pages#terms'
+  get 'privacy', to: 'static_pages#privacy'
+
   # マイページ用の情報取得
   resource :my_profile, only: [:edit, :show, :update]
   resources :my_posts, only: [:index]
