@@ -1,9 +1,25 @@
 class Favorite < ApplicationRecord
+  validates :user_id, uniqueness: { scope: :post_id }
+
   belongs_to :user
   belongs_to :post
 
   # ポリモーフィック関連付け
   has_many :notifications, as: :notifiable, dependent: :destroy
+  # コールバックの設定とその後生成するメソッドについて
+  after_create_commit :create_notification_favorite!
 
-  validates :user_id, uniqueness: { scope: :post_id }
+  private
+
+  def create_notification_favorite!
+    notification = notifications.new(
+      user_id: post.user.id,      # 通知の受信者(投稿の作者)のID
+      visitor_id: user.id,        # お気に入りしたユーザーのID
+      visited_id: post.user.id,  # 投稿の作者のID
+      action: 'favorite',         # 通知の種類
+      notifiable_type: 'Favorite', # 通知対象のモデルのクラス名
+      notifiable_id: id           # 通知対象のモデルのID
+    )
+    notification.save!
+  end
 end

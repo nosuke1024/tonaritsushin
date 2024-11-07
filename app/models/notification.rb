@@ -8,3 +8,4 @@ class Notification < ApplicationRecord
   # ポリモーフィック関連付け
   belongs_to :notifiable, polymorphic: true
 end
+
