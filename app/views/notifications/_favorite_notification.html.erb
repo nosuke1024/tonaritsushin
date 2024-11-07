@@ -1,0 +1,5 @@
+<%= link_to notification.visitor.name, notification.visitor %>さんが
+あなたの投稿
+<%= link_to notification.notifiable.post.title, notification.notifiable.post %>に
+いいねしました。
+(<%= notification.created_at.to_s(:short) %>)

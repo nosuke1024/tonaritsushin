@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get "notifications/index"
   get "oauths/oauth"
   get "oauths/callback"
   get "items/index"
@@ -11,6 +12,9 @@ Rails.application.routes.draw do
     resources :favorites, only: %i[index create destroy]  # お気に入り機能の追加
     resources :comments, only: %i[create edit destroy], shallow: true #コメント機能の追加
   end
+
+  # 通知機能
+  resources :notifications, only: :index
 
   # プランの診断機能に関するルート
   resources :plan_diagnoses, only: %i[index create] do
