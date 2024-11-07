@@ -1,5 +1,6 @@
-<%= link_to notification.visitor.name, notification.visitor %>さんが
-あなたの投稿
-<%= link_to notification.notifiable.post.title, notification.notifiable.post %>に
-いいねしました。
-(<%= notification.created_at.to_s(:short) %>)
+<%= notification.visitor.name %>さんが
+<%= link_to "あなたの投稿", notification.notifiable.post %>
+をお気に入りしました。
+<span class="text-muted">
+  (<%= time_ago_in_words(notification.created_at) %>前)
+</span>
