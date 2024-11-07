@@ -1,15 +1,22 @@
 <h1>通知一覧</h1>
 
-<ul>
-  <% @notifications.each do |notification| %>
-    <li>
-      <% if notification.notifiable_type == 'Favorite' %>
-        <%= render partial: 'favorite_notification', locals: { notification: notification } %>
-      <% elsif notification.notifiable_type == 'Comment' %>
-        <%= render partial: 'comment_notification', locals: { notification: notification } %>
+<div class="card">
+  <div class="card-header">
+    通知
+  </div>
+  <div class="card-body">
+    <ul class="list-group list-group-flush">
+      <% @notifications.each do |notification| %>
+        <li class="list-group-item">
+          <% if notification.notifiable_type == 'Favorite' %>
+            <%= render partial: 'favorite_notification', locals: { notification: notification } %>
+          <% elsif notification.notifiable_type == 'Comment' %>
+            <%= render partial: 'comment_notification', locals: { notification: notification } %>
+          <% end %>
+        </li>
       <% end %>
-    </li>
-  <% end %>
-</ul>
+    </ul>
+  </div>
+</div>
 
 <%= paginate @notifications %>
