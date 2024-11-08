@@ -1,21 +1,22 @@
 <h1>通知一覧</h1>
 
 <div class="card">
-  <div class="card-header">
-    通知
+  <div class="card-header d-flex justify-content-between align-items-center">
+    <div>通知</div>
+    <div>
+      <%= form_with model: current_user, url: notifications_path, method: :patch, local: true do |f| %>
+        <div>
+          <%= f.hidden_field :line_notification_enabled, value: !current_user.line_notification_enabled %>
+          <% if current_user.line_notification_enabled %>
+            <%= f.submit "LINE通知をOFFにする", class: "btn btn-danger" %>
+          <% else %>
+            <%= f.submit "LINE通知をONにする", class: "btn btn-success" %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
   </div>
   <div class="card-body">
-    <!-- 通知のONとOFF -->
-    <%= form_with model: current_user, url: my_profile_path, method: :patch, local: true do |f| %>
-      <div>
-        <%= f.hidden_field :line_notification_enabled, value: !current_user.line_notification_enabled %>
-        <% if current_user.line_notification_enabled %>
-          <%= f.submit "LINE通知をOFFにする", class: "btn btn-danger" %>
-        <% else %>
-          <%= f.submit "LINE通知をONにする", class: "btn btn-success" %>
-        <% end %>
-      </div>
-    <% end %>
     <!-- 通知一覧 -->
     <ul class="list-group list-group-flush">
       <% @notifications.each do |notification| %>

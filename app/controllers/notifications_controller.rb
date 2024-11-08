@@ -7,12 +7,11 @@ class NotificationsController < ApplicationController
     @notifications.where(checked: false).update_all(checked: true)
     # LINE通知に関する内容
     @notifications.each do |notification|
-      if notification.user.line_notification_enabled?
+      if notification.user.line_notification_enabled? && notification.action == "comment" # 例: コメントの通知だけLINEで送る
         line_id = notification.user.authentications.find_by(provider: 'line')&.uid
-
         if line_id
-          message = "新しい通知があります: #{notification.message}"
-          send_line_notification(line_id, message) # LINE通知を送信するメソッドを呼び出す
+          message = "新しい通知が来ています。" # 固定メッセージに変更
+          send_line_notification(line_id, message)
         end
       end
     end
