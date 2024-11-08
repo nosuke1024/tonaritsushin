@@ -41,4 +41,9 @@ class User < ApplicationRecord
   def favorite?(post)
     favorite_posts.include?(post)
   end
+
+  # LINEの通知の有効化
+  def line_notification_enabled?
+    line_notification_enabled
+  end
 end

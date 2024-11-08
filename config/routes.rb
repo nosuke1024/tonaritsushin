@@ -14,7 +14,11 @@ Rails.application.routes.draw do
   end
 
   # 通知機能
-  resources :notifications, only: :index
+  resources :notifications, only: [:index] do
+    collection do
+      patch :update
+    end
+  end
 
   # プランの診断機能に関するルート
   resources :plan_diagnoses, only: %i[index create] do
