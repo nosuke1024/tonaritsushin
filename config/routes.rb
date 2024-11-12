@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get "items/index"
   # 初期ページのルーティング
   root 'static_pages#top'
-  resources :users, only: %i[new create show]
+  resources :users, only: %i[new create]
   # 投稿機能に関する機能
   resources :posts, only: %i[index new create show edit update destroy] do
     # ここにはコメント機能のルートを追加する予定
