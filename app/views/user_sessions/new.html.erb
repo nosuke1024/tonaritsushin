@@ -1,22 +1,35 @@
 <div class="container">
-  <div class="row">
-    <div class=" col-md-10 col-lg-8 mx-auto">
-      <h1>ログイン</h1>
-      <%= form_with url: login_path do |f| %>
+  <div class="row justify-content-center">
+    <div class="col-md-10 col-lg-8 mx-auto">
+      <h2 class="text-center mt-5 mb-4">ログイン</h2>
+
+      <%= form_with url: login_path, class: "p-4 border rounded" do |f| %>
         <div class="mb-3">
-          <%= f.label :email %>
+          <%= f.label :email, class: "form-label" %>
           <%= f.email_field :email, class: "form-control" %>
         </div>
         <div class="mb-3">
-          <%= f.label :password %>
+          <%= f.label :password, class: "form-label" %>
           <%= f.password_field :password, class: "form-control" %>
         </div>
-        <%= f.submit "ログイン", class: "btn btn-primary" %>
+        <div class="text-center">
+          <%= f.submit "ログイン", class: "btn btn-primary" %>
+        </div>
       <% end %>
-      <div class='text-center'>
-        <%= link_to '登録ページへ', new_user_path %>
-        <%= link_to 'パスワードをお忘れの方はこちら', '#' %>
-        <%= link_to "LINEでログイン", oauths_oauth_path(:provider => :line) %>
+
+      <div class="text-center mt-4">
+        <%= link_to '登録ページへ', new_user_path, class: "btn btn-outline-primary me-3" %>
+        <%= link_to 'パスワードをお忘れの方はこちら', '#', class: "btn btn-outline-secondary" %>
+      </div>
+
+      <div class="text-center mt-4">
+        <div class="row justify-content-center">
+          <div class="col-4 text-center">
+            <%= link_to auth_at_provider_path(provider: :line) do %>
+              <%= image_tag "LINE.logo.png", class: "w-75" %>
+            <% end %>
+          </div>
+        </div>
       </div>
     </div>
   </div>
