@@ -1,8 +1,9 @@
 <div class="container">
-  <div class="row">
+  <div class="row justify-content-center">
     <div class="col-md-10 col-lg-8 mx-auto">
-      <h1>ユーザー登録</h1>
-      <%= form_with model: @user, url: users_path do |f| %>
+      <h2 class="text-center mt-5 mb-4">ユーザー登録</h2>
+
+      <%= form_with model: @user, url: users_path, class: "p-4 border rounded" do |f| %>
         <%= render 'shared/error', object: f.object %>
         <div class="mb-3">
           <%= f.label :name, class: "form-label" %>
@@ -20,11 +21,24 @@
           <%= f.label :password_confirmation, class: "form-label" %>
           <%= f.password_field :password_confirmation, class: "form-control" %>
         </div>
-        <%= f.submit "登録", class: "btn btn-primary" %>
+        <div class="text-center">
+          <%= f.submit "登録", class: "btn btn-primary" %>
+        </div>
       <% end %>
-      <div class='text-center'>
-        <%= link_to 'ログインページへ', login_path %>
-        <%= link_to "LINEでログイン", oauths_oauth_path(:provider => :line) %>
+
+      <div class="text-center mt-4">
+        <%= link_to 'ログインページへ', login_path, class: "btn btn-outline-primary" %>
+      </div>
+
+      <div class="text-center mt-4">
+        <div class="row justify-content-center">
+            <div class="col-4 text-center">
+              <%= link_to auth_at_provider_path(provider: :line) do %>
+                <%= image_tag "LINE.logo.png", class: "w-75" %>
+              <% end %>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

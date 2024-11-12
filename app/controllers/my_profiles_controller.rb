@@ -1,12 +1,15 @@
 class MyProfilesController < ApplicationController
+  before_action :set_user
+
+  def show
+  end
+
   def edit
-    @user = current_user # ログイン中のユーザー情報を取得
   end
 
   def update
-    @user = current_user
     if @user.update(user_params)
-      redirect_to edit_my_profile_path, notice: 'プロフィールを更新しました'
+      redirect_to my_profile_path, notice: 'プロフィールを更新しました'
     else
       render :edit
     end
@@ -14,7 +17,11 @@ class MyProfilesController < ApplicationController
 
   private
 
+  def set_user
+    @user = current_user
+  end
+
   def user_params
-    params.require(:user).permit(:name) # 更新を許可するパラメータ
+    params.require(:user).permit(:name, :email)
   end
 end
