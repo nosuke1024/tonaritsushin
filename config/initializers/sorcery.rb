@@ -224,7 +224,8 @@ Rails.application.config.sorcery.configure do |config|
   config.line.secret = ENV['LINE_CHANNEL_SECRET']
   # 本番環境のURLに置き換える
   config.line.callback_url = 'https://f25b-14-9-144-128.ngrok-free.app/oauth/callback?provider=line'
-  config.line.scope = "profile"
+  #ユーザーを識別するためのOpenID Connect IDトークンとメールアドレス
+  config.line.scope = "profile openid email"
   config.line.bot_prompt = 'aggressive'
   config.line.user_info_mapping = { name: 'displayName', line_user_id: 'userId' }
 
@@ -245,22 +246,8 @@ Rails.application.config.sorcery.configure do |config|
   # --- user config ---
   config.user_class = "User"
 
+  # Sorceryの設定をカスタマイズするためのブロック|
   config.user_config do |user|
-    user.class_eval do
-      def self.find_by_credentials(credentials)
-        # credentials は [provider, uid] の配列
-        provider, uid = credentials
-
-        if provider == 'line'
-          # authentications テーブルで line_user_id を検索
-          authentication = Authentication.find_by(provider: provider, line_user_id: uid) 
-          authentication&.user
-        else
-          # 他のプロバイダの場合は、Sorcery のデフォルトの動作
-          super
-        end
-      end
-    end
 
     # Downcase the username before trying to authenticate, default is false
     # Default: `false`

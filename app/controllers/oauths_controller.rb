@@ -1,5 +1,3 @@
-require 'line/bot' # line-bot-apiとセット
-
 class OauthsController < ApplicationController
   skip_before_action :require_login
 
@@ -9,14 +7,8 @@ class OauthsController < ApplicationController
 
   def callback
     provider = params[:provider]
-
-    if logged_in?
-      # sorceryを使って登録済みの既存ユーザーのLINE連携処理
-      if provider == 'line'
-        # link_line_account
-      end
-      redirect_to root_path, success: t('user_sessions.create.success')
-
+    if @user = login_from(provider)
+      redirect_to root_path, :notice => "Logged in from #{provider.titleize}!"
     else
       # 新規ユーザーがLINE認証を使ったユーザー登録
       begin
