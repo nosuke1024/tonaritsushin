@@ -222,10 +222,11 @@ Rails.application.config.sorcery.configure do |config|
   # LINE認証に関すること
   config.line.key = ENV['LINE_CHANNEL_ID']
   config.line.secret = ENV['LINE_CHANNEL_SECRET']
-  config.line.callback_url ='https://fc72-103-5-140-151.ngrok-free.app/oauth/callback?provider=line'
+  # 本番環境のURLに置き換える
+  config.line.callback_url = 'https://f25b-14-9-144-128.ngrok-free.app/oauth/callback?provider=line'
   config.line.scope = "profile"
   config.line.bot_prompt = 'aggressive'
-  config.line.user_info_mapping = { name: 'displayName', email: 'userId' }
+  config.line.user_info_mapping = { name: 'displayName', line_user_id: 'userId' }
 
   # For information about Discord API
   # https://discordapp.com/developers/docs/topics/oauth2
@@ -242,17 +243,24 @@ Rails.application.config.sorcery.configure do |config|
   # config.battlenet.callback_url = "http://localhost:3000/oauth/callback?provider=battlenet"
   # config.battlenet.scope = "openid"
   # --- user config ---
-  config.user_config do |user|
-    # -- core --
-    # Specify username attributes, for example: [:username, :email].
-    # Default: `[:email]`
-    #
-    # user.username_attribute_names =
+  config.user_class = "User"
 
-    # Change *virtual* password attribute, the one which is used until an encrypted one is generated.
-    # Default: `:password`
-    #
-    # user.password_attribute_name =
+  config.user_config do |user|
+    user.class_eval do
+      def self.find_by_credentials(credentials)
+        # credentials は [provider, uid] の配列
+        provider, uid = credentials
+
+        if provider == 'line'
+          # authentications テーブルで line_user_id を検索
+          authentication = Authentication.find_by(provider: provider, line_user_id: uid) 
+          authentication&.user
+        else
+          # 他のプロバイダの場合は、Sorcery のデフォルトの動作
+          super
+        end
+      end
+    end
 
     # Downcase the username before trying to authenticate, default is false
     # Default: `false`
@@ -565,5 +573,4 @@ Rails.application.config.sorcery.configure do |config|
 
   # This line must come after the 'user config' block.
   # Define which model authenticates with sorcery.
-  config.user_class = "User"
 end
