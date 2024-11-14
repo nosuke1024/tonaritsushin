@@ -46,4 +46,14 @@ class User < ApplicationRecord
   def line_notification_enabled?
     line_notification_enabled
   end
+
+  # すでにLINE認証を使ったユーザーかどうかの判別
+  def line_registered?
+    authentications.exists?(provider: 'line')
+  end
+
+  # Sorceryで登録したユーザーがLINE連携済みかどうかの判別
+  def sorcery_user_linked_to_line?
+    authentications.exists?(provider: 'line')
+  end
 end

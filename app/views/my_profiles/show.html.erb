@@ -11,6 +11,9 @@
         <div class="mb-3">
           <p>メールアドレス: <%= @user.email %></p>
         </div>
+        <div class="mb-3">
+          <p>LINEのユーザーID: <%= @user.line_user_id %></p>
+        </div>
 
         <div class="text-center">
           <%= link_to 'プロフィールを編集', edit_my_profile_path, class: "btn btn-primary" %>
@@ -19,12 +22,21 @@
         <div class="text-center mt-4">
           <div class="row justify-content-center">
             <div class="col-4 text-center">
-              <%= link_to auth_at_provider_path(provider: :line) do %>
-                <%= image_tag "LINE.logo.png", class: "w-75" %>
+              <% if current_user.line_registered? %>
+                <p>LINE連携済みです</p> 
+              <% else %>
+                <% if current_user.sorcery_user_linked_to_line? %>
+                  <%= button_to 'LINE連携を解除', auth_at_provider_path(provider: :line), method: :delete, class: 'btn btn-danger' %> 
+                <% else %>
+                  <%= link_to auth_at_provider_path(provider: :line) do %>
+                    <%= image_tag "LINE.logo.png", class: "w-75" %>
+                  <% end %>
+                <% end %>
               <% end %>
-            </div>
+              </div>
           </div>
         </div>
+
       </div>
 
     </div>
