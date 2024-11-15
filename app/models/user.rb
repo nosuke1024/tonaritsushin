@@ -52,8 +52,9 @@ class User < ApplicationRecord
     authentications.exists?(provider: 'line')
   end
 
-  # Sorceryで登録したユーザーがLINE連携済みかどうかの判別
-  def sorcery_user_linked_to_line?
-    authentications.exists?(provider: 'line')
+  # OmniAuthでLINEログインしたユーザーかどうか
+  def omniauth_user_linked_to_line?
+    # line_user_id が存在する場合に true を返す
+    line_user_id.present?
   end
 end
