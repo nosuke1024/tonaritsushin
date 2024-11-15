@@ -68,6 +68,10 @@ gem 'dotenv-rails'
 # 47ブランチで導入。LINE通知
 gem 'line-bot-api'
 
+# 54ブランチで導入。既存ユーザーのLINE連携
+gem 'omniauth-line'
+gem 'omniauth-rails_csrf_protection' # CSRF対策
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"

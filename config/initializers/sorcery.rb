@@ -220,10 +220,10 @@ Rails.application.config.sorcery.configure do |config|
   # config.salesforce.user_info_mapping = {:email => "email"}
 
   # LINE認証に関すること
-  config.line.key = ENV['LINE_CHANNEL_ID']
-  config.line.secret = ENV['LINE_CHANNEL_SECRET']
+  config.line.key = ENV['LINE_Sorcery_ID']
+  config.line.secret = ENV['LINE_Sorcery_SECRET']
   # 本番環境のURLに置き換える
-  config.line.callback_url = 'https://f25b-14-9-144-128.ngrok-free.app/oauth/callback?provider=line'
+  config.line.callback_url = 'https://8703-14-9-144-128.ngrok-free.app/oauth/callback?provider=line'
   #ユーザーを識別するためのOpenID Connect IDトークンとメールアドレス
   config.line.scope = "profile openid email"
   config.line.bot_prompt = 'aggressive'

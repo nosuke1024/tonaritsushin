@@ -76,10 +76,15 @@ Rails.application.routes.draw do
   get 'items', to: 'items#index'
   get 'items/search' , to: 'items#search'
 
-  # LINE認証の
+  # LINE認証
+  # LINEを使った新規登録のoauthコントローラーのリクエスト
   get "oauth/callback" => "oauths#callback" # GETリクエストを追加
   post "oauth/callback" => "oauths#callback"
   get "oauth/:provider" => "oauths#oauth", :as => :auth_at_provider
+  # 既存ユーザーのLINE連携用のLineConnectionsController用のルートを追加
+  get '/auth/line/callback', to: 'line_connections#callback' # LINE連携ページへのルート
+  post '/auth/line/callback', to: 'line_connections#callback' # LINE連携処理を行うルート
+  delete 'line_connection', to: 'line_connections#destroy'
 
   # 初期設定のセットアップ時のルーティング
   get "up" => "rails/health#show", as: :rails_health_check
