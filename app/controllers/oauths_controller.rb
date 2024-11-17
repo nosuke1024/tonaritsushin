@@ -9,7 +9,7 @@ class OauthsController < ApplicationController
     provider = params[:provider]
     # 既にログインしたことあるユーザーの場合。
     if @user = login_from(provider)
-      redirect_to root_path, :notice => "Logged in from #{provider.titleize}!"
+      redirect_to posts_path, flash: { success: t('user_sessions.create.success') } # 変更
     else
       # 新規ユーザーがLINE認証を使ったユーザー登録
       begin
@@ -18,15 +18,9 @@ class OauthsController < ApplicationController
         auto_login(@user)
         redirect_to root_path, success: t('user_sessions.create.success')
       rescue
-        redirect_to root_path, flash: { danger: t('user_sessions.destroy.success') }
+        flash.now[:danger] = t('users.create.failure')
+        redirect_to root_path
       end
     end
   end
-
-  private
-
-  # def auth_params
-  #   params.permit(:code, :provider)
-  # end
-
 end
