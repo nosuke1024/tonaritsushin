@@ -82,8 +82,8 @@ Rails.application.routes.draw do
   post "oauth/callback" => "oauths#callback"
   get "oauth/:provider" => "oauths#oauth", :as => :auth_at_provider
   # 既存ユーザーのLINE連携用のLineConnectionsController用のルートを追加
-  get '/oauth/line/callback', to: 'line_connections#callback' # LINE連携ページへのルート
-  post '/oauth/line/callback', to: 'line_connections#callback' # LINE連携処理を行うルート
+  get '/auth/line/callback', to: 'line_connections#callback' # LINE連携ページへのルート
+  post '/auth/line/callback', to: 'line_connections#callback' # LINE連携処理を行うルート
   delete 'line_connection', to: 'line_connections#destroy'
 
   # 初期設定のセットアップ時のルーティング
