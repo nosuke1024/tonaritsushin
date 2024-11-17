@@ -1,4 +1,6 @@
 class LineConnectionsController < ApplicationController
+  before_action :authenticate_user!
+
   def callback
     auth = request.env['omniauth.auth']
 
@@ -17,7 +19,7 @@ class LineConnectionsController < ApplicationController
     else
       flash[:alert] = '連携解除に失敗しました'
     end
-    
+
     redirect_to my_profile_path
   end
 end
