@@ -1,5 +1,5 @@
 class LineConnectionsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :require_login
 
   def callback
     auth = request.env['omniauth.auth']
