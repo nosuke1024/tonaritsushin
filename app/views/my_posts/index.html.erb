@@ -1,7 +1,16 @@
-<h1>自分の投稿</h1>
-
-<ul>
-  <% @posts.each do |post| %>
-    <li><%= link_to post.title, post_path(post) %></li>
-  <% end %>
-</ul>
+<div class="container pt-3">
+  <div class="row">
+    <div class="col-lg-10 offset-lg-1">
+      <h1>自分の投稿</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <div class="row">
+        <% @posts.each do |post| %>
+          <%= render partial: 'posts/post', locals: { post: post } %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

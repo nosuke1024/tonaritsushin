@@ -1,7 +1,16 @@
-<h1>お気に入り</h1>
-
-<ul>
-  <% @favorites.each do |favorite| %>
-    <li><%= link_to favorite.post.title, post_path(favorite.post) %></li> 
-  <% end %>
-</ul>
+<div class="container pt-3">
+  <div class="row">
+    <div class="col-lg-10 offset-lg-1">
+      <h1>お気に入り</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <div class="row">
+        <% @favorites.each do |favorite| %>
+          <%= render partial: 'posts/post', locals: { post: favorite.post } %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
