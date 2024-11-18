@@ -1,6 +1,6 @@
 <%= search_form_for @q, url: url do |f| %>
   <!-- フリーワードの検索 -->
-  <%= f.search_field :title_or_body_cont, class: 'form-control', placeholder: '検索ワード' %>
+  <%= f.search_field :body_cont, class: 'form-control', placeholder: '検索キーワード' %>
 
   <!-- ダイヤル式検索 -->
   <%= f.select :title_eq, Post.titles.keys.map { |k| [Post.titles_i18n[k], k] }, { include_blank: '選択してください' }, { class: 'form-control' } %>
