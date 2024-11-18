@@ -3,7 +3,7 @@
     <h1>診断内容</h1>
   </div>
   <!-- 診断内容 -->
-  <%= form_with model: @plan_diagnosis, url: plan_diagnoses_path, method: :post do |f| %>
+  <%= form_with model: @plan_diagnosis, url: plan_diagnoses_path, method: :post, data: { turbo: false } do |f| %>
     <div class="form-group">
       <label>① あなたに当てはまるものはどれですか？（一つ回答してください）</label><br>
       <%= f.radio_button :question1, 1, checked: true %>
