@@ -30,9 +30,7 @@
                 <% if current_user.omniauth_user_linked_to_line? %>
                   <%= button_to 'LINE連携を解除', line_connection_path, method: :delete, class: 'btn btn-danger' %>
                 <% else %>
-                  <%= button_to '/auth/line', method: :post, data: { turbo: false } do %>
-                    <%= image_tag "LINE.logo.png", class: "w-75" %>
-                  <% end %>
+                  <%= button_to 'LINEと連携する', '/auth/line', method: :post, data: { turbo: false }, class: 'btn btn-success' %>
                 <% end %>
               <% end %>
               </div>
