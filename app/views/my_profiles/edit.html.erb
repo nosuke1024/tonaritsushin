@@ -3,7 +3,7 @@
     <div class="col-md-10 col-lg-8 mx-auto">
       <h2 class="text-center mt-5 mb-4">プロフィール編集</h2>
 
-      <%= form_with model: @user, url: my_profile_path, local: true, class: "p-4 border rounded" do |f| %>
+      <%= form_with model: @user, url: my_profile_path, local: true, class: "p-4 border rounded", data: { turbo: false } do |f| %>
         <%= render 'shared/error', object: f.object %>
         <div class="mb-3">
           <%= f.label :name, class: "form-label" %>

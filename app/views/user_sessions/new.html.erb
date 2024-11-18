@@ -2,8 +2,7 @@
   <div class="row justify-content-center">
     <div class="col-md-10 col-lg-8 mx-auto">
       <h2 class="text-center mt-5 mb-4">ログイン</h2>
-
-      <%= form_with url: login_path, class: "p-4 border rounded" do |f| %>
+      <%= form_with url: login_path, class: "p-4 border rounded", data: { turbo: false } do |f| %>
         <div class="mb-3">
           <%= f.label :email, class: "form-label" %>
           <%= f.email_field :email, class: "form-control" %>
