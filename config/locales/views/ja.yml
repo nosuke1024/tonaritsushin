@@ -14,6 +14,7 @@ ja:
       updated: "更新しました！"
       not_updated: "更新に失敗しました！"
       deleted: "投稿を削除しました！"
+    delete_confirm: 本当に削除しますか？
   user_sessions:
     new:
       title: ログイン

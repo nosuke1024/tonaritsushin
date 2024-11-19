@@ -44,7 +44,6 @@ class PostsController < ApplicationController
     post.destroy!
     redirect_to posts_path, flash: { danger: t('defaults.flash_message.deleted') }, status: :see_other
   end
-
   # お気に入りがない時のメソッドの定義
   private
 
