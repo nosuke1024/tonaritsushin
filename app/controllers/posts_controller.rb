@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   def index
 		@q = Post.ransack(params[:q])
-    @posts = @q.result(distinct: true).includes(:user).order(created_at: :desc) #.page(params[:page])
+    @posts = @q.result(distinct: true).includes(:user).order(created_at: :desc).page(params[:page])
 
     # Turbo Stream 形式にしてposts/search_resultsに診断機能を返す
     respond_to do |format|
