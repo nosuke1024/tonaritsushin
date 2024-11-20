@@ -8250,8 +8250,23 @@ var hello_controller_default = class extends Controller {
   }
 };
 
+// app/javascript/controllers/search_controller.js
+var search_controller_default = class extends Controller {
+  static targets = ["form", "bodyCont"];
+  search() {
+    clearTimeout(this.timeout);
+    this.timeout = setTimeout(() => {
+      const bodyCont = this.bodyContTarget.value;
+      if (bodyCont) {
+        this.formTarget.requestSubmit();
+      }
+    }, 200);
+  }
+};
+
 // app/javascript/controllers/index.js
 application.register("hello", hello_controller_default);
+application.register("search", search_controller_default);
 
 // node_modules/@popperjs/core/lib/index.js
 var lib_exports = {};
