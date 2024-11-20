@@ -11,6 +11,11 @@ Rails.application.routes.draw do
     # ここにはコメント機能のルートを追加する予定
     resources :favorites, only: %i[index create destroy]  # お気に入り機能の追加
     resources :comments, only: %i[create edit destroy], shallow: true #コメント機能の追加
+    # 検索に関するブロックでのルート
+    collection do
+      get 'search'
+      # get 'search/result'診断結果を追加する場合
+    end
   end
 
   # 通知機能

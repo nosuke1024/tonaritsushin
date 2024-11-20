@@ -4,8 +4,8 @@
       <div class="card-body">
         <div class="d-flex">
           <h4 class="card-title">
-            <!-- 投稿のタイトル -->
-            <%= link_to "#{post.user.name}の#{post.title_i18n}", post_path(post) %>
+            <!-- 投稿のタイトル。ターボフレームの入れ子の問題を解決 -->
+            <%= link_to "#{post.user.name}の#{post.title_i18n}", post_path(post), data: { turbo_frame: "_top" } %>
           </h4>
           <div class='ms-auto'>
             <!-- 現在のユーザーが投稿の作成者の場合編集と削除のリンク、そうじゃない場合はお気に入り機能の追加-->
@@ -14,7 +14,7 @@
                 <%= link_to edit_post_path(post), id: "button-edit-#{post.id}" do %>
                   <i class="bi bi-pencil-fill"></i>
                 <% end %>
-                <%= button_to post_path(post), method: :delete, id: "button-delete-#{post.id}", data: { turbo_method: :delete, turbo_confirm: t('defaults.delete_confirm') } do %>
+                <%= button_to post_path(post), method: :delete, id: "button-delete-#{post.id}", data: { turbo_method: :delete, turbo_confirm: t('defaults.delete_confirm'), turbo_frame: "_top" } do %>
                   <i class="bi bi-trash-fill"></i>
                 <% end %>
               </div>
