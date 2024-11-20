@@ -1,13 +1,23 @@
 class PostsController < ApplicationController
   def index
-		@q = Post.ransack(params[:q])
-    @posts = @q.result(distinct: true).includes(:user).order(created_at: :desc).page(params[:page])
+    @q = Post.ransack(params[:q])
+    @posts = Post.all.includes(:user).order(created_at: :desc)
+  end
 
-    # Turbo Stream 形式にしてposts/search_resultsに診断機能を返す
+  # 検索
+  def search
+    # title_eq パラメータをenumの値に変換
+    if params[:q] && params[:q][:title_eq].present?
+      params[:q][:title_eq] = Post.titles[params[:q][:title_eq]]
+    end
+
+    @q = Post.ransack(params[:q])
+    @posts = @q.result(distinct: true).includes(:user).order(created_at: :desc)
+  
     respond_to do |format|
-      format.html
+      format.html { render :index }
       format.turbo_stream do
-        render turbo_stream: turbo_frame_tag("search_results", partial: "posts/search_results", locals: { posts: @posts })
+        render turbo_stream: turbo_frame_tag("search_results", partial: "posts/index", locals: { posts: @posts })
       end
     end
   end

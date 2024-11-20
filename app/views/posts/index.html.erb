@@ -7,10 +7,16 @@
   </div>
   <div class="row">
     <div class="col-12">
-      <!-- パーシャルファイルに -->
-      <turbo-frame id="search_results">
-        <%= render partial: "posts/search_results", locals: { posts: @posts } %>
-      </turbo-frame>
+      <div class="row">
+        <turbo-frame id="search_results">
+          <% if @posts.present? %>
+            <%= render @posts %>
+          <% else %>
+            <div class="mb-3">投稿がありません</div>
+          <% end %>
+        </turbo-frame>
+        <!-- %= paginate @posts, theme: 'bootstrap-5' % -->
+      </div>
     </div>
   </div>
 </div>

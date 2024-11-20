@@ -8,13 +8,13 @@ ja:
       email: メールアドレス
       password: パスワード
   defaults:
+    delete_confirm: 本当に削除しますか？
     flash_message:
       created: "投稿しました！"
       not_created: "投稿に失敗しました！"
       updated: "更新しました！"
       not_updated: "更新に失敗しました！"
       deleted: "投稿を削除しました！"
-    delete_confirm: 本当に削除しますか？
   user_sessions:
     new:
       title: ログイン

@@ -1,14 +1,14 @@
-<%= search_form_for @q, url: url, html: { class: "search-form" } do |f| %>
+<%= search_form_for @q, url: search_posts_path, html: { class: "search-form" } do |f| %>
   <div class="search-form-container">
     <div class="search-item">
       <%= f.label :title_eq, "タイトル", class: "form-label" %>
-      <%= f.select :title_eq, Post.titles.keys.map { |k| [Post.titles_i18n[k], k] }, { include_blank: '選択してください' }, { class: 'form-select' } %>
+      <%= f.select :title_eq, Post.titles.keys.map { |k| [Post.titles_i18n[k], k] }, { include_blank: '選択してください' }, { class: 'form-select', data: { turbo_frame: "_top" } } %>
     </div>
 
-  <div class="mb-3">
-    <%= f.label :body_cont, "フリーワード検索", class: "form-label" %>
-    <%= f.search_field :body_cont, class: 'form-control', placeholder: '検索ワード' %>
-  </div>
+    <div class="mb-3">
+      <%= f.label :body_cont, "フリーワード検索", class: "form-label" %>
+      <%= f.search_field :body_cont, class: 'form-control', placeholder: '検索ワード', data: { action: "input->search#search" }  %>
+    </div>
 
     <div class="search-item">
       <%= f.submit '検索', class: 'btn btn-primary search-button' %>
