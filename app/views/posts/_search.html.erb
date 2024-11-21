@@ -1,13 +1,15 @@
+<% @q = Post.ransack(params[:q]) %>
 <%= search_form_for @q, url: search_posts_path, html: { class: "search-form" } do |f| %>
   <div class="search-form-container">
     <div class="search-item">
       <%= f.label :title_eq, "タイトル", class: "form-label" %>
-      <%= f.select :title_eq, Post.titles.keys.map { |k| [Post.titles_i18n[k], k] }, { include_blank: '選択してください' }, { class: 'form-select', data: { turbo_frame: "_top" } } %>
+      <%= f.select :title_eq, Post.titles.keys.map { |k| [Post.titles_i18n[k], k] }, { include_blank: '選択してください' }, { class: 'form-select' } %>
     </div>
 
     <div class="mb-3">
+      <%# search_controller.jsのサーチメソットを使い、ボディカラムをターゲットに指定 %>
       <%= f.label :body_cont, "フリーワード検索", class: "form-label" %>
-      <%= f.search_field :body_cont, class: 'form-control', placeholder: '検索ワード', data: { action: "input->search#search" }  %>
+      <%= f.search_field :body_cont, class: 'form-control', placeholder: '検索ワード', data: { controller: "search", action: "input->search#search", search_target: "bodyCont" } %>
     </div>
 
     <div class="search-item">
