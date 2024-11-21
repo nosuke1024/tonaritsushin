@@ -9,13 +9,11 @@
   <div class="row">
     <div class="col-12">
       <div class="row">
-      <turbo-frame id="search_results" data-search-target="results">
-          <% if @posts.present? %>
-            <%= render @posts %>
-          <% else %>
-            <div class="mb-3">投稿がありません</div>
-          <% end %>
-        </turbo-frame>
+        <% if @posts.present? %>
+          <%= render @posts %>
+        <% else %>
+          <div class="mb-3">投稿がありません</div>
+        <% end %>
         <!-- %= paginate @posts, theme: 'bootstrap-5' % -->
       </div>
     </div>
