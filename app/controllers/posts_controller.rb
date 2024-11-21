@@ -1,25 +1,35 @@
 class PostsController < ApplicationController
   def index
     @q = Post.ransack(params[:q])
-    @posts = Post.all.includes(:user).order(created_at: :desc)
+
+    # 検索フォームからのパラメータがある場合は検索結果を表示
+    if params[:q].present?
+      @posts = @q.result(distinct: true).includes(:user).order(created_at: :desc)
+    else
+      # そうでない場合は全ての投稿を表示
+      @posts = Post.all.includes(:user).order(created_at: :desc)
+    end
   end
 
-  # 検索
+  # 検索候補
+  def search_candidates
+    keyword = params[:keyword]
+    candidates = Post.where("body LIKE ?", "%#{keyword}%").pluck(:body)
+    render partial: "posts/search_candidates", locals: { candidates: candidates }
+  end
+
+  # 検索結果
   def search
     # title_eq パラメータをenumの値に変換
     if params[:q] && params[:q][:title_eq].present?
       params[:q][:title_eq] = Post.titles[params[:q][:title_eq]]
     end
 
+    # 検索のパラメーターの指定
     @q = Post.ransack(params[:q])
     @posts = @q.result(distinct: true).includes(:user).order(created_at: :desc)
-  
-    respond_to do |format|
-      format.html { render :index }
-      format.turbo_stream do
-        render turbo_stream: turbo_frame_tag("search_results", partial: "posts/index", locals: { posts: @posts })
-      end
-    end
+
+    render :index # index.html.erb をレンダリング
   end
 
   def new
