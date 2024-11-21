@@ -9,7 +9,7 @@
     <div class="mb-3">
       <%# search_controller.jsのサーチメソットを使い、ボディカラムをターゲットに指定 %>
       <%= f.label :body_cont, "フリーワード検索", class: "form-label" %>
-      <%= f.search_field :body_cont, class: 'form-control', placeholder: '検索ワード', data: { action: "input->search#search", search_target: "bodyCont" } %>
+      <%= f.search_field :body_cont, class: 'form-control', placeholder: '検索ワード', data: { controller: "search", action: "input->search#search", search_target: "bodyCont" } %>
     </div>
 
     <div class="search-item">

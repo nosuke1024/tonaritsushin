@@ -1,9 +1,10 @@
-import { Controller } from "@hotwired/stimulus"
+import { Controller } from "@hotwired/stimulus" //Stimuluscontrollerを使うインポート
 
 export default class extends Controller {
   static targets = ["bodyCont", "results"] // resultsTargetという値を、返す
 
-  search() {
+  search(event) { // イベントオブジェクトを受け取る
+    console.log("search() が実行されました"); // この行を追加
     clearTimeout(this.timeout)
     this.timeout = setTimeout(async () => {
       const keyword = this.bodyContTarget.value;
@@ -41,6 +42,6 @@ export default class extends Controller {
         // エラーメッセージを表示 (必要に応じて)
         this.resultsTarget.innerHTML = "<div class='error'>検索に失敗しました</div>";
       }
-    }, 200)
+    }, 500)
   }
 }

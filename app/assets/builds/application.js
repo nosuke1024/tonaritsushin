@@ -8254,7 +8254,8 @@ var hello_controller_default = class extends Controller {
 var search_controller_default = class extends Controller {
   static targets = ["bodyCont", "results"];
   // resultsTargetという値を、返す
-  search() {
+  search(event) {
+    console.log("search() \u304C\u5B9F\u884C\u3055\u308C\u307E\u3057\u305F");
     clearTimeout(this.timeout);
     this.timeout = setTimeout(async () => {
       const keyword = this.bodyContTarget.value;
@@ -8278,7 +8279,7 @@ var search_controller_default = class extends Controller {
         console.error("\u691C\u7D22\u30A8\u30E9\u30FC:", error2);
         this.resultsTarget.innerHTML = "<div class='error'>\u691C\u7D22\u306B\u5931\u6557\u3057\u307E\u3057\u305F</div>";
       }
-    }, 200);
+    }, 500);
   }
 };
 
