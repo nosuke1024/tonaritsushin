@@ -6374,13 +6374,13 @@ var AttributeObserver = class {
   }
 };
 function add(map, key, value) {
-  fetch2(map, key).add(value);
+  fetch(map, key).add(value);
 }
 function del(map, key, value) {
-  fetch2(map, key).delete(value);
+  fetch(map, key).delete(value);
   prune(map, key);
 }
-function fetch2(map, key) {
+function fetch(map, key) {
   let values = map.get(key);
   if (!values) {
     values = /* @__PURE__ */ new Set();
@@ -8252,34 +8252,7 @@ var hello_controller_default = class extends Controller {
 
 // app/javascript/controllers/search_controller.js
 var search_controller_default = class extends Controller {
-  static targets = ["bodyCont", "results"];
-  // resultsTargetという値を、返す
-  search(event) {
-    console.log("search() \u304C\u5B9F\u884C\u3055\u308C\u307E\u3057\u305F");
-    clearTimeout(this.timeout);
-    this.timeout = setTimeout(async () => {
-      const keyword = this.bodyContTarget.value;
-      try {
-        this.resultsTarget.innerHTML = "<div class='loading'>Loading...</div>";
-        const response = await fetch(`${window.location.pathname}/search_candidates?keyword=${keyword}`);
-        if (!response.ok) {
-          const message = `Error: ${response.status} ${response.statusText}`;
-          this.resultsTarget.innerHTML = `<div class='error'>${message}</div>`;
-          throw new Error(message);
-        }
-        const html = await response.text();
-        this.resultsTarget.innerHTML = html;
-        this.resultsTarget.querySelectorAll(".candidate").forEach((candidate) => {
-          candidate.addEventListener("click", () => {
-            const keyword2 = candidate.dataset.keyword;
-            window.location.href = `${window.location.pathname}?q[body_cont]=${keyword2}`;
-          });
-        });
-      } catch (error2) {
-        console.error("\u691C\u7D22\u30A8\u30E9\u30FC:", error2);
-        this.resultsTarget.innerHTML = "<div class='error'>\u691C\u7D22\u306B\u5931\u6557\u3057\u307E\u3057\u305F</div>";
-      }
-    }, 500);
+  connect() {
   }
 };
 

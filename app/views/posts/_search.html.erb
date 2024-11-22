@@ -6,10 +6,12 @@
       <%= f.select :title_eq, Post.titles.keys.map { |k| [Post.titles_i18n[k], k] }, { include_blank: '選択してください' }, { class: 'form-select' } %>
     </div>
 
-    <div class="mb-3">
-      <%# search_controller.jsのサーチメソットを使い、ボディカラムをターゲットに指定 %>
+    <div class="mb-3" data-controller="search"> <%# search_controller.js をこの div に接続 %>
       <%= f.label :body_cont, "フリーワード検索", class: "form-label" %>
-      <%= f.search_field :body_cont, class: 'form-control', placeholder: '検索ワード', data: { controller: "search", action: "input->search#search", search_target: "bodyCont" } %>
+      <%= f.search_field :body_cont, class: 'form-control', placeholder: '検索ワード', 
+          data: { action: "input->search#search" },
+          "data-search-target":"bodyCont" %>
+      <div data-search-target="results"></div>
     </div>
 
     <div class="search-item">
