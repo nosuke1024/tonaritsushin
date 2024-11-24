@@ -4968,7 +4968,7 @@ function setConfirmMethod(confirmMethod) {
 function setFormMode(mode) {
   session.setFormMode(mode);
 }
-var Turbo = /* @__PURE__ */ Object.freeze({
+var Turbo2 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   navigator: navigator$1,
   session,
@@ -5671,7 +5671,7 @@ if (customElements.get("turbo-stream-source") === void 0) {
     element = element.parentElement;
   }
 })();
-window.Turbo = { ...Turbo, StreamActions };
+window.Turbo = { ...Turbo2, StreamActions };
 start();
 
 // node_modules/@hotwired/turbo-rails/app/javascript/turbo/cable.js
@@ -8253,33 +8253,18 @@ var hello_controller_default = class extends Controller {
 // app/javascript/controllers/search_controller.js
 var search_controller_default = class extends Controller {
   static targets = ["bodyCont", "results"];
-  // resultsTargetという値を、返す
+  connect() {
+  }
   search(event) {
-    console.log("search() \u304C\u5B9F\u884C\u3055\u308C\u307E\u3057\u305F");
-    clearTimeout(this.timeout);
-    this.timeout = setTimeout(async () => {
-      const keyword = this.bodyContTarget.value;
-      try {
-        this.resultsTarget.innerHTML = "<div class='loading'>Loading...</div>";
-        const response = await fetch(`${window.location.pathname}/search_candidates?keyword=${keyword}`);
-        if (!response.ok) {
-          const message = `Error: ${response.status} ${response.statusText}`;
-          this.resultsTarget.innerHTML = `<div class='error'>${message}</div>`;
-          throw new Error(message);
-        }
-        const html = await response.text();
-        this.resultsTarget.innerHTML = html;
-        this.resultsTarget.querySelectorAll(".candidate").forEach((candidate) => {
-          candidate.addEventListener("click", () => {
-            const keyword2 = candidate.dataset.keyword;
-            window.location.href = `${window.location.pathname}?q[body_cont]=${keyword2}`;
-          });
-        });
-      } catch (error2) {
-        console.error("\u691C\u7D22\u30A8\u30E9\u30FC:", error2);
-        this.resultsTarget.innerHTML = "<div class='error'>\u691C\u7D22\u306B\u5931\u6557\u3057\u307E\u3057\u305F</div>";
-      }
-    }, 500);
+    const searchTerm = this.bodyContTarget.value;
+    fetch(`/posts/search?q[body_cont]=${searchTerm}`, { headers: { "Accept": "text/vnd.turbo-stream.html" } }).then((response) => response.text()).then((html) => Turbo.renderStreamMessage(html));
+  }
+  focus() {
+    this.resultsTarget.innerHTML = "<ul></ul>";
+    this.search();
+  }
+  blur() {
+    this.resultsTarget.innerHTML = "";
   }
 };
 
@@ -13444,6 +13429,11 @@ var Toast = class _Toast extends BaseComponent {
 };
 enableDismissTrigger(Toast);
 defineJQueryPlugin(Toast);
+
+// app/javascript/application.js
+document.addEventListener("turbo:load", () => {
+  importmap.reload();
+});
 /*! Bundled license information:
 
 @hotwired/turbo/dist/turbo.es2017-esm.js:

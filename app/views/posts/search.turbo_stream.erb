@@ -1,0 +1,4 @@
+<!-- 検索候補が動的に出てくる非同期処理 -->
+<%= turbo_stream.replace "search-results" do %>
+  <%= render partial: 'search_candidates', locals: { candidates: @candidates } %>
+<% end %>

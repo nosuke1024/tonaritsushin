@@ -1,5 +1,10 @@
-// Entry point for the build script in your package.json
+// Configure your import map in config/importmap.rb. Read more: https://github.com/rails/importmap-rails
 import "@hotwired/turbo-rails"
 import "./controllers"
+import "./controllers/search_controller"
 import * as bootstrap from "bootstrap"
-// import "./favorites" 非同期処理時に開放
+
+document.addEventListener("turbo:load", () => {
+  // import map を再読み込み
+  importmap.reload();
+});

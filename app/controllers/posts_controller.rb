@@ -11,13 +11,6 @@ class PostsController < ApplicationController
     end
   end
 
-  # 検索候補
-  def search_candidates
-    keyword = params[:keyword]
-    candidates = Post.where("body LIKE ?", "%#{keyword}%").pluck(:body)
-    render partial: "posts/search_candidates", locals: { candidates: candidates }
-  end
-
   # 検索結果
   def search
     # title_eq パラメータをenumの値に変換
@@ -29,7 +22,17 @@ class PostsController < ApplicationController
     @q = Post.ransack(params[:q])
     @posts = @q.result(distinct: true).includes(:user).order(created_at: :desc)
 
-    render :index # index.html.erb をレンダリング
+    # 検索キーワードを取得
+    keyword = params[:q][:body_cont] if params[:q]
+
+    # 検索候補を取得
+    @candidates = Post.pluck(:body)
+
+    respond_to do |format|
+      format.html { render :index } # index.html.erb をレンダリング
+      format.turbo_stream # search.turbo_stream.erb をレンダリング
+    end
+
   end
 
   def new
