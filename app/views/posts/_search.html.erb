@@ -1,5 +1,5 @@
 <% @q = Post.ransack(params[:q]) %>
-<%= search_form_for @q, url: search_posts_path, html: { class: "search-form" } do |f| %>
+<%= search_form_for @q, url: search_posts_path, html: { class: "search-form", data: { turbo: false } } do |f| %>
   <div class="search-form-container">
     <div class="search-item">
       <%= f.label :title_eq, "タイトル", class: "form-label" %>
@@ -8,10 +8,10 @@
 
     <div class="mb-3" data-controller="search"> <%# search_controller.js をこの div に接続 %>
       <%= f.label :body_cont, "フリーワード検索", class: "form-label" %>
-      <%= f.search_field :body_cont, class: 'form-control', placeholder: '検索ワード', 
-          data: { action: "input->search#search" },
-          "data-search-target":"bodyCont" %>
-      <div data-search-target="results"></div>
+      <%= f.search_field :body_cont, class: 'form-control', placeholder: '検索ワード',
+        data: "action: input->search#search focus->search#focus blur->search#blur search-target: bodyCont" %> 
+
+      <div id="search-results" data-search-target="results"></div> <%# 検索結果を表示する要素 %>
     </div>
 
     <div class="search-item">

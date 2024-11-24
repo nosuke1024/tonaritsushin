@@ -4968,7 +4968,7 @@ function setConfirmMethod(confirmMethod) {
 function setFormMode(mode) {
   session.setFormMode(mode);
 }
-var Turbo = /* @__PURE__ */ Object.freeze({
+var Turbo2 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   navigator: navigator$1,
   session,
@@ -5671,7 +5671,7 @@ if (customElements.get("turbo-stream-source") === void 0) {
     element = element.parentElement;
   }
 })();
-window.Turbo = { ...Turbo, StreamActions };
+window.Turbo = { ...Turbo2, StreamActions };
 start();
 
 // node_modules/@hotwired/turbo-rails/app/javascript/turbo/cable.js
@@ -6374,13 +6374,13 @@ var AttributeObserver = class {
   }
 };
 function add(map, key, value) {
-  fetch(map, key).add(value);
+  fetch2(map, key).add(value);
 }
 function del(map, key, value) {
-  fetch(map, key).delete(value);
+  fetch2(map, key).delete(value);
   prune(map, key);
 }
-function fetch(map, key) {
+function fetch2(map, key) {
   let values = map.get(key);
   if (!values) {
     values = /* @__PURE__ */ new Set();
@@ -8252,7 +8252,19 @@ var hello_controller_default = class extends Controller {
 
 // app/javascript/controllers/search_controller.js
 var search_controller_default = class extends Controller {
+  static targets = ["bodyCont", "results"];
   connect() {
+  }
+  search(event) {
+    const searchTerm = this.bodyContTarget.value;
+    fetch(`/posts/search?q[body_cont]=${searchTerm}`, { headers: { "Accept": "text/vnd.turbo-stream.html" } }).then((response) => response.text()).then((html) => Turbo.renderStreamMessage(html));
+  }
+  focus() {
+    this.resultsTarget.innerHTML = "<ul></ul>";
+    this.search();
+  }
+  blur() {
+    this.resultsTarget.innerHTML = "";
   }
 };
 
@@ -13417,6 +13429,11 @@ var Toast = class _Toast extends BaseComponent {
 };
 enableDismissTrigger(Toast);
 defineJQueryPlugin(Toast);
+
+// app/javascript/application.js
+document.addEventListener("turbo:load", () => {
+  importmap.reload();
+});
 /*! Bundled license information:
 
 @hotwired/turbo/dist/turbo.es2017-esm.js:
