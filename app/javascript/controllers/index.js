@@ -7,5 +7,7 @@ import { application } from "./application"
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
+//ここまでは読み込まれいてる。
+
 import SearchController from "./search_controller"
 application.register("search", SearchController)
