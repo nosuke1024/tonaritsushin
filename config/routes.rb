@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     # 検索に関するブロックでのルート
     collection do
       get 'search'
+      get 'search_candidates'
       # get 'search/result'診断結果を追加する場合
     end
   end

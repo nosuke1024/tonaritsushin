@@ -13,9 +13,23 @@ class PostsController < ApplicationController
 
   # 検索候補
   def search_candidates
-    keyword = params[:keyword]
-    candidates = Post.where("body LIKE ?", "%#{keyword}%").pluck(:body)
-    render partial: "posts/search_candidates", locals: { candidates: candidates }
+    return if params[:keyword].blank? || params[:keyword].length < 2
+  
+    @candidates = Post.where("body LIKE ?", "%#{params[:keyword]}%")
+                     .select(:body)
+                     .distinct
+                     .limit(5)
+                     .pluck(:body)
+  
+    respond_to do |format|
+      format.turbo_stream {
+        render turbo_stream: turbo_stream.update(
+          "search-candidates",
+          partial: "posts/search_candidates",
+          locals: { candidates: @candidates }
+        )
+      }
+    end
   end
 
   # 検索結果
