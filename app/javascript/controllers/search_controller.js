@@ -39,8 +39,11 @@ export default class extends Controller {
   }
 
   selectCandidate(event) {
-    const postId = event.currentTarget.dataset.postId;
-    // 詳細ページへのリンクを作成して遷移する
-    window.location.href = `/posts/${postId}`;
-  }
+    // 選択された検索候補の値を取得
+  const selectedValue = event.currentTarget.dataset.searchValue;
+  // 検索フォームに値をセット
+  this.inputTarget.value = selectedValue;
+  // 候補リストをクリア
+  document.getElementById("search-candidates").innerHTML = "";
+}
 }
