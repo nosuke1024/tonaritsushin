@@ -7,7 +7,7 @@
           data-search-value="<%= candidate %>">
           data-post-id="<%= candidate.id %>">
           <!-- 検索候補の文字数を20文字の表記 -->
-        <%= highlight(truncate(candidate.title, length: 20), params[:keyword]) %>
+        <%= link_to truncate(highlight(candidate.title, params[:keyword]), length: 20), post_path(candidate) %>
       </li>
     <% end %>
   </ul>
