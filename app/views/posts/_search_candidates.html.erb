@@ -4,7 +4,7 @@
     <% candidates.each do |candidate| %>
       <li class="candidate-item"
           data-action="click->search#selectCandidate"
-          data-search-value="<%= candidate %>">
+          data-search-value="<%= strip_tags(candidate) %>">
           <!-- 検索候補の文字数を20文字の表記 -->
         <%= truncate(highlight(candidate, params[:keyword]), length: 20) %>
       </li>
