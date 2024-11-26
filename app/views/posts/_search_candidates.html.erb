@@ -5,8 +5,12 @@
       <li class="candidate-item"
           data-action="click->search#selectCandidate"
           data-search-value="<%= candidate %>">
-        <%= highlight(candidate, params[:keyword]) %>
+          data-post-id="<%= candidate.id %>">
+          <!-- 検索候補の文字数を20文字の表記 -->
+        <%= highlight(truncate(candidate.title, length: 20), params[:keyword]) %>
       </li>
     <% end %>
   </ul>
+<% else %>
+  <p>検索候補がありません</p>
 <% end %>
