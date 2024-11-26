@@ -44,3 +44,6 @@
 /.env
 # SSL証明書用のファイル（今使っていないはず）
 /config/certs/*
+
+# assetの追加
+app/assets/builds

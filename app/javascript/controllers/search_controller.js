@@ -29,7 +29,12 @@ export default class extends Controller {
           "X-Requested-With": "XMLHttpRequest"
         }
       })
-    }, 300)
+      // 検索候補をHTMLに返すことを追加
+      .then(response => response.text())
+      .then(html => {
+        document.getElementById("search-candidates").innerHTML = html;
+      });
+    }, 300);
   }
 
   selectCandidate(event) {
