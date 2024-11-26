@@ -22,7 +22,7 @@ export default class extends Controller {
     // デバウンス処理（300ms）
     this.timeout = setTimeout(() => {
       const url = `/posts/search_candidates?keyword=${encodeURIComponent(query)}`
-      
+
       fetch(url, {
         headers: {
           "Accept": "text/vnd.turbo-stream.html",

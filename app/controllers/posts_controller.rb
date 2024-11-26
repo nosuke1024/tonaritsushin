@@ -16,10 +16,10 @@ class PostsController < ApplicationController
     return if params[:keyword].blank? || params[:keyword].length < 2
   
     @candidates = Post.where("body LIKE ?", "%#{params[:keyword]}%")
-                     .select(:body)
-                     .distinct
-                     .limit(5)
-                     .pluck(:body)
+                    .select(:body)
+                    .distinct
+                    .limit(5)
+                    .pluck(:body)
   
     respond_to do |format|
       format.turbo_stream {
