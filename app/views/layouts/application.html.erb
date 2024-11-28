@@ -8,6 +8,7 @@
     <%= stylesheet_link_tag "application" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
     <%= turbo_include_tags %>
+    <%= display_meta_tags(default_meta_tags) %>
   </head>
 
   <body>
