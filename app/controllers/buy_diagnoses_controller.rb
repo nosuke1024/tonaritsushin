@@ -1,4 +1,7 @@
 class BuyDiagnosesController < ApplicationController
+  skip_before_action :require_login, only: [:question1, :question2, :question3,
+                                          :question4, :question5, :question6] # ログインしなくても使える
+
   def question1
     # 質問1を表示
   end

@@ -1,6 +1,10 @@
 <% @q = Post.ransack(params[:q]) %>
-<%= search_form_for @q, url: search_posts_path, html: { class: "search-form" } do |f| %>
+<%= search_form_for @q, url: search_posts_path, html: { class: "search-form", data: { turbo_stream: true } } do |f| %>
   <div class="search-form-container">
+
+    <%# メッセージ表示エリアを追加 %>
+    <div id="search-message" class="mt-3"></div>
+
     <div class="search-item">
       <%= f.label :title_eq, "タイトル", class: "form-label" %>
       <%= f.select :title_eq, Post.titles.keys.map { |k| [Post.titles_i18n[k], k] }, { include_blank: '選択してください' }, { class: 'form-select' } %>
