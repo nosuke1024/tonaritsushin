@@ -1,4 +1,5 @@
 class PlanDiagnosesController < ApplicationController
+  skip_before_action :require_login, only: [:index, :create, :result] # ログインしなくても一覧閲覧可能に。
   def index; end
 
   def create

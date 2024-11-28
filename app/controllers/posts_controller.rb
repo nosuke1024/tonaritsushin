@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  skip_before_action :require_login, only: [:index, :search] # ログインしなくても一覧閲覧可能に。
+
   def index
     @q = Post.ransack(params[:q])
 
@@ -34,12 +36,26 @@ class PostsController < ApplicationController
 
   # 検索結果
   def search
-    # title_eq パラメータをenumの値に変換
+    # ログインチェック
+    unless logged_in?
+      # ログインしていない場合は全件表示のまま。turboで返す
+      @posts = Post.all.includes(:user).order(created_at: :desc)
+      respond_to do |format|
+        format.html { redirect_to posts_path }
+        format.turbo_stream {
+          render turbo_stream: turbo_stream.update(
+            "search-message",
+            partial: "shared/login_required_message")
+        }
+      end
+      return
+    end
+
+    # ログインしている場合は検索を実行
     if params[:q] && params[:q][:title_eq].present?
       params[:q][:title_eq] = Post.titles[params[:q][:title_eq]]
     end
 
-    # 検索のパラメーターの指定
     @q = Post.ransack(params[:q])
     @posts = @q.result(distinct: true).includes(:user).order(created_at: :desc)
 
