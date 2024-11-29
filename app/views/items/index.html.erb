@@ -1,47 +1,84 @@
 <h1>楽天市場の商品一覧</h1>
-<!-- 検索エンジン -->
-<%= form_with url: items_search_path, method: :get, local: true, data: { turbo: false } do |f| %>
-  <!-- 検索欄 -->
-  <div>
-    <%= f.radio_button :manufacturer, 'スマホ', checked: true %>
-    <%= f.label :manufacturer, "スマホ" %>
-    <%= f.radio_button :manufacturer, 'iPhone' %>
-    <%= f.label :manufacturer, "iPhone" %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 mb-4">
+    <!-- 検索エンジン -->
+      <%= form_with url: items_search_path, method: :get, local: true, data: { turbo: false }, class: "form" do |f| %>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="form-group">
+              <label class="form-label">メーカー</label>
+              <div>
+                <div class="form-check form-check-inline">
+                  <%= f.radio_button :manufacturer, 'スマホ', checked: true, class: "form-check-input" %>
+                  <%= f.label :manufacturer, "スマホ", class: "form-check-label" %>
+                </div>
+                <div class="form-check form-check-inline">
+                  <%= f.radio_button :manufacturer, 'iPhone', class: "form-check-input" %>
+                  <%= f.label :manufacturer, "iPhone", class: "form-check-label" %>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="form-group">
+              <label class="form-label">状態</label>
+              <div>
+                <div class="form-check form-check-inline">
+                  <%= f.radio_button :condition, '新品', class: "form-check-input" %>
+                  <%= f.label :condition_new, "新品", class: "form-check-label" %>
+                </div>
+                <div class="form-check form-check-inline">
+                  <%= f.radio_button :condition, '中古', class: "form-check-input" %>
+                  <%= f.label :condition_used, "中古", class: "form-check-label" %>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="form-group">
+              <label class="form-label">キャリア</label>
+              <div>
+                <div class="form-check form-check-inline">
+                  <%= f.radio_button :carrier, '楽天モバイル', class: "form-check-input" %>
+                  <%= f.label :carrier, "楽天モバイル", class: "form-check-label" %>
+                </div>
+                <div class="form-check form-check-inline">
+                  <%= f.radio_button :carrier, 'SIMフリー', class: "form-check-input" %>
+                  <%= f.label :carrier, "SIMフリー", class: "form-check-label" %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="input-group input-group-sm">
+          <%= f.text_field :keyword, class: "form-control", placeholder: "商品名を入力" %>
+          <div class="input-group-append mx-4"> 
+            <%= f.submit "検索", class: "btn btn-primary" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+    <!-- 全体のインデックス -->
+    <div class="col-md-12">
+      <div class="row">
+        <% @items.each do |item| %>
+          <div class="col-md-4 mb-4">
+            <div class="card">
+              <img src="<%= item['mediumImageUrls'][0] %>" class="card-img-top" alt="<%= item['itemName'] %>">
+              <div class="card-body">
+                <h5 class="card-title"><%= link_to item['itemName'], item['itemUrl'] %></h5>
+                <p class="card-text"><%= item['itemPrice'] %>円</p>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
-
-  <div>
-    <%= f.label :condition_new, "新品" %>
-    <%= f.radio_button :condition, '新品' %>
-
-    <%= f.label :condition_used, "中古" %>
-    <%= f.radio_button :condition, '中古' %>
-  </div>
-
-  <div>
-    <%= f.label :carrier, "楽天モバイルの購入" %>
-    <%= f.radio_button :carrier, '楽天モバイル' %>
-
-    <%= f.label :carrier, "SIMフリー" %>
-    <%= f.radio_button :carrier, 'SIMフリー' %>
-  </div>
-
-  <div>
-    <%= f.label :keyword, "商品名" %>
-    <%= f.text_field :keyword %>
-  </div>
-
-  <%= f.submit "検索" %>
-<% end %>
-
-<!-- 全体のインデックス -->
-<ul>
-  <% @items.each do |item| %>
-    <li>
-      <%= link_to item['itemName'], item['itemUrl'] %>
-      <br>
-      <%= image_tag item['mediumImageUrls'][0] %>
-      <br>
-      <%= item['itemPrice'] %>円
-    </li>
-  <% end %>
-</ul>
+</div>
