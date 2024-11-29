@@ -6,10 +6,10 @@ class PostsController < ApplicationController
 
     # 検索フォームからのパラメータがある場合は検索結果を表示
     if params[:q].present?
-      @posts = @q.result(distinct: true).includes(:user).order(created_at: :desc)
+      @posts = @q.result(distinct: true).includes(:user).order(created_at: :desc).page(params[:page]).per(10)
     else
       # そうでない場合は全ての投稿を表示
-      @posts = Post.all.includes(:user).order(created_at: :desc)
+      @posts = Post.all.includes(:user).order(created_at: :desc).page(params[:page]).per(10)
     end
   end
 
