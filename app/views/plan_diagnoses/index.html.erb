@@ -1,44 +1,81 @@
 <div class="container">
-  <div class="text-center">
-    <h1>診断内容</h1>
+  <div class="text-center mb-5">
+    <h1>プラン診断</h1>
+    <p>ここでは3つの質問からおすすめの料金プランの紹介をしています。</p>
   </div>
-  <!-- 診断内容 -->
+
   <%= form_with model: @plan_diagnosis, url: plan_diagnoses_path, method: :post, data: { turbo: false } do |f| %>
-    <div class="form-group">
-      <label>① あなたに当てはまるものはどれですか？（一つ回答してください）</label><br>
-      <%= f.radio_button :question1, 1, checked: true %>
-      <%= f.label :question1, '一緒にまとめている家族もいるし、ネットワークの契約もある' %><br>
-      <%= f.radio_button :question1, 2 %>
-      <%= f.label :question1, '一緒にまとめている家族がいる（または引き続きまとめたいかどうか）' %><br>
-      <%= f.radio_button :question1, 3 %>
-      <%= f.label :question1, 'ネットワークの契約がある（または引き続きまとめたいかどうか）' %><br>
-      <%= f.radio_button :question1, 4 %>
-      <%= f.label :question1, '特に考慮する点なし' %><br>
+    <div class="card mb-4">
+      <div class="card-header">
+        ① あなたに当てはまるものはどれですか？（一つ回答してください）
+      </div>
+      <div class="card-body">
+        <div class="form-check">
+          <%= f.radio_button :question1, 1, checked: true, class: "form-check-input" %>
+          <%= f.label :question1, '一緒にまとめている家族もいるし、ネットワークの契約もある', class: "form-check-label" %>
+        </div>
+        <div class="form-check">
+          <%= f.radio_button :question1, 2, class: "form-check-input" %>
+          <%= f.label :question1, '一緒にまとめている家族がいる（または引き続きまとめたいかどうか）', class: "form-check-label" %>
+        </div>
+        <div class="form-check">
+          <%= f.radio_button :question1, 3, class: "form-check-input" %>
+          <%= f.label :question1, 'ネットワークの契約がある（または引き続きまとめたいかどうか）', class: "form-check-label" %>
+        </div>
+        <div class="form-check">
+          <%= f.radio_button :question1, 4, class: "form-check-input" %>
+          <%= f.label :question1, '特に考慮する点なし', class: "form-check-label" %>
+        </div>
+      </div>
     </div>
 
-    <div class="form-group">
-      <label>② 携帯電話の料金に関することで重視したいことはどれですか？（一つ回答してください）</label><br>
-      <%= f.radio_button :question2, 1, checked: true %>
-      <%= f.label :question2, '質重視（とにかくストレスなく使いたい）' %><br>
-      <%= f.radio_button :question2, 2 %>
-      <%= f.label :question2, 'バランス重視（価格と質のバランスを取りたい）' %><br>
-      <%= f.radio_button :question2, 3 %>
-      <%= f.label :question2, '価格重視（とにかく安くしたい）' %><br>
+    <div class="card mb-4">
+      <div class="card-header">
+        ② 携帯電話の料金に関することで重視したいことはどれですか？（一つ回答してください）
+      </div>
+      <div class="card-body">
+        <div class="form-check">
+          <%= f.radio_button :question2, 1, checked: true, class: "form-check-input" %>
+          <%= f.label :question2, '質重視（とにかくストレスなく使いたい）', class: "form-check-label" %>
+        </div>
+        <div class="form-check">
+          <%= f.radio_button :question2, 2, class: "form-check-input" %>
+          <%= f.label :question2, 'バランス重視（価格と質のバランスを取りたい）', class: "form-check-label" %>
+        </div>
+        <div class="form-check">
+          <%= f.radio_button :question2, 3, class: "form-check-input" %>
+          <%= f.label :question2, '価格重視（とにかく安くしたい）', class: "form-check-label" %>
+        </div>
+      </div>
     </div>
 
-    <div class="form-group">
-      <label>③ ネットの利用量についてあなたの該当するものを教えて（一つ回答してください）</label><br>
-      <%= f.radio_button :question3, 1, checked: true %>
-      <%= f.label :question3, 'よく使う' %><br>
-      <%= f.radio_button :question3, 2 %>
-      <%= f.label :question3, 'けっこう使う' %><br>
-      <%= f.radio_button :question3, 3 %>
-      <%= f.label :question3, 'そこそこ使う' %><br>
-      <%= f.radio_button :question3, 4 %>
-      <%= f.label :question3, 'そんなに使わない' %><br>
-      <%= f.radio_button :question3, 5 %>
-      <%= f.label :question3, 'あまり使わない' %><br>
+    <div class="card mb-4">
+      <div class="card-header">
+        ③ ネットの利用量についてあなたの該当するものを教えて（一つ回答してください）
+      </div>
+      <div class="card-body">
+        <div class="form-check">
+          <%= f.radio_button :question3, 1, checked: true, class: "form-check-input" %>
+          <%= f.label :question3, 'よく使う', class: "form-check-label" %>
+        </div>
+        <div class="form-check">
+          <%= f.radio_button :question3, 2, class: "form-check-input" %>
+          <%= f.label :question3, 'けっこう使う', class: "form-check-label" %>
+        </div>
+        <div class="form-check">
+          <%= f.radio_button :question3, 3, class: "form-check-input" %>
+          <%= f.label :question3, 'そこそこ使う', class: "form-check-label" %>
+        </div>
+        <div class="form-check">
+          <%= f.radio_button :question3, 4, class: "form-check-input" %>
+          <%= f.label :question3, 'そんなに使わない', class: "form-check-label" %>
+        </div>
+        <div class="form-check">
+          <%= f.radio_button :question3, 5, class: "form-check-input" %>
+          <%= f.label :question3, 'あまり使わない', class: "form-check-label" %>
+        </div>
+      </div>
     </div>
-    <%= f.submit '診断する', class: 'btn btn-primary' %>
-  <% end %>
+
+    <div class="text-center"> <%= f.submit '診断する', class: 'btn btn-primary' %> </div> <% end %>
 </div>

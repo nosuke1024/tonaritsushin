@@ -1,8 +1,24 @@
-<h1>質問2</h1>
-<p>今回の購入で通信キャリアを変更する予定はありますか？</p>
+<div class="container">
+  <div class="text-center mb-5">
+    <h1>購入診断</h1>
+      <p> ここでは合計6つの質問から構成されています。</p>
+      <p> その質問の回答によって、質問内容が変更されて回答も変わる仕組みになっています。</p>
+  </div>
 
-<%= link_to '通信キャリアを変える', question6_buy_diagnoses_path , class:"btn btn-primary"%>
-<%= link_to 'そのまま使う', question4_buy_diagnoses_path , class:"btn btn-primary" %>
-<div class="text-center">
-  <%= link_to '前のページに戻る', :back %>
+  <div class="card">
+    <div class="card-header">
+      <h3>質問2</h3>
+    </div>
+    <div class="card-body">
+      <p class="card-text">今回の購入で通信キャリアを変更する予定はありますか？</p>
+      <div class="text-center">
+        <%= link_to '通信キャリアを変える', question6_buy_diagnoses_path , class:"btn btn-primary"%>
+        <%= link_to 'そのまま使う', question4_buy_diagnoses_path , class:"btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="text-center mt-3">
+    <%= link_to '前のページに戻る', :back %>
+  </div>
 </div>
