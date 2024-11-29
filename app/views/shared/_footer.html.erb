@@ -4,25 +4,23 @@
       <div class="row text-center pt-3">
 
         <div class="col-md-3 py-2 col-6">
-          <li><a href="<%= terms_path %>" style="color: hsl(0, 0%, 92%);"><%= t('footer.terms_of_service') %></a></li>
+          <a href="<%= terms_path %>" style="color: hsl(0, 0%, 92%);"><%= t('footer.terms_of_service') %></a>
         </div>
 
         <div class="col-md-3 py-2 col-6">
-          <li><a href="<%= privacy_path %>" style="color: hsl(0, 0%, 92%);"><%= t('footer.privacy_policy') %></a></li>
+          <a href="<%= privacy_path %>" style="color: hsl(0, 0%, 92%);"><%= t('footer.privacy_policy') %></a>
         </div>
 
         <div class="col-md-3 py-2 col-6">
-          <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSeMcSFo4mI2zhTbDT3VOXi3kEDYurKuOIABVCf9zlETL5CMww/viewform?usp=sf_link" style="color: hsl(0, 0%, 92%);"><%= t('footer.contact') %></a></li> 
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSeMcSFo4mI2zhTbDT3VOXi3kEDYurKuOIABVCf9zlETL5CMww/viewform?usp=sf_link" style="color: hsl(0, 0%, 92%);"><%= t('footer.contact') %></a>
         </div>
 
         <div class="col-md-3 py-2 col-6">
-          <li>
-            <a href="https://twitter.com/share?url=<%= request.url %>&text=<%= CGI.escape('Smart Phone Choiceでスマホ選び #すまちょい') %>"
-              title="Twitter"
-              target="_blank">
-              Xへのシェア
-            </a>
-          </li>
+          <a href="https://twitter.com/share?url=<%= request.url %>&text=<%= CGI.escape('Smart Phone Choiceでスマホ選び #すまちょい') %>"
+            title="Twitter"
+            target="_blank">
+            Xへのシェア
+          </a>
         </div>
 
         <div class="row text-center mt-1">
