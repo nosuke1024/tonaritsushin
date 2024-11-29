@@ -6,14 +6,14 @@
     <div id="search-message" class="mt-3"></div>
 
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-md-4 mb-1">
         <div class="form-group">
           <%= f.label :title_eq, "タイトル", class: "form-label" %>
           <%= f.select :title_eq, Post.titles.keys.map { |k| [Post.titles_i18n[k], k] }, { include_blank: '選択してください' }, { class: 'form-select' } %>
         </div>
       </div>
 
-      <div class="col-md-5 mb-4 position-relative">
+      <div class="col-md-5 mb-1 position-relative">
         <div class="form-group">
           <%= f.label :body_cont, "フリーワード検索", class: "form-label" %>
           <%= f.search_field :body_cont, 
@@ -30,7 +30,7 @@
         </div>
       </div>
 
-      <div class="col-md-2">
+      <div class="col-md-2 mb-3">
         <div class="form-group">
           <label class="form-label">検索</label> <%# 検索ラベルを追加 %>
           <%= f.submit '検索', class: 'btn btn-primary search-button w-100' %> <%# mt-2で下にマージンを追加 %>
