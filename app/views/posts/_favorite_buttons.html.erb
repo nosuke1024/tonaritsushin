@@ -1,10 +1,12 @@
 <!-- お気に入りしているかどうかの条件式 -->
-<% if current_user.favorite?(post) %>
-  <%= button_to post_favorite_path(post_id: post.id, id: current_user.favorites.find_by(post_id: post.id), redirect_to: request.fullpath), method: :delete, class: "btn btn-ghost btn-sm", data: { turbo: false } do %>
-    <p class="text-xl text-yellow-500">★</p>
-  <% end %>
-<% else %>
-  <%= button_to post_favorites_path(post_id: post.id), method: :post, class: "btn btn-ghost btn-sm", data: { turbo: false } do %>
-    <p class="text-xl">☆</p>
+<% if logged_in? %>
+  <% if current_user.favorite?(post) %>
+    <%= button_to post_favorite_path(post_id: post.id, id: current_user.favorites.find_by(post_id: post.id), redirect_to: request.fullpath), method: :delete, class: "btn btn-ghost btn-sm", data: { turbo: false } do %>
+      <p class="text-xl text-yellow-500">★</p>
+    <% end %>
+  <% else %>
+    <%= button_to post_favorites_path(post_id: post.id), method: :post, class: "btn btn-ghost btn-sm", data: { turbo: false } do %>
+      <p class="text-xl">☆</p>
+    <% end %>
   <% end %>
 <% end %>
