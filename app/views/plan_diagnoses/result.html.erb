@@ -1,27 +1,50 @@
-<div class="container">
+<div class="container py-5">
   <div class="text-center">
-    <h1>診断結果</h1>
+    <h1 class="display-4 mb-4">診断結果</h1>
 
-    <div class="result-box">
-      <h3 class="result-text">
-        <%= @diagnosis_result %>
-      </h3>
+    <!-- 結果表示カード -->
+    <div class="card shadow-lg mb-5">
+      <div class="card-body p-5">
+        <h2 class="card-title text-primary mb-4"><%= @diagnosis_result %></h2>
+        <p class="text-muted mb-0">以下のプランの詳細を確認してみましょう</p>
+      </div>
     </div>
 
-    <div class="action-button mb-3">
-      <%= link_to "大手キャリアメインプラン（docomo,au,softbank）について詳しく見る", major_carrier_path, class: "btn btn-primary" %>
+    <!-- ボタングループ -->
+    <div class="row justify-content-center g-3">
+      <div class="col-12 col-md-8">
+        <%= link_to major_carrier_path, class: "btn btn-outline-primary btn-lg w-100 mb-3 d-flex align-items-center justify-content-between shadow-sm" do %>
+          <span>大手キャリアメインプラン</span>
+          <small>docomo・au・softbank</small>
+        <% end %>
+
+        <%= link_to online_plan_path, class: "btn btn-outline-primary btn-lg w-100 mb-3 d-flex align-items-center justify-content-between shadow-sm" do %>
+          <span>大手キャリアオンラインプラン</span>
+          <small>ahamo・povo・linmo</small>
+        <% end %>
+
+        <%= link_to sub_brand_path, class: "btn btn-outline-primary btn-lg w-100 mb-3 d-flex align-items-center justify-content-between shadow-sm" do %>
+          <span>大手キャリアサブブランド</span>
+          <small>irumo・UQモバイル・Yモバイル</small>
+        <% end %>
+
+        <%= link_to mvno_path, class: "btn btn-outline-primary btn-lg w-100 mb-3 d-flex align-items-center justify-content-between shadow-sm" do %>
+          <span>格安SIM</span>
+          <small>詳しく見る →</small>
+        <% end %>
+
+        <%= link_to rakuten_path, class: "btn btn-outline-primary btn-lg w-100 mb-3 d-flex align-items-center justify-content-between shadow-sm" do %>
+          <span>楽天モバイル</span>
+          <small>詳しく見る →</small>
+        <% end %>
+      </div>
     </div>
-    <div class="action-button mb-3">
-      <%= link_to "大手キャリアオンラインプラン（ahamo,povo,linmo）について詳しく見る", online_plan_path, class: "btn btn-primary" %>
-    </div>
-    <div class="action-button mb-3">
-      <%= link_to "大手キャリアサブブランド（irumo,UQﾓﾊﾞｲﾙ,Yﾓﾊﾞｲﾙ）について詳しく見る", sub_brand_path, class: "btn btn-primary" %>
-    </div>
-    <div class="action-button mb-3">
-      <%= link_to "格安SIMについて詳しく見る", mvno_path, class: "btn btn-primary" %>
-    </div>
-    <div class="action-button mb-3">
-      <%= link_to "楽天モバイルについて詳しく見る", rakuten_path, class: "btn btn-primary" %>
+
+    <!-- 補足情報 -->
+    <div class="mt-5">
+      <p class="text-muted">
+        ※診断結果は一つの目安です。実際のご契約の際は各社の料金プランを必ずご確認ください。
+      </p>
     </div>
   </div>
 </div>
