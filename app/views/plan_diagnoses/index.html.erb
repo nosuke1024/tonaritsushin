@@ -7,7 +7,7 @@
   <%= form_with model: @plan_diagnosis, url: plan_diagnoses_path, method: :post, data: { turbo: false } do |f| %>
     <div class="card mb-4">
       <div class="card-header">
-        ① あなたに当てはまるものはどれですか？（一つ回答してください）
+        ① あなたに当てはまるものはどれですか？
       </div>
       <div class="card-body">
         <div class="form-check">
@@ -31,7 +31,7 @@
 
     <div class="card mb-4">
       <div class="card-header">
-        ② 携帯電話の料金に関することで重視したいことはどれですか？（一つ回答してください）
+        ② 携帯電話の料金に関することで重視したいことはどれですか？
       </div>
       <div class="card-body">
         <div class="form-check">
@@ -51,7 +51,7 @@
 
     <div class="card mb-4">
       <div class="card-header">
-        ③ ネットの利用量についてあなたの該当するものを教えて（一つ回答してください）
+        ③ ネットの利用量についてあなたの該当するものはどれですか？
       </div>
       <div class="card-body">
         <div class="form-check">
@@ -77,5 +77,8 @@
       </div>
     </div>
 
-    <div class="text-center"> <%= f.submit '診断する', class: 'btn btn-primary' %> </div> <% end %>
+    <div class="text-center">
+      <%= f.submit '診断する', class: 'btn btn-primary mb-3' %>
+    </div>
+  <% end %>
 </div>
