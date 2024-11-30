@@ -223,7 +223,7 @@ Rails.application.config.sorcery.configure do |config|
   config.line.key = ENV['LINE_Sorcery_ID']
   config.line.secret = ENV['LINE_Sorcery_SECRET']
   # 本番環境のURLに置き換える
-  config.line.callback_url = 'https://tonaritsushin.onrender.com/oauth/callback?provider=line'
+  config.line.callback_url = 'https://smart-phone-choice.com/oauth/callback?provider=line'
   #ユーザーを識別するためのOpenID Connect IDトークンとメールアドレス
   config.line.scope = "profile openid email"
   config.line.bot_prompt = 'aggressive'

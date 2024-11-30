@@ -15,6 +15,8 @@ ja:
       updated: "更新しました！"
       not_updated: "更新に失敗しました！"
       deleted: "投稿を削除しました！"
+      line_success: "LINEとの連携に成功しました"
+      line_failure: "LINEとの連携に失敗しました"
   user_sessions:
     new:
       title: ログイン

@@ -2,7 +2,7 @@
   <div class="row justify-content-center">
     <div class="col-md-10 col-lg-8 mx-auto">
       <h2 class="text-center mt-5 mb-4">マイプロフィール</h2>
-      <p class="text-center mt-5 mb-4">Line通知を利用したい方はLINEとの連携をお願い致します。</p>
+      <p class="text-center mt-5 mb-4">※Line通知を利用したい方はLINEとの連携をお願い致します。</p>
 
       <div class="p-4 border rounded">
         <div class="mb-3">
@@ -24,11 +24,11 @@
             <div class="col-4 text-center">
               <!-- LINEを使って登録したユーザー用 -->
               <% if current_user.line_registered? %>
-                <p>LINE連携済みです</p>
+                <p>LINEでの登録済み</p>
               <% else %>
                 <!-- LINEの後から連携のユーザー用 -->
                 <% if current_user.omniauth_user_linked_to_line? %>
-                  <%= button_to 'LINE連携を解除', line_connection_path, method: :delete, class: 'btn btn-danger' %>
+                  <p>LINEとの連携済み</p>
                 <% else %>
                   <%= button_to 'LINEと連携する', '/auth/line', method: :post, data: { turbo: false }, class: 'btn btn-success' %>
                 <% end %>
@@ -36,9 +36,7 @@
               </div>
           </div>
         </div>
-
       </div>
-
     </div>
   </div>
 </div>
