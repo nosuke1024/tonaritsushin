@@ -11,9 +11,7 @@
         <div class="mb-3">
           <p>メールアドレス: <%= @user.email %></p>
         </div>
-        <div class="mb-3">
-          <p>LINEのユーザーID: <%= @user.line_user_id %></p>
-        </div>
+        <%# <p>LINEのユーザーID: <%= @user.line_user_id %>
 
         <div class="text-center">
           <%= link_to 'プロフィールを編集', edit_my_profile_path, class: "btn btn-primary" %>
