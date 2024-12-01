@@ -1,10 +1,71 @@
-<div class="container">
-  <div class="text-center">
-    <h1>診断結果</h1>
-    <h4>中古のオンライン販売店での購入がおすすめです。</h4>
-  </div>
-</div>
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <div class="text-center mb-4">
+            <h1 class="h2 mb-3">診断結果</h1>
+            <h4 class="text-primary mb-4">中古のオンライン販売店での購入がおすすめです。</h4>
+          </div>
 
-<div class="text-center">
-  <%= link_to '前のページに戻る', :back %>
+          <div class="diagnosis-reason mb-4">
+            <h5 class="border-bottom pb-2">診断理由</h5>
+            <p>
+              お客様の回答から、以下の条件に合致したため、中古のオンライン販売店での購入をおすすめしています：
+            </p>
+            <ul class="list-unstyled">
+              <li>✓ 古い端末または中古品でも問題ない</li>
+              <li>✓ 自宅で様々な選択肢を比較検討したい</li>
+              <li>✓ オンラインでの商品選びを希望</li>
+            </ul>
+          </div>
+
+          <div class="recommended-for mb-4">
+            <h5 class="border-bottom pb-2">こんな方におすすめ</h5>
+            <ul class="list-unstyled">
+              <li>✓ じっくり商品を比較検討したい方</li>
+              <li>✓ 自分のペースで選びたい方</li>
+              <li>✓ 店舗に行く時間がない方</li>
+              <li>✓ オンラインショッピングに慣れている方</li>
+            </ul>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="merits mb-4">
+                <h5 class="border-bottom pb-2">メリット</h5>
+                <ul class="list-unstyled">
+                  <li>✓ 24時間いつでも商品閲覧可能</li>
+                  <li>✓ 豊富な商品から選択可能</li>
+                  <li>✓ 商品の詳細な情報を確認可能</li>
+                  <li>✓ 価格比較が容易</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="demerits mb-4">
+                <h5 class="border-bottom pb-2">デメリット</h5>
+                <ul class="list-unstyled">
+                  <li>✗ 実機を直接確認できない</li>
+                  <li>✗ 即日受け取り不可</li>
+                  <li>✗ 対面でのサポートがない</li>
+                  <li>✗ 返品条件の確認が重要</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center mt-4">
+            <div class="mb-3">
+              <%= link_to 'ホームに戻る', root_path, class: 'btn btn-outline-primary' %>
+            </div>
+            <small class="text-muted">
+              ※この診断結果は回答内容を元にした参考情報です。実際の購入時は十分にご検討ください。
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
