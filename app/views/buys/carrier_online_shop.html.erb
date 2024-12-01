@@ -1,10 +1,72 @@
-<div class="container">
-  <div class="text-center">
-    <h1>診断結果</h1>
-    <h4>通信会社のオンラインショップでの購入がおすすめです。</h4>
-  </div>
-</div>
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <div class="text-center mb-4">
+            <h1 class="h2 mb-3">診断結果</h1>
+            <h4 class="text-primary mb-4">通信会社のオンラインショップでの購入がおすすめです。</h4>
+          </div>
 
-<div class="text-center">
-  <%= link_to '前のページに戻る', :back %>
+          <div class="diagnosis-reason mb-4">
+            <h5 class="border-bottom pb-2">診断理由</h5>
+            <p>
+              お客様の回答から、以下の条件に合致したため、通信会社のオンラインショップでの購入をおすすめしています：
+            </p>
+            <ul class="list-unstyled">
+              <li>✓ オンラインでのサポートで十分と考えている</li>
+              <li>✓ 商品購入時に相談しながら決めたい</li>
+              <li>✓ 通信キャリアの変更を検討している</li>
+              <li>✓ 新品端末の購入を希望</li>
+            </ul>
+          </div>
+
+          <div class="recommended-for mb-4">
+            <h5 class="border-bottom pb-2">こんな方におすすめ</h5>
+            <ul class="list-unstyled">
+              <li>✓ オンラインでの手続きに抵抗がない方</li>
+              <li>✓ チャットサポートを活用したい方</li>
+              <li>✓ キャリアの割引サービスを利用したい方</li>
+              <li>✓ 自宅で契約手続きを完結させたい方</li>
+            </ul>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="merits mb-4">
+                <h5 class="border-bottom pb-2">メリット</h5>
+                <ul class="list-unstyled">
+                  <li>✓ 店舗より安価な場合が多い</li>
+                  <li>✓ オンライン限定特典あり</li>
+                  <li>✓ 24時間申込み可能</li>
+                  <li>✓ 豊富な分割払いプラン</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="demerits mb-4">
+                <h5 class="border-bottom pb-2">デメリット</h5>
+                <ul class="list-unstyled">
+                  <li>✗ 実機を触って確認できない</li>
+                  <li>✗ 対面での詳細な説明なし</li>
+                  <li>✗ 即日受け取り不可</li>
+                  <li>✗ 契約内容の理解が必要</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center mt-4">
+            <div class="mb-3">
+              <%= link_to 'ホームに戻る', root_path, class: 'btn btn-outline-primary' %>
+            </div>
+            <small class="text-muted">
+              ※この診断結果は回答内容を元にした参考情報です。実際の購入時は十分にご検討ください。
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

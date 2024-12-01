@@ -1,10 +1,72 @@
-<div class="container">
-  <div class="text-center">
-    <h1>診断結果</h1>
-    <h4>携帯電話ショップでの購入がおすすめです。</h4>
-  </div>
-</div>
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <div class="text-center mb-4">
+            <h1 class="h2 mb-3">診断結果</h1>
+            <h4 class="text-primary mb-4">キャリアショップでの購入がおすすめです。</h4>
+          </div>
 
-<div class="text-center">
-  <%= link_to '前のページに戻る', :back %>
+          <div class="diagnosis-reason mb-4">
+            <h5 class="border-bottom pb-2">診断理由</h5>
+            <p>
+              お客様の回答から、以下の条件に合致したため、キャリアショップでの購入をおすすめしています：
+            </p>
+            <ul class="list-unstyled">
+              <li>✓ 初期設定やデータ移行のサポートを希望</li>
+              <li>✓ 商品購入時に相談しながら決めたい</li>
+              <li>✓ 通信キャリアの変更を検討</li>
+              <li>✓ 新品端末での購入を希望</li>
+            </ul>
+          </div>
+
+          <div class="recommended-for mb-4">
+            <h5 class="border-bottom pb-2">こんな方におすすめ</h5>
+            <ul class="list-unstyled">
+              <li>✓ 手厚いサポートを求める方</li>
+              <li>✓ データ移行に不安がある方</li>
+              <li>✓ キャリアの独自サービスを活用したい方</li>
+              <li>✓ アフターサポートを重視する方</li>
+            </ul>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="merits mb-4">
+                <h5 class="border-bottom pb-2">メリット</h5>
+                <ul class="list-unstyled">
+                  <li>✓ 専門スタッフによる設定サポート</li>
+                  <li>✓ キャリア独自の特典が充実</li>
+                  <li>✓ 契約後のアフターフォロー</li>
+                  <li>✓ トラブル時の対面サポート</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="demerits mb-4">
+                <h5 class="border-bottom pb-2">デメリット</h5>
+                <ul class="list-unstyled">
+                  <li>✗ オンラインより価格が高め</li>
+                  <li>✗ 待ち時間が長い場合が多い</li>
+                  <li>✗ 他社比較が難しい</li>
+                  <li>✗ 店舗の営業時間内での対応</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center mt-4">
+            <div class="mb-3">
+              <%= link_to 'ホームに戻る', root_path, class: 'btn btn-outline-primary' %>
+            </div>
+            <small class="text-muted">
+              ※この診断結果は回答内容を元にした参考情報です。実際の購入時は十分にご検討ください。
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
