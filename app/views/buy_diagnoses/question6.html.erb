@@ -5,16 +5,26 @@
       <p> その質問の回答によって、質問内容が変更されて回答も変わる仕組みになっています。</p>
   </div>
 
-  <div class="card">
-    <div class="card-header">
-      <h3>質問6</h3>
-    </div>
-    <div class="card-body">
-      <p class="card-text">購入時のサポートについてですか？</p>
-      <div class="text-center">
-        <%= link_to 'オンラインでの購入で十分', carrier_online_shop_path , class:"btn btn-primary"%>
-        <%= link_to '複数の会社の料金プランの比較まで聞きたい', electronics_retailer_path , class:"btn btn-primary" %>
-        <%= link_to '料金プランだけでなく初期設定やデータ移行までサポートしてほしい', carrier_shop_path , class:"btn btn-primary" %>
+  <div class="container py-4">
+    <div class="card">
+      <div class="card-header">
+        <h3>質問6</h3>
+      </div>
+      <div class="card-body">
+        <p class="card-text mb-4">購入時のサポートについてですか？</p>
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-8">
+            <%= link_to carrier_online_shop_path, class: "btn btn-outline-primary btn-lg w-100 mb-3 text-start" do %>
+              オンラインでの購入で十分
+            <% end %>
+            <%= link_to electronics_retailer_path, class: "btn btn-outline-primary btn-lg w-100 mb-3 text-start" do %>
+              複数の会社の料金プランの比較まで聞きたい
+            <% end %>
+            <%= link_to carrier_shop_path, class: "btn btn-outline-primary btn-lg w-100 mb-3 text-start" do %>
+              料金プランだけでなく初期設定やデータ移行までサポートしてほしい
+            <% end %>
+          </div>
+        </div>
       </div>
     </div>
   </div>

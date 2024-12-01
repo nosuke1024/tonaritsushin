@@ -5,15 +5,23 @@
       <p> その質問の回答によって、質問内容が変更されて回答も変わる仕組みになっています。</p>
   </div>
 
-  <div class="card">
-    <div class="card-header">
-      <h3>質問4</h3>
-    </div>
-    <div class="card-body">
-      <p class="card-text">次商品の購入に大事なことはなんですか？</p>
-      <div class="text-center">
-        <%= link_to 'できる限り安く買いたい', question5_buy_diagnoses_path , class:"btn btn-primary"%>
-        <%= link_to '高くてもいいので相談しながら購入したい', question6_buy_diagnoses_path , class:"btn btn-primary" %>
+  <div class="container py-4">
+    <div class="card">
+      <div class="card-header">
+        <h3>質問4</h3>
+      </div>
+      <div class="card-body">
+        <p class="card-text mb-4">次商品の購入に大事なことはなんですか？</p>
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-8">
+            <%= link_to question5_buy_diagnoses_path, class: "btn btn-outline-primary btn-lg w-100 mb-3 text-start" do %>
+              できる限り安く買いたい
+            <% end %>
+            <%= link_to question6_buy_diagnoses_path, class: "btn btn-outline-primary btn-lg w-100 mb-3 text-start" do %>
+              高くてもいいので相談しながら購入したい
+            <% end %>
+          </div>
+        </div>
       </div>
     </div>
   </div>

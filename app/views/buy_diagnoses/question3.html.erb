@@ -5,23 +5,38 @@
       <p> その質問の回答によって、質問内容が変更されて回答も変わる仕組みになっています。</p>
   </div>
 
-  <div class="card">
-    <div class="card-header">
-      <h3>質問3</h3>
-    </div>
-    <div class="card-body">
-      <p class="card-text">
-        古い端末または中古可の方に質問の内容です。
-        中古端末の購入について当てはまる内容を選択してください
-      </p>
-      <div class="text-center">
-        <%= link_to '実機確認と専門家のアドバイスを重視', used_store_path , class:"btn btn-primary"%>
-        <%= link_to '自宅での比較検討と多様な選択肢を重視', used_online_sale_path , class:"btn btn-primary" %>
-        <%= link_to '最安値と直接交渉を重視', flea_market_site_path , class:"btn btn-primary" %>
-        <%= link_to '古い機種でも新品にこだわる ', question4_buy_diagnoses_path , class:"btn btn-primary" %>
+
+  <div class="container py-4">
+    <div class="card">
+      <div class="card-header">
+        <h3>質問3</h3>
+      </div>
+      <div class="card-body">
+        <p class="card-text mb-4">古い端末または中古可の方に質問の内容です。中古端末の購入について当てはまる内容を選択してください</p>
+
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-8">
+            <%= link_to used_store_path, class: "btn btn-outline-primary btn-lg w-100 mb-3 text-start" do %>
+              実機確認と専門家のアドバイスを重視
+            <% end %>
+
+            <%= link_to used_online_sale_path, class: "btn btn-outline-primary btn-lg w-100 mb-3 text-start" do %>
+              自宅での比較検討と多様な選択肢を重視
+            <% end %>
+
+            <%= link_to flea_market_site_path, class: "btn btn-outline-primary btn-lg w-100 mb-3 text-start" do %>
+              最安値と直接交渉を重視
+            <% end %>
+
+            <%= link_to question4_buy_diagnoses_path, class: "btn btn-outline-primary btn-lg w-100 mb-3 text-start" do %>
+              古い機種でも新品にこだわる
+            <% end %>
+          </div>
+        </div>
       </div>
     </div>
   </div>
+
 
   <div class="text-center mt-3">
     <%= link_to '前のページに戻る', :back %>
