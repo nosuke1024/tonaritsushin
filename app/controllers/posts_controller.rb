@@ -56,7 +56,7 @@ class PostsController < ApplicationController
     end
 
     @q = Post.ransack(params[:q])
-    @posts = @q.result(distinct: true).includes(:user).order(created_at: :desc)
+    @posts = @q.result(distinct: true).includes(:user).order(created_at: :desc).page(params[:page]).per(10)
 
     render :index # index.html.erb をレンダリング
   end
