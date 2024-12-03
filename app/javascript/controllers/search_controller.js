@@ -37,13 +37,4 @@ export default class extends Controller {
       });
     }, 300);
   }
-
-  selectCandidate(event) {
-    // 選択された検索候補の値を取得
-  const selectedValue = event.currentTarget.dataset.searchValue;
-  // 検索フォームに値をセット
-  this.inputTarget.value = selectedValue;
-  // 候補リストをクリア
-  document.getElementById("search-candidates").innerHTML = "";
-}
 }
