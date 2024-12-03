@@ -39,7 +39,7 @@ class PostsController < ApplicationController
     # ログインチェック
     unless logged_in?
       # ログインしていない場合は全件表示のまま。turboで返す
-      @posts = Post.all.includes(:user).order(created_at: :desc)
+      @posts = Post.all.includes(:user).order(created_at: :desc).page(params[:page]).per(10)
       respond_to do |format|
         format.html { redirect_to posts_path }
         format.turbo_stream {
