@@ -2,11 +2,12 @@
 <% if candidates.any? %>
   <ul class="search-candidates-list">
     <% candidates.each do |candidate| %>
-      <li class="candidate-item"
-          data-action="click->search#selectCandidate"
-          data-search-value="<%= strip_tags(candidate) %>">
+      <li class="candidate-item">
+        <%# link_toを使用して直接詳細ページへのリンクを作成 %>
+        <%= link_to post_path(candidate), class: "candidate-item" do %>
           <!-- 検索候補の文字数を20文字の表記 -->
-        <%= truncate(highlight(candidate, params[:keyword]), length: 20) %>
+          <%= truncate(highlight(candidate.body, params[:keyword]), length: 20) %>
+        <% end %>
       </li>
     <% end %>
   </ul>
