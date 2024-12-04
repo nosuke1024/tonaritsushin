@@ -21,6 +21,7 @@ class NotificationsController < ApplicationController
   def update
     if current_user.update(user_params)
       redirect_to notifications_path, notice: '通知設定を更新しました'
+      
     else
       render :index, alert: '通知設定の更新に失敗しました'
     end
