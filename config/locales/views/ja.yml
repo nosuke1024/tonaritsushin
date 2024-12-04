@@ -17,6 +17,8 @@ ja:
       deleted: "投稿を削除しました！"
       line_success: "LINEとの連携に成功しました"
       line_failure: "LINEとの連携に失敗しました"
+      notification_success: "通知設定を更新しました"
+      notification_failure: "通知設定の更新に失敗しました"
   user_sessions:
     new:
       title: ログイン

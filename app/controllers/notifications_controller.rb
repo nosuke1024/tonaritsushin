@@ -20,10 +20,14 @@ class NotificationsController < ApplicationController
   # 通知の更新
   def update
     if current_user.update(user_params)
-      redirect_to notifications_path, notice: '通知設定を更新しました'
-      
+      if params[:user][:line_notification_enabled] == "true"
+        # LINE通知をONにする場合、友達追加画面へリダイレクト
+        redirect_to "https://lin.ee/VgbvT1p", allow_other_host: true  # 短縮URLを使用
+      else
+        redirect_to notifications_path, success: t('defaults.flash_message.notification_success')
+      end
     else
-      render :index, alert: '通知設定の更新に失敗しました'
+      render :index, danger: t('defaults.flash_message.notification_failure')
     end
   end
 
