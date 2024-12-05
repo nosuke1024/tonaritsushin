@@ -5,7 +5,7 @@ ja:
     attributes:
       user:
         email: メールアドレス
-        password: パスワード
+        password: パスワード ※英数字合わせて8文字以上
         password_confirmation: パスワード確認
         name: 名前
       post:
