@@ -2,11 +2,11 @@ class OauthsController < ApplicationController
   skip_before_action :require_login
 
   def oauth
-    login_at(params[:provider])
+    login_at(auth_params[:provider])
   end
 
   def callback
-    provider = params[:provider]
+    provider = auth_params[:provider]
     # 既にログインしたことあるユーザーの場合。
     if @user = login_from(provider)
       redirect_to posts_path, flash: { success: t('user_sessions.create.success') } # 変更
@@ -23,4 +23,11 @@ class OauthsController < ApplicationController
       end
     end
   end
+
+  private
+
+  def auth_params
+    params.permit(:code, :provider, :error, :state)
+  end
+
 end
