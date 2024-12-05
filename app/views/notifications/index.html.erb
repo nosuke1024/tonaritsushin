@@ -3,7 +3,8 @@
 <div class="card">
   <div class="card-header d-flex justify-content-between align-items-center">
     <div>通知</div>
-    <div>
+    <div class="line-notification-section">
+    <!-- LINE通知のONとOFF -->
       <%= form_with model: current_user, url: notifications_path, method: :patch, local: true, data: { turbo: false } do |f| %>
         <div>
           <%= f.hidden_field :line_notification_enabled, value: !current_user.line_notification_enabled %>
@@ -30,6 +31,15 @@
       <% end %>
     </ul>
   </div>
+
+</div>
+<!-- LINEの友達追加 -->
+<div class="line-friend-add py-3 text-center" style="background-color: #f8f9fa; margin: 2rem 0;">
+  <p class="mb-3">
+    ※LINE通知を受け取るには、公式アカウントの友達追加が必要です。<br>
+    友達登録をキャンセルした方や、ブロックした方は再度こちらから追加してください。
+  </p>
+  <a href="https://lin.ee/0NVtMsf"><img src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png" alt="友だち追加" height="36" border="0"></a>
 </div>
 
 <%= paginate @notifications %>
