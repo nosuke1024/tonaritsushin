@@ -7,16 +7,19 @@ class NotificationsController < ApplicationController
     @notifications.where(checked: false).update_all(checked: true)
   end
 
-  # 通知の更新
+  # LINW通知の更新
   def update
-    if current_user.update(user_params)
-      if params[:user][:line_notification_enabled] == "true"
-        # LINE通知をONにする場合、友達追加画面へリダイレクト
-        redirect_to "https://lin.ee/VgbvT1p", allow_other_host: true  # 短縮URLを使用
-      else
-        redirect_to notifications_path, success: t('defaults.flash_message.notification_success')
-      end
+    # まずLINEのユーザーIDが存在するか確認
+    unless current_user.line_user_id.present?
+      flash[:danger] = "LINE連携が必要です。先にLINE連携を行ってください。"
+      return render :index
+    end
+
+    # LINE連携済みの場合、通知設定を更新
+    if current_user.update_column(:line_notification_enabled, params[:user][:line_notification_enabled])
+      redirect_to notifications_path, success: t('defaults.flash_message.notification_success')
     else
+      # 通知設定の更新に失敗した場合
       render :index, danger: t('defaults.flash_message.notification_failure')
     end
   end
