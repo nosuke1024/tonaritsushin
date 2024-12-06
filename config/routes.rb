@@ -8,14 +8,11 @@ Rails.application.routes.draw do
   resources :users, only: %i[new create]
   # 投稿機能に関する機能
   resources :posts, only: %i[index new create show edit update destroy] do
-    # ここにはコメント機能のルートを追加する予定
-    resources :favorites, only: %i[index create destroy]  # お気に入り機能の追加
-    resources :comments, only: %i[create edit destroy], shallow: true #コメント機能の追加
-    # 検索に関するブロックでのルート
+    resources :favorites, only: %i[index create destroy]
+    resources :comments, only: %i[create edit destroy], shallow: true
     collection do
       get 'search'
       get 'search_candidates'
-      # get 'search/result'診断結果を追加する場合
     end
   end
 
@@ -37,13 +34,11 @@ Rails.application.routes.draw do
   resources :buy_diagnoses do
     collection do
       get 'question1'
-      # post 'question1_answer'
       get 'question2'
       get 'question3'
       get 'question4'
       get 'question5'
       get 'question6'
-      get 'result' # 診断結果表示用
     end
   end
 
@@ -82,7 +77,6 @@ Rails.application.routes.draw do
   get 'items', to: 'items#index'
   get 'items/search' , to: 'items#search'
 
-  # LINE認証
   # LINEを使った新規登録のoauthコントローラーのリクエスト
   get "oauth/callback" => "oauths#callback" # GETリクエストを追加
   post "oauth/callback" => "oauths#callback"
