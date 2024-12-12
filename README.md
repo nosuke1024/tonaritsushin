@@ -95,4 +95,9 @@
 # ■ ER図
   ![ER図](https://github.com/nosuke1024/tonaritsushin/blob/main/app/assets/images/ER.png)
   
-  
+
+## ■ 外部記事
+- 個人開発の機能や背景をまとめたもの: [Qiita記事](https://qiita.com/emieminosuke/items/04641e9a81952243f788)
+- Hotwireを使ってインクリメンタルサーチの実装をした: [Qiita記事](https://qiita.com/emieminosuke/items/2ee160b863b761f38520)
+- 既存ユーザーを後からLINEで連携をしたい: [Qiita記事](https://qiita.com/emieminosuke/items/3593cf87d414756e523f)
+
