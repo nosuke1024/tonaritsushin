@@ -1,3 +1,5 @@
-# 将来的に購入診断のロジックを拡張する可能性があるため、モデルは残しておく
-class BuyDiagnosis < ApplicationRecord
+class BuyDiagnosis
+  include ActiveModel::Model
+  include ActiveModel::Attributes
+  # 診断のロジックをモデルファイルに記載したいから残す
 end
