@@ -18,6 +18,6 @@ module Myapp
     # 追加した通常の言語
     config.i18n.default_locale = :ja
     # タイムゾーンの設定
-    config.time_zone = 'Tokyo'
+    config.time_zone = "Tokyo"
   end
 end

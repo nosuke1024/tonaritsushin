@@ -16,8 +16,8 @@ class Favorite < ApplicationRecord
       user_id: post.user.id,      # 通知の受信者(投稿の作者)のID
       visitor_id: user.id,        # お気に入りしたユーザーのID
       visited_id: post.user.id,  # 投稿の作者のID
-      action: 'favorite',         # 通知の種類
-      notifiable_type: 'Favorite', # 通知対象のモデルのクラス名
+      action: "favorite",         # 通知の種類
+      notifiable_type: "Favorite", # 通知対象のモデルのクラス名
       notifiable_id: id           # 通知対象のモデルのID
     )
     notification.save!

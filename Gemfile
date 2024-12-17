@@ -37,43 +37,43 @@ gem "bootsnap", require: false
 # gem "image_processing", "~> 1.2"
 
 # 08ブランチで作成
-gem 'sorcery'
+gem "sorcery"
 
 # 11ブランチで作成
-gem 'rails-i18n'
+gem "rails-i18n"
 
 # 13ブランチで導入
-gem 'byebug', '~> 11.1'
+gem "byebug", "~> 11.1"
 
 # 18ブランチで導入
-gem 'enum_help'
+gem "enum_help"
 
 # 21ブランチで導入
-gem 'draper'
+gem "draper"
 
 # 30ブランチで導入
-gem 'kaminari'
+gem "kaminari"
 
-gem 'bootstrap5-kaminari-views'
+gem "bootstrap5-kaminari-views"
 
 # 41ブランチで導入
-gem 'ransack'
+gem "ransack"
 
 # 44ブランチで導入。RakutenAPIの導入
-gem 'rakuten_web_service'
+gem "rakuten_web_service"
 
 # 44ブランチで導入。環境変数として.envの導入のために導入
-gem 'dotenv-rails'
+gem "dotenv-rails"
 
 # 47ブランチで導入。LINE通知
-gem 'line-bot-api'
+gem "line-bot-api"
 
 # 54ブランチで導入。既存ユーザーのLINE連携
-gem 'omniauth-line'
-gem 'omniauth-rails_csrf_protection' # CSRF対策
+gem "omniauth-line"
+gem "omniauth-rails_csrf_protection" # CSRF対策
 
 # 静的OGPの作成
-gem 'meta-tags'
+gem "meta-tags"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

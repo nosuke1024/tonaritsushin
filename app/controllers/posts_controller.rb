@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  skip_before_action :require_login, only: [:index, :search] # ログインしなくても一覧閲覧可能に。
+  skip_before_action :require_login, only: [ :index, :search ] # ログインしなくても一覧閲覧可能に。
 
   def index
     @q = Post.ransack(params[:q])
@@ -18,7 +18,7 @@ class PostsController < ApplicationController
     return if params[:keyword].blank? || params[:keyword].length < 2
 
     @candidates = Post.where("body LIKE ?", "%#{params[:keyword]}%")
-                    .select(:id,:body) # 投稿IDもセットで
+                    .select(:id, :body) # 投稿IDもセットで
                     .distinct
                     .limit(5)
 
@@ -68,9 +68,9 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params)
     if @post.save
-      redirect_to posts_path, success: t('defaults.flash_message.created',)
+      redirect_to posts_path, success: t("defaults.flash_message.created",)
     else
-      flash.now[:danger] = t('defaults.flash_message.not_created')
+      flash.now[:danger] = t("defaults.flash_message.not_created")
       render :new, status: :unprocessable_entity
     end
   end
@@ -88,10 +88,10 @@ class PostsController < ApplicationController
   def update
     @post = current_user.posts.find(params[:id])
     if @post.update(post_params)
-      redirect_to post_path(@post), success: t('defaults.flash_message.updated')
+      redirect_to post_path(@post), success: t("defaults.flash_message.updated")
     else
       flash.now
-      flash.now[:danger] = t('defaults.flash_message.not_updated')
+      flash.now[:danger] = t("defaults.flash_message.not_updated")
       render :edit, status: :unprocessable_entity
     end
   end
@@ -99,7 +99,7 @@ class PostsController < ApplicationController
   def destroy
     post = current_user.posts.find(params[:id])
     post.destroy!
-    redirect_to posts_path, flash: { danger: t('defaults.flash_message.deleted') }, status: :see_other
+    redirect_to posts_path, flash: { danger: t("defaults.flash_message.deleted") }, status: :see_other
   end
   # お気に入りがない時のメソッドの定義
   private

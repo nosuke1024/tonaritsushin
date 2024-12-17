@@ -1,7 +1,7 @@
-require 'line/bot' # line-bot-apiとセット
+require "line/bot" # line-bot-apiとセット
 
 class NotificationsController < ApplicationController
-  before_action :set_notifications, only: [:index]
+  before_action :set_notifications, only: [ :index ]
 
   def index
     # 通常の通知に関する内容
@@ -20,11 +20,11 @@ class NotificationsController < ApplicationController
 
     # LINE連携済みの場合、通知設定を更新
     if current_user.update_column(:line_notification_enabled, params[:user][:line_notification_enabled])
-      redirect_to notifications_path, success: t('defaults.flash_message.notification_success')
+      redirect_to notifications_path, success: t("defaults.flash_message.notification_success")
     else
       # 通知設定の更新に失敗した場合
       set_notifications
-      render :index, danger: t('defaults.flash_message.notification_failure')
+      render :index, danger: t("defaults.flash_message.notification_failure")
     end
   end
 
@@ -39,5 +39,4 @@ class NotificationsController < ApplicationController
   def user_params
     params.require(:user).permit(:line_notification_enabled)
   end
-
 end

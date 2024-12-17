@@ -1,9 +1,9 @@
 class Notification < ApplicationRecord
   belongs_to :user
   # 通知の訪問者（アクションを起こしたユーザー）
-  belongs_to :visitor, class_name: 'User', foreign_key: 'visitor_id'
+  belongs_to :visitor, class_name: "User", foreign_key: "visitor_id"
   # 通知の受信者（アクションの対象となったユーザー）
-  belongs_to :visited, class_name: 'User', foreign_key: 'visited_id'
+  belongs_to :visited, class_name: "User", foreign_key: "visited_id"
   # ポリモーフィック関連付け
   belongs_to :notifiable, polymorphic: true
 
@@ -25,32 +25,32 @@ class Notification < ApplicationRecord
 
     # LINE通知送信
     client = Line::Bot::Client.new { |config|
-      config.channel_secret = ENV['MESSAGING_CHANNEL_SECRET']
-      config.channel_token = ENV['MESSAGING_CHANNEL_TOKEN']
+      config.channel_secret = ENV["MESSAGING_CHANNEL_SECRET"]
+      config.channel_token = ENV["MESSAGING_CHANNEL_TOKEN"]
     }
 
     message = {
-      type: 'flex',
-      altText: '新しい通知があります',
+      type: "flex",
+      altText: "新しい通知があります",
       contents: {
-        type: 'bubble',
+        type: "bubble",
         body: {
-          type: 'box',
-          layout: 'vertical',
+          type: "box",
+          layout: "vertical",
           contents: [
             {
-              type: 'text',
-              text: '新しい通知が届きました',
-              weight: 'bold',
-              size: 'xl'
+              type: "text",
+              text: "新しい通知が届きました",
+              weight: "bold",
+              size: "xl"
             },
             {
-              type: 'button',
-              style: 'primary',
+              type: "button",
+              style: "primary",
               action: {
-                type: 'uri',
-                label: '通知を確認する',
-                uri: 'https://smart-phone-choice.com/notifications'
+                type: "uri",
+                label: "通知を確認する",
+                uri: "https://smart-phone-choice.com/notifications"
               }
             }
           ]
