@@ -16,8 +16,8 @@ class Comment < ApplicationRecord
       user_id: post.user.id,      # 通知の受信者(投稿の作者)のID
       visitor_id: user.id,        # コメントしたユーザーのID
       visited_id: post.user.id,  # 投稿の作者のID
-      action: 'comment',          # 通知の種類
-      notifiable_type: 'Comment', # 通知対象のモデルのクラス名
+      action: "comment",          # 通知の種類
+      notifiable_type: "Comment", # 通知対象のモデルのクラス名
       notifiable_id: id           # 通知対象のモデルのID
     )
     notification.save!

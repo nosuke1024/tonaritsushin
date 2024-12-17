@@ -4,7 +4,7 @@
 # Available submodules are: :user_activation, :http_basic_auth, :remember_me,
 # :reset_password, :session_timeout, :brute_force_protection, :activity_logging,
 # :magic_login, :external
-Rails.application.config.sorcery.submodules = [:external]
+Rails.application.config.sorcery.submodules = [ :external ]
 
 # Here you can configure each submodule's features.
 Rails.application.config.sorcery.configure do |config|
@@ -80,7 +80,7 @@ Rails.application.config.sorcery.configure do |config|
   # i.e. [:twitter, :facebook, :github, :linkedin, :xing, :google, :liveid, :salesforce, :slack, :line].
   # Default: `[]`
   # サブモジュールでの有効化
-  config.external_providers = [:line]
+  config.external_providers = [ :line ]
 
   # You can change it by your local ca_file. i.e. '/etc/pki/tls/certs/ca-bundle.crt'
   # Path to ca_file. By default use a internal ca-bundle.crt.
@@ -220,14 +220,14 @@ Rails.application.config.sorcery.configure do |config|
   # config.salesforce.user_info_mapping = {:email => "email"}
 
   # LINE認証に関すること
-  config.line.key = ENV['LINE_Sorcery_ID']
-  config.line.secret = ENV['LINE_Sorcery_SECRET']
+  config.line.key = ENV["LINE_Sorcery_ID"]
+  config.line.secret = ENV["LINE_Sorcery_SECRET"]
   # 本番環境のURLに置き換える
-  config.line.callback_url = 'https://smart-phone-choice.com/oauth/callback?provider=line'
-  #ユーザーを識別するためのOpenID Connect IDトークンとメールアドレス
+  config.line.callback_url = "https://smart-phone-choice.com/oauth/callback?provider=line"
+  # ユーザーを識別するためのOpenID Connect IDトークンとメールアドレス
   config.line.scope = "profile openid email"
-  config.line.bot_prompt = 'aggressive'
-  config.line.user_info_mapping = { name: 'displayName', line_user_id: 'userId' }
+  config.line.bot_prompt = "aggressive"
+  config.line.user_info_mapping = { name: "displayName", line_user_id: "userId" }
 
   # For information about Discord API
   # https://discordapp.com/developers/docs/topics/oauth2
@@ -248,7 +248,6 @@ Rails.application.config.sorcery.configure do |config|
 
   # Sorceryの設定をカスタマイズするためのブロック|
   config.user_config do |user|
-
     # Downcase the username before trying to authenticate, default is false
     # Default: `false`
     #

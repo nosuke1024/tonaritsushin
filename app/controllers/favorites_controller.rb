@@ -14,7 +14,7 @@ class FavoritesController < ApplicationController
       favorite.destroy
       redirect_to params[:redirect_to] || post_path(favorite.post)
     else
-      flash[:error] = 'お気に入りボタンを連打しないでください！'
+      flash[:error] = "お気に入りボタンを連打しないでください！"
       redirect_back(fallback_location: root_path)
     end
   end
