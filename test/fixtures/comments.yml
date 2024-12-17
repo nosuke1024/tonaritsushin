@@ -1,11 +1,1 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  body: MyText      # contentをbodyに変更
-  user: one         # user_idの関連付け
-  post: one         # post_idの関連付け
-
-two:
-  body: MyText      # contentをbodyに変更
-  user: two         # user_idの関連付け
-  post: two         # post_idの関連付け
