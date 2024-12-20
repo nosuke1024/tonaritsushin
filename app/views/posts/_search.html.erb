@@ -16,11 +16,11 @@
       <div class="col-md-5 mb-1 position-relative">
         <div class="form-group">
           <%= f.label :body_cont, "フリーワード検索", class: "form-label" %>
-          <%= f.search_field :body_cont, 
-              class: 'form-control', 
-              placeholder: '検索ワード', 
-              data: { 
-                controller: "search", 
+          <%= f.search_field :body_cont,
+              class: 'form-control',
+              placeholder: '検索ワード',
+              data: {
+                controller: "search",
                 action: "input->search#suggest",
                 search_target: "input"
               }

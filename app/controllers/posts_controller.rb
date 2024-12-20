@@ -58,7 +58,7 @@ class PostsController < ApplicationController
     @q = Post.ransack(params[:q])
     @posts = @q.result(distinct: true).includes(:user).order(created_at: :desc).page(params[:page]).per(10)
 
-    render 'index'  # シンボルではなく文字列を使用
+    render :index
   end
 
   def new

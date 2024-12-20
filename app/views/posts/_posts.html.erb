@@ -1,0 +1,7 @@
+<% posts.each do |post| %>
+  <div class="col-sm-12 col-lg-4 mb-3">
+    <div id="post-id-<%= post.id %>">
+      <%= render partial: "post_content", locals: { post: post } %>
+    </div>
+  </div>
+<% end %>
