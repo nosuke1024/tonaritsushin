@@ -3,3 +3,12 @@
 # This model initially had no columns defined. If you add columns to the
 # model remove the "{}" from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
+one:
+  email: 'test@example.com'
+  crypted_password: <%= User.encrypt_password('password') %> # パスワードの暗号化が必要
+  salt: <%= User.generate_salt %> # saltも必要な場合
+
+two:
+  email: 'test2@example.com'
+  crypted_password: <%= User.encrypt_password('password') %>
+  salt: <%= User.generate_salt %>
