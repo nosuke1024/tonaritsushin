@@ -2,12 +2,15 @@ require "test_helper"
 
 class OauthsControllerTest < ActionDispatch::IntegrationTest
   test "should get oauth" do
-    get oauths_oauth_url
+    get oauth_path(provider: 'line')  # providerパラメータを追加
     assert_response :success
   end
 
   test "should get callback" do
-    get oauths_callback_url
-    assert_response :success
+    get oauth_callback_path(provider: 'line')  # providerパラメータを追加
+    # コールバックは通常リダイレクトするので
+    assert_response :redirect
+    # ログイン失敗時はroot_pathにリダイレクト
+    assert_redirected_to root_path
   end
 end
