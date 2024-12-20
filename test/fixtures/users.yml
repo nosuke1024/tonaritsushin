@@ -6,10 +6,12 @@
 # test/fixtures/users.yml
 one:
   email: 'test@example.com'
+  name: 'Test User'
   salt: <%= salt = "asdasdastr4325234324sdfds" %>
   crypted_password: <%= Sorcery::CryptoProviders::BCrypt.encrypt("password", salt) %>
 
 two:
   email: 'test2@example.com'
+  name: 'Test User 2'
   salt: <%= salt = "asdasdastr4325234324sdfds" %>
   crypted_password: <%= Sorcery::CryptoProviders::BCrypt.encrypt("password", salt) %>
