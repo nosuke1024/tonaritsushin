@@ -1,4 +1,7 @@
-class PlanDiagnosis < ApplicationRecord
+class PlanDiagnosis
+  include ActiveModel::Model
+  include ActiveModel::Attributes
+
   def self.diagnose(params)
     # 1-1
     if params[:question1] == "1" && params[:question2] == "1" && params[:question3] == "1"
