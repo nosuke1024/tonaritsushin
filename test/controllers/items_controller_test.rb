@@ -3,8 +3,7 @@ require "test_helper"
 class ItemsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @user = users(:one)
-    # テスト前にログイン
-    post login_path, params: { email: @user.email, password: "password" }
+    login_as(@user)
   end
 
   test "should get index for logged in user" do
@@ -13,8 +12,18 @@ class ItemsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should redirect to login when not logged in" do
-    delete logout_path  # ログアウトする
+    logout
     get items_path
-    assert_redirected_to login_path  # ログインページにリダイレクトされることを確認
+    assert_redirected_to login_path
+  end
+
+  private
+
+  def login_as(user)
+    post login_url, params: { email: user.email, password: "password" }
+  end
+
+  def logout
+    delete logout_url
   end
 end
