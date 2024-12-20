@@ -13,7 +13,7 @@ class UserSessionsControllerTest < ActionDispatch::IntegrationTest
   test "should get create" do
     post login_path, params: {
       email: @user.email,
-      password: 'password'  # fixtureで設定したパスワード
+      password: "password"  # fixtureで設定したパスワード
     }
     assert_response :redirect
     assert_redirected_to posts_path
@@ -21,7 +21,7 @@ class UserSessionsControllerTest < ActionDispatch::IntegrationTest
 
   test "should get destroy" do
     # ログインしたあとに削除
-    post login_path, params: { email: @user.email, password: 'password' }
+    post login_path, params: { email: @user.email, password: "password" }
     delete logout_path
     assert_response :see_other
     assert_redirected_to root_path
