@@ -1,18 +1,13 @@
 require "test_helper"
 
 class OauthsControllerTest < ActionDispatch::IntegrationTest
-  setup do
-    setup_oauth_mock
-  end
-
   test "should get callback" do
-    # providerパラメータを必ず含める
+    # 必要最小限のパラメータのみ送信
     get oauth_callback_path, params: {
       provider: 'line',
-      code: 'dummy_auth_code',
-      state: 'dummy_state'
+      code: 'dummy_auth_code'
     }
-    assert_response :redirect
-    assert_redirected_to root_path
+    assert_response :redirect # リダイレクトされることを確認
+    assert_redirected_to root_path # リダイレクト先の確認
   end
 end
