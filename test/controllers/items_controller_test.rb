@@ -1,8 +1,8 @@
 require "test_helper"
 
 class ItemsControllerTest < ActionDispatch::IntegrationTest
-  test "should get index" do
-    get items_index_url
-    assert_response :success
+  test "should redirect to login when not logged in" do
+    get items_path
+    assert_redirected_to login_path
   end
 end
